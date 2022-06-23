@@ -4,7 +4,7 @@
 
 ### Request URL  
 
-Requests to the APT application will all be made to the following URL: https://plattest02-opus.tracelink.com/api/events/  
+Your administrator can provide the URL you will use for submitting requests.  
 These requests will use the **POST** verb.
 
 ### Request Headers  
