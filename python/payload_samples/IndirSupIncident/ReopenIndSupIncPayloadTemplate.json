@@ -1,0 +1,27 @@
+{
+    "header": {
+        "headerVersion": 1,
+        "eventName": "agile-process-teams:reopen-indirect-supplier-incident:v1",
+        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+        "processNetworkId": "a70ca41a-ef4d-4b5a-b243-26cff72434ce",
+        "appName": "agile-process-teams",
+        "dataspace": "default"
+    },
+    "payload": {
+        "id":"c8fae272-faa9-4f51-9a49-68f67930d4db",
+        "aptCommentBox": {
+            "aptComment": {
+                "commentText": "Reopening incident. Closed in error; issue not fully resolved.",
+                "visibilityType": "Public"
+            },
+            "addAttachment": [
+                {
+                    "fileName": "Smith_email_download(1).pdf",
+                    "fileSize": "5mb",
+                    "visibilityType": "InternalOnly",
+                    "requestIdentifier": "4ec1229a-d46f-4fc0-878f-188d318db55a"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "payload": {
+        "partnerCompany": {
+            "partnerId": "be9c8cea-72bc-459c-97b9-ef3f7c73ccc8",
+            "toIdType": "companyMasterData"
+        },
+        "partnerLocationId": "bb75c388-16f7-4a18-9c77-f418d928359e",
+        "aptBusinessObjectSummary": "Missing Shipment",
+        "aptBusinessObjectDescription": "Shipment XYZ missing at Location ABC",
+        "deviationType": "PLANNED",
+        "responsiblePartyAtCompany": "ff060ac0-035d-11eb-8738-0242ac110017",
+        "responsibleDepartmentAtCompany": "CUSTOMER_SERVICE",
+        "responsiblePartyAtPartner": "bb75c388-16f7-4a18-9c77-f418d928359e",
+        "responsibleDepartmentAtPartner": "SUPPLY_CHAIN",
+        "currentlyAssignedCompanyUsers": [
+            "bb75c388-16f7-4a18-9c77-f418d928359e"
+        ],
+        "currentlyAssignedPartnerUsers": [
+            "ff060ac0-035d-11eb-8738-0242ac110017",
+            "feb32fd0-035d-11eb-bb87-0242ac110017"
+        ],
+        "materialType": "FINISHED_GOOD",
+        "materialSubtype": "CHEMICAL_API",
+        "materialProblem": "MATERIAL_SHORTAGE",
+        "isEscalated": false,
+        "originatingLocation": {
+            "originatingLocationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+            "toIdType": "partnerLocationMasterData"
+        },
+        "resolutionDueDate": 1651133945000,
+        "createdByPartner": false,
+        "isSubmittedToPartner": true,
+        "referenceIdentifiers": {
+            "referenceTransactionType": "BILL_OF_LADING",
+            "value": "GTIN-1161187176294956"
+        },
+        "directSupplierMaterialInformation": {
+            "companyInternalMaterialInformation": "Company Internal Material Information",
+            "partnerInternalMaterialInformation": "pim161187176294672",
+            "materialName": "Material Name",
+            "materialDescription": "Material Description",
+            "companyLotNumber": "cln161187176294679",
+            "partnerLotNumber": "pln161187176294652",
+            "defectiveQuantity": 1,
+            "defectiveUnitOfMeasure": "CENTILITER",
+            "defectiveItemInformation": "Defective Item Information",
+            "samplesAvailable": false
+        },
+        "directSupplierResponse": {
+            "initialResponseDueDate": 1641133945000,
+            "initialResponseInformation": "Initial Response Information",
+            "finalResponseDueDate": 1641133945000,
+            "finalResponseInformation": "Final Response Information",
+            "dateSamplesSentToCompany": 1641133945000,
+            "dateSamplesReceivedByCompany": 1641133945000,
+            "dateSamplesSentToPartner": 1641133945000,
+            "dateSamplesReceivedByPartner": 1641133945000,
+            "inventoryImpact": "Inventory Impact",
+            "inventoryAnalysisMethod": "Inventory Analysis Method",
+            "initialContainmentActions": "Final Containment Actions",
+            "recommendationFromOriginatingCompany": "Recommendation From Originating Company",
+            "immediateCorrectiveActions": "Immediate Corrective Actions",
+            "potentialRootCauses": [
+                "DOCUMENTATION"
+            ],
+            "potentialRootCauseNotes": "Potential Root Cause Notes",
+            "finalPreventativeActions": "Final Preventative Actions",
+            "methodsToProvePreventativeActionsTaken": "Methods To Prove Preventative Actions Taken",
+            "replacementMaterials": [
+                {
+                    "availabilityDateForReplacements": 1641133945000,
+                    "transactionIDsForReplacements": {
+                        "referenceTransactionType": "INVOICE_NUMBER",
+                        "value": "100"
+                    }
+                }
+            ]
+        },
+        "directSupplierImpact": {
+            "businessImpact": "Business Impact",
+            "businessPriority": "HIGH",
+            "impactedDepartments": [
+                "CUSTOMER_SERVICE"
+            ],
+            "highPriorityReasons": [
+                "Reason1"
+            ],
+            "financialImpact": 164113394500,
+            "dateSupplyImpacted": 1641133945000,
+            "originatingLocationInvestigationDueDate": 1641133945000,
+            "dateResourcesDeployed": 1641133945000,
+            "dateEscalationReportRequested": 1641133945000
+        },
+        "impactedProducts": [
+            "613ac6ab-2940-45c4-b214-ea84feb4e931"
+        ],
+        "potentiallyImpactedProducts": [
+            "fc58cbf8-1098-4f66-bf37-763922bd36b3",
+            "613ac6ab-2940-45c4-b214-ea84feb4e931"
+        ],
+        "impactedLocations": {
+            "locationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+            "toIdType": "companyLocationMasterData",
+            "locationType": "INTERNAL",
+            "locationContact": "edavis"
+        },
+        "potentiallyImpactedLocations": [
+            {
+                "locationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+                "toIdType": "companyLocationMasterData",
+                "locationType": "INTERNAL",
+                "locationContact": "edavis"
+            }
+        ],
+        "aptEscalationReportBox": {
+            "addAttachment": [
+                {
+                    "fileSize": "5mb",
+                    "fileName": "aptEscalationReportBox1",
+                    "requestIdentifier": "53e27ae1-6f5b-45c9-a6ab-5e480d652f4e",
+                    "visibilityType": "Public"
+                },
+                {
+                    "fileSize": "5mb",
+                    "fileName": "aptEscalationReportBox2",
+                    "requestIdentifier": "83bd02d6-ee59-46b3-ad40-2b5c86888623",
+                    "visibilityType": "Public"
+                }
+            ]
+        },
+        "relatedProcesses": [
+            {
+                "processId": "c8c2b7ab-fcfd-448e-8964-798e42fb9aea",
+                "processType": "incident"
+            }
+        ],
+        "aptCommentBox": [
+            {
+                "aptComment": {
+                    "commentText": "add DSI.",
+                    "visibilityType": "Public"
+                },
+                "addAttachment": [
+                    {
+                        "fileSize": "5mb",
+                        "fileName": "File1",
+                        "requestIdentifier": "fc58cbf8-1098-4f66-bf37-763922bd36b3",
+                        "visibilityType": "Public"
+                    }
+                ]
+            }
+        ]
+    }
+}

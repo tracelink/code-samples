@@ -1,0 +1,15 @@
+{
+    "payload": {
+        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+        "resolutionType": "RESOLVED",
+        "isReoccuring": true,
+        "impactedLocation": "8b99b7d8-d65b-4333-92fd-9d551ff2c07e",
+        "aptCommentBox": [
+            "aptComment":{
+                "commentText": "Specs updated to correct version (v12.0). Were able to repackage with little loss",
+                "visibilityType": "Public"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "payload": {
+        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+        "aptCommentBox": {
+            "aptComment": {
+                "commentText": "Reopening INC-4097 based on additional info on damaged cargo (see attached email)",
+                "visibilityType": "Public"
+            },
+            "addAttachment": [
+                {
+                    "fileName": "INC-4097_12Jun2021.pdf",
+                    "fileSize": "2mb",
+                    "visibilityType": "Public",
+                    "requestIdentifier": "a67d7261-33b1-4be6-9760-61ae8fe9eed3"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "payload": {
+        "id": "fd04dd70-c162-43ef-8118-539ca01de471",
+        "createdByPartner": false,
+        "aptBusinessObjectSummary": "Shipment Damage",
+        "copyGeneralInfo": true,
+        "copyPartnerInfo": false,
+        "copyMaterialInfo": true,
+        "copyImpactInfo": false,
+        "copyReferenceIds": false,
+        "copyRelatedProcesses": true
+    }
+}

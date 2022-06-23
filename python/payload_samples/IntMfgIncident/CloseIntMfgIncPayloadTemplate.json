@@ -1,0 +1,23 @@
+{
+    "payload": {
+        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+        "resolutionType": "RESOLVED",
+        "isReoccuring": false,
+        "commentAndAttachments": [
+            {
+                "aptComment":{
+                    "commentText": "Investigation complete. Refer to root cause notes for additional information.",
+                    "visibilityType": "Public"
+                },
+                "addAttachment":[
+                    {
+                        "fileName": "damaged_container.png",
+                        "fileSize": "3mb",
+                        "visibilityType": "Public",
+                        "requestIdentifier": "4383a452-1e19-4aa6-98fe-84c9f7a3bd16"
+                    }
+                ]
+            }
+        ]
+    }
+}

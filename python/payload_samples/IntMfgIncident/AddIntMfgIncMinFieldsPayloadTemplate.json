@@ -1,0 +1,8 @@
+{
+    "payload": {
+        "aptBusinessObjectSummary": "Raw materials shortage at Location XYZ",
+        "internalManufacturingImpact": {
+            "businessPriority": "HIGH"
+        }
+    }
+}

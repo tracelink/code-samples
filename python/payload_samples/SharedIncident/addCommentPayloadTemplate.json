@@ -1,0 +1,20 @@
+{
+    "payload": {
+        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+        "processType": "indirectSupplierIncident",
+        "aptCommentBox":{
+            "aptComment":{
+                "commentText": "Attaching latest order documentation per Jen's request",
+                "visibilityType": "Public"
+            },
+            "addAttachment":[
+                {
+                    "fileName" : "INC-4098_shipping-order.pdf",
+                    "fileSize" : "3mb",
+                    "visibilityType": "Public",
+                    "requestIdentifier": "4383a452-1e19-4aa6-98fe-84c9f7a3bd16"
+                }
+            ]
+        }
+    }
+}

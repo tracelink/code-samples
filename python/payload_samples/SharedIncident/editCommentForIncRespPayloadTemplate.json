@@ -1,0 +1,16 @@
+{
+    "payload": {
+        "commentId": "a67d7261-33b1-4be6-9760-61ae8fe9eed3",
+        "processType": "directSupplierincident",
+        "id": "9d84028a-61ae-11eb-90b4-e933a8e8da5e",
+        "aptCommentBox": {
+            "aptComment": {
+                "commentText": "Incorrect order uploaded",
+                "visibilityType": "Public"
+            },
+            "removeAttachment" : [
+                "9d84028a-abcd-11eb-90b4-e933a8e8da5e"
+            ]
+        }
+    }
+}

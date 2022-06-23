@@ -1,0 +1,62 @@
+{
+    "payload": {
+        "id": "fd04dd70-c162-43ef-8118-539ca01de471",
+        "partnerCompany": {
+            "partnerId": "be9c8cea-72bc-459c-97b9-ef3f7c73ccc8",
+            "toIdType": "companyMasterData"
+        },
+        "partnerLocationId": "bb75c388-16f7-4a18-9c77",
+        "responsiblePartyAtPartner": "a67d7261-33b1-4be6-9760-61ae8fe9eed3",
+        "currentlyAssignedPartnerUsers": [
+            "a67d7261-33b1-4be6-9760-61ae8fe9eed6"
+        ],
+        "directSupplierImpact": {
+            "businessImpact": "Business Impact",
+            "businessPriority": "HIGH",
+            "impactedDepartments": [
+                "CUSTOMER_SERVICE"
+            ],
+            "highPriorityReasons": [
+                "Reason1"
+            ],
+            "financialImpact": 164113394500,
+            "dateSupplyImpacted": 1641133945000,
+            "originatingLocationInvestigationDueDate": 1641133945000,
+            "dateResourcesDeployed": 1641133945000,
+            "dateEscalationReportRequested": 1641133945000,
+        },
+        "impactedProducts": [
+            "613ac6ab-2940-45c4-b214-ea84feb4e931"
+        ],
+        "potentiallyImpactedProducts": [
+            "fc58cbf8-1098-4f66-bf37-763922bd36b3",
+            "613ac6ab-2940-45c4-b214-ea84feb4e931"
+        ],
+        "impactedLocations": {
+            "locationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+            "toIdType": "companyLocationMasterData",
+            "locationType": "INTERNAL",
+            "locationContact": "edavis"
+        },
+        "potentiallyImpactedLocations": [
+            {
+                "locationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+                "toIdType": "companyLocationMasterData",
+                "locationType": "INTERNAL",
+                "locationContact": "edavis"
+            }
+        ],
+        "referenceIdentifiers":[
+            {
+                "referenceTransactionType":"BILL OF LADING",
+                "value": "FZ-1896155146"
+            }
+        ],
+        "aptCommentBox":{
+            "aptComment":{
+                "commentText": "Re-assigning to Jen",
+                "visibilityType": "Internal"
+            }
+        }
+    }
+}

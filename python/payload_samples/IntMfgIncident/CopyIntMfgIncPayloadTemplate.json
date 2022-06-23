@@ -1,0 +1,11 @@
+{
+    "payload": {
+        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+        "aptBusinessObjectSummary": "Container damaged in transit (second occurrence)",
+        "copyGeneralInfo": true,
+        "copymaterialInfo": true,
+        "copyImpactInfo": false,
+        "copyReferenceIds": true,
+        "copyRelatedProcesses": true
+    }
+}
