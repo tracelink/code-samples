@@ -33,4 +33,4 @@ Each event folder also contains a *samples* folder with payload template files p
 
 [Basic request formatting](FormatRequests.MD) - Learn the request body requirements  
 [Event name mapping](EventNames.MD) - Shows the event name text to use in the header for each request type  
-[Using the API walk-through](UsingTheAPI.md) - A simple walk-through example  
+[Using the API walk-through](UsingTheAPI.MD) - A simple walk-through example  

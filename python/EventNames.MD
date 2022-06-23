@@ -154,4 +154,4 @@ Some event names can be used for multiple operations within their category.  For
 
 # Next  
 
-Work through a simple tutorial in the [Using the API walk-through](UsingTheAPI.md) guide.  
+Work through a simple tutorial in the [Using the API walk-through](UsingTheAPI.MD) guide.  
