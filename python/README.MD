@@ -26,8 +26,7 @@ Use the **utils.py** file for the following actions:
 The request header provides authentication with the APT application.  
 The payload header provides information needed to properly route the request.
 
-The samples provided show the minimum required or commonly used payload data and provide a method for specifying parameters for header and payload data.  
-Each event folder also contains a *samples* folder with payload template files properly formatted with sample payload data.
+The samples provided *(in the payload-samples folder)* show the minimum required or commonly used payload data and provide a method for specifying parameters for header and payload data.  These sample files contain only the payload section for clarity.  Longer versions of these samples are available on the API documentation pages.  
 
 # Next  
 
