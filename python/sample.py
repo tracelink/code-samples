@@ -17,20 +17,21 @@ import utils
 
 # Variables
 # payload file created by copying from the API documentation
-file_name = "c:/temp/samples/addIncident.json"
+file_name = "c:/samples/addIncident.json"  # you must supply this file
 # authentication token
 token = "SomeTokenYouGotFromSomewhere"
 # end Variables
 
 
 if __name__ == "__main__":
-    # the statements below can be made on their own from your own processes rather than using this __main__ function.
+    # the statements below can be made on their own from your own processes rather than using this function.
+    # the steps below when replaced with live data would create a single Direct Supplier Incident
     token = "NotARealToken"  # admittedly redundant since we declared it earlier
     file = "c:/temp/samples/addIncident.json"  # again, we already declared this
 
     event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-                  "ownerId": "2aaeed40-3912-427e-a94f-51fd5a730345",
-                  "processNetworkId": "61077cb2-601b-4c27-b11f-5e3910589931"}
+                  "ownerId": "{your owner id}",
+                  "processNetworkId": "{your process network id}"}
     # data that is specific to the company and request being made
 
     request_header = utils.create_headers(token)

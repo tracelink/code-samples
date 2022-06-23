@@ -1,17 +1,19 @@
+# This utils file is meant as a primer only.  There is no error handling built in
+
 import requests
 import json
 
 # establish some variables
-# This is a placeholder for event data, it can be used to hold data as needed or built during runtime.
+# This is a placeholder for event data, it can be used to hold data as needed or (more likely) built during runtime.
 # Be careful with the eventName.  It should change depending on the category of  request.
 event_data = {
     "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-    "ownerId": "2aaeed40-3912-427e-a94f-51fd5a730345",
-    "processNetworkId": "61077cb2-601b-4c27-b11f-5e3910589931"
+    "ownerId": "{your ownerId}",
+    "processNetworkId": "{your processNetworkId}"
 }
 
-# we expect this to remain static since it's serving GraphQL
-request_url = "https://valvir-opus.tracelink.com/api/events/"
+# we expect this to remain static
+request_url = "URL provided by your administrator"
 
 
 def read_payload_file(filename):
