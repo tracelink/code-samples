@@ -54,4 +54,4 @@ A simple example of a complete request is as follows:
 
 # Next  
 Determine the correct **eventName** to use in your header using the [Event name mapping](EventNames.MD) guide.  
-Refer to the [Using the API readme](UsingTheAPI.md) for a walk-through.  
+Refer to the [Using the API readme](UsingTheAPI.MD) for a walk-through.  
