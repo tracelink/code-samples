@@ -8,4 +8,4 @@ Samples focus on basic actions using the most common scripting languages.  These
 Folders are added as the language samples become available.  
 
 ## Samples available
-View the [Python readme](python/README.MD).
+[Python](python/README.MD)
