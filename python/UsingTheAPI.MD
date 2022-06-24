@@ -212,11 +212,11 @@ You decide to add a comment during the same session to test the process.  You've
 ```
 {
 	"payload": {
-		"id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
-		"processType": "DirectSupplierIncident",
+		"processId": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+		"processType": "directSupplierIncident",
 		"aptCommentBox":{
 			"aptComment":{
-				"commentText": "We will send a sample back for retesting.  Please perform a retest and provide results.",
+				"commentText": "Please provide a list of missing items and we will replace them.",
 				"visibilityType": "Public"
 				}
 			}
@@ -229,13 +229,13 @@ You return to your Python terminal:
 >>> comment_payload_file = 'comment_payload.json'
 >>> comment_payload = utils.read_payload_file(comment_payload_file)
 >>> comment_payload
-{'id': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'DirectSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'We will send a sample back for retesting.  Please perform a retest and provide results.', 'visibilityType': 'Public'}}}
+{'id': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 Your payload has been loaded properly, but the id is still wrong.  You can use the update() function to change the value stored in the 'id' key.
 ```
 >>> comment_payload.update({"id": "fd04dd70-c162-43ef-8118-539ca01de471"})
 >>> comment_payload
-{'id': 'fd04dd70-c162-43ef-8118-539ca01de471', 'processType': 'DirectSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'We will send a sample back for retesting.  Please perform a retest and provide results.', 'visibilityType': 'Public'}}}
+{'id': 'fd04dd70-c162-43ef-8118-539ca01de471', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 You can use the same process to change your eventName to use the comment event name:
 ```
