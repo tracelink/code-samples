@@ -56,19 +56,15 @@ Not satisfied to do the minimum, you decide to add just a bit more information f
 ```
 {
 	"payload": {
-		"aptBusinessObjectSummary": "Substandard Product Quality file-powered API test run",
-		"aptBusinessObjectDescription": "Latest shipment failed quality test.",
+		"aptBusinessObjectSummary": "Incomplete shipment received.",
+		"aptBusinessObjectDescription": "Several packages missing or damaged.",
 		"deviationType": "UNPLANNED",
 		"materialType": "FINISHED_GOOD",
-		"materialSubtype": "RELEASED",
-		"materialProblem": "",
+		"materialSubtype": "SHIPPED",
+		"materialProblem": "SHORT_SHIPMENT_RECEIVED",
 		"isEscalated": false,
 		"createdByPartner": false,
 		"isSubmittedToPartner": false,
-		"referenceIdentifiers": {
-			"referenceTransactionType": "BILL_OF_LADING",
-			"value": "GTIN-1161187176294956"
-			},
 		"directSupplierImpact": {
 			"businessImpact": "Business Impact",
 			"businessPriority": "HIGH"
