@@ -41,7 +41,7 @@ def accept_json_payload(payload_in):
     :return: Reformatted payload data ready to be appended to a request body.
     """
     try:
-        # check to see if the payload in a valid JSON string, the application will reject bad data
+        # check to see if the payload is a valid JSON string, the application will reject bad data
         data = json.loads(payload_in)
         payload = data.get("payload")
         return payload
