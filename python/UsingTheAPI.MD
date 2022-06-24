@@ -140,24 +140,20 @@ Body of event request:
         "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
     },
     "payload": {
-        "aptBusinessObjectDescription": "Latest shipment failed quality test.",
-        "aptBusinessObjectSummary": "Substandard Product Quality file-powered API test run",
-        "createdByPartner": false,
+        "aptBusinessObjectSummary": "Incomplete shipment received.",
+        "aptBusinessObjectDescription": "Several packages missing or damaged.",
         "deviationType": "UNPLANNED",
+        "materialType": "FINISHED_GOOD",
+        "materialSubtype": "SHIPPED",
+        "materialProblem": "SHORT_SHIPMENT_RECEIVED",
+        "isEscalated": false,
+        "createdByPartner": false,
+        "isSubmittedToPartner": false,
         "directSupplierImpact": {
             "businessImpact": "Business Impact",
             "businessPriority": "HIGH"
-        },
-        "isEscalated": false,
-        "isSubmittedToPartner": false,
-        "materialProblem": "",
-        "materialSubtype": "RELEASED",
-        "materialType": "FINISHED_GOOD",
-        "referenceIdentifiers": {
-            "referenceTransactionType": "BILL_OF_LADING",
-            "value": "GTIN-1161187176294956"
+            }
         }
-    }
 }
 ```
 
