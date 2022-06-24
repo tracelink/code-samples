@@ -229,13 +229,13 @@ You return to your Python terminal:
 >>> comment_payload_file = 'comment_payload.json'
 >>> comment_payload = utils.read_payload_file(comment_payload_file)
 >>> comment_payload
-{'id': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
+{'processId': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 Your payload has been loaded properly, but the id is still wrong.  You can use the update() function to change the value stored in the 'id' key.
 ```
->>> comment_payload.update({"id": "fd04dd70-c162-43ef-8118-539ca01de471"})
+>>> comment_payload.update({"processId": "fd04dd70-c162-43ef-8118-539ca01de471"})
 >>> comment_payload
-{'id': 'fd04dd70-c162-43ef-8118-539ca01de471', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
+{'processId': 'fd04dd70-c162-43ef-8118-539ca01de471', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 You can use the same process to change your eventName to use the comment event name:
 ```
@@ -260,7 +260,7 @@ Sending this request, you find that your hard work has paid off.
         "licensePlate": "vXPsFz"
     },
     "payload": {
-        "commentId": "a67d7261-33b1-4be6-9760-61ae8fe9eed3"
+        "id": "a67d7261-33b1-4be6-9760-61ae8fe9eed3"
     }
 }
 ```
@@ -269,4 +269,4 @@ Sending this request, you find that your hard work has paid off.
 You will need a mechanism to create or update your payload data whether it's stored in a file or submitted at runtime and discarded.  
 You will also need a method to maintain or refer to the id number of specific incidents.  
 
-Hopefully, the examples provided will be enough to get you started.  
+Hopefully, the examples provided can get you started.  
