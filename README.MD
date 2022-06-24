@@ -7,5 +7,5 @@ This project contains sets of code samples intended to assist developers create 
 Samples focus on basic actions using the most common scripting languages.  These samples are organized in folders by language.  
 Folders are added as the language samples become available.  
 
-### Samples available
+## Samples available
 View the [Python readme](python/README.MD).
