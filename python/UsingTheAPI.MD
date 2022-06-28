@@ -269,4 +269,5 @@ Sending this request, you find that your hard work has paid off.
 You will need a mechanism to create or update your payload data whether it's stored in a file or submitted at runtime and discarded.  
 You will also need a method to maintain or refer to the id number of specific incidents.  
 
-Hopefully, the examples provided can get you started.  
+#### Not working as expected?
+See our [troubleshooting primer](Troubleshooting.MD) for hints to get you started.

@@ -33,3 +33,4 @@ The samples provided *(in the payload-samples folder)* show the minimum required
 [Basic request formatting](FormatRequests.MD) - Learn the request body requirements  
 [Event name mapping](EventNames.MD) - Shows the event name text to use in the header for each request type  
 [Using the API walk-through](UsingTheAPI.MD) - A simple walk-through example  
+[Troubleshooting primer](Troubleshooting.MD) - A basic troubleshooting example  
