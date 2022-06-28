@@ -9,7 +9,7 @@ These requests will use the **POST** verb.
 
 ### Request Headers  
 
-To authenticate with the APT application, you will include the following in the header of your HTTP request:  
+To authenticate with the APT application, include the following in the header of your HTTP request:  
 A **Token** that is your authorization to make requests.  
 A **Content Type** that identifies the format of the data passed.  In this case it will be *application/json*.  
 
