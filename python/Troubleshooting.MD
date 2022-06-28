@@ -13,8 +13,8 @@ Assume you submit the following request:
         "dataspace": "default",
         "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
         "headerVersion": 1,
-        "ownerId": "911379c4-f29c-46cd-8c85-0026932791b9",
-        "processNetworkId": "2154f852-02eb-4725-b521-047df60bbbff"
+        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
     },
     "payload": {
         "aptBusinessObjectDescription": "Several packages missing or damaged.",
@@ -82,7 +82,7 @@ Response message {
   "header" : {
     "headerVersion" : 1,
     "eventName" : "agile-process-teams:add-direct-supplier-incident-response:v2",
-    "ownerId" : "911379c4-f29c-46cd-8c85-0026932791b9",
+    "ownerId" : "94f94f37-2772-4b39-8041-9c2dcfcfff82",
     "isErr" : false,
     "errCode" : "200_OK",
     "licensePlate" : "emPNlq-EfkPSJ"
