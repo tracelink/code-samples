@@ -28,7 +28,8 @@ This is not to be confused with HTTP headers.  The request body header identifie
 - **dataspace:** String, **Required**. The dataspace within the environment where the request is being made. Valid value for the Production and Validation environments is **default**.    
 
 #### Payload
-The payload is the request body.  Each event will have different parameters and requirements.  A properly constructed JavaScript Object Notation (JSON) object is required as a payload.  The samples folders contain the payload bodies with examples of all the data required for each request event.  You need to provide the corresponding data for your own environment for them to work properly.
+The payload is the request body.  Each event will have different parameters and requirements.  A properly constructed JavaScript Object Notation (JSON) object is required as a payload.  The samples folders contain the payload bodies with examples of all the data required for each request event.  
+**You need to provide the corresponding data for your own environment for these samples to work properly.**  
 
 *You can either dynamically create and use a JSON object at runtime or create a file with the appropriate values for importing as needed.*  
 
@@ -38,8 +39,8 @@ A simple example of a complete request is as follows:
     "header": {
         "headerVersion": 1,
         "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-        "ownerId": owner.get('ownerId'),
-        "processNetworkId": owner.get('processNetworkId'),
+        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
         "appName": "agile-process-teams",
         "dataspace": "default"
             },
