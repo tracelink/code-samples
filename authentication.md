@@ -6,6 +6,8 @@ You must be able to login to the Opus Platform and access APT-SCWM.
 
 Once logged into Opus on your browser, select the desired process. For example, Direct Supplier Incident. 
 
+![Key Value Pairs](images/opus_apt.png)
+
 You will need the values for the following keys: 
 
 1. `_store_js_production_processNetworkOwnerId`
