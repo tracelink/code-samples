@@ -28,13 +28,16 @@ From the Firefox menu, navigate to **Tools** > **Web Developer Tools**.
 Select the **Storage** tab from the Web Developer Tools pane. From the left hand navigation menu, click **Local Section** and then
 `https://opus.tracelink.com`. You should now see a list of key/value pairs. 
 
-##Generate API Key
+## Generate API Key
 
-###Postman
+### Postman
 
 1. Set up a POST call to `https://valvir-opus.tracelink.com/api/events`.
 2. Under the **Authorization** tab select **Bearer Token** as the **Type** and insert the `_store_js_production_token` obtained
 from your broswer as the **Token**. 
+
+![Postman Token](images/postman_token.png)
+
 3. Use exact json below as the payload body. You do not need to replace any values here. 
 
 ```json
