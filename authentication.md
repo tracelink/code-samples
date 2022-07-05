@@ -20,6 +20,8 @@ From the Chrome menu, navigate to **View** > **Developer** > **Developer Tools**
 Select the **Application** tab from the Developer Tools pane. From the left hand navigation menu, under the storage section, select
 **Local Storage** from the dropdown. Then, click `https://opus.tracelink.com`. You should now see a list of key/value pairs. 
 
+![Key Value Pairs](images/chrome_apt.png)
+
 ### Firefox
 
 From the Firefox menu, navigate to **Tools** > **Web Developer Tools**.
