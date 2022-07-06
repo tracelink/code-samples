@@ -2,19 +2,17 @@
 
 ## Prerequisites 
 
-You must be able to login to the Opus Platform and access APT-SCWM. 
+1. You must be able to login to the Opus Platform and access APT-SCWM. 
 
-Once logged into Opus on your browser, select the desired process. For example, Direct Supplier Incident. 
+2. Once logged into Opus on your browser, select the desired process. For example, Direct Supplier Incident. 
 
-![Key Value Pairs](images/opus_apt.png)
+![Opus in Browser](images/opus_apt.png)
 
-You will need the values for the following keys: 
+3. Using the directions below for your designated, generate the following values:
 
-1. `_store_js_production_processNetworkOwnerId`
-2. `_store_js_production_processNetworkId`
-3. `_store_js_production_token`
-
-Use the directions for your browser below to generate these values.
+- `_store_js_production_processNetworkOwnerId`
+- `_store_js_production_processNetworkId`
+- `_store_js_production_token`
 
 ### Chrome
 
@@ -30,7 +28,7 @@ From the Firefox menu, navigate to **Tools** > **Web Developer Tools**.
 Select the **Storage** tab from the Web Developer Tools pane. From the left hand navigation menu, click **Local Section** and then
 `https://opus.tracelink.com`. You should now see a list of key/value pairs. 
 
-## Generate API Key
+## Generate API Key and Secret
 
 ### Postman
 
@@ -75,3 +73,21 @@ Here is an example of the response you should receive:
   }
 }
 ```
+
+The API key and secret long-lived, static values that do not expire. 
+
+## Encode API Key and Secret
+
+In order to make an API key using your API key and secret, they will need to be base64 encoded.
+
+Use the format {{KEY}}:{{SECRET}}, where a colon is separating the two values. Using the response values above as an example,
+`10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
+
+Use the following command in your terminal window:
+`echo -n 'KEYSECRETSTRING' | base64`
+
+The result will look like this:
+`MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`
+
+Alternatively you can use an online resource such as https://www.base64encode.org/.
+
