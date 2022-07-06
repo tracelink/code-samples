@@ -78,7 +78,7 @@ The API key and secret long-lived, static values that do not expire.
 
 ## Encode API Key and Secret
 
-In order to make an API key using your API key and secret, they will need to be base64 encoded.
+In order to make an API call using your API key and secret, they will need to be base64 encoded.
 
 Use the format {{KEY}}:{{SECRET}}, where a colon is separating the two values. Using the response values above as an example,
 `10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
@@ -90,4 +90,8 @@ The result will look like this:
 `MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`
 
 Alternatively you can use an online resource such as https://www.base64encode.org/.
+
+This value can now be used in a basic authorization header. For example,
+`authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
+
 
