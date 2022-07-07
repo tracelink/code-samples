@@ -34,7 +34,7 @@ Select the **Storage** tab from the Web Developer Tools pane. From the left hand
 
 1. Set up a POST call to `https://valvir-opus.tracelink.com/api/events`.
 2. Under the **Authorization** tab select **Bearer Token** as the **Type** and insert the `_store_js_production_token` obtained
-from your broswer as the **Token**. 
+from your browser as the **Token**.
 
 ![Postman Token](images/postman_token.png)
 
@@ -80,16 +80,16 @@ The API key and secret are long-lived, static values that do not expire.
 
 1. Take the values of `apiKey` and `apiSecret` and convert them into a string with the format {{KEY}}:{{SECRET}}, with a colon seperating the two values. 
 
-For example: `10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
+   For example: `10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
 
 2. Use the following command in your terminal window to encode the string: `echo -n 'KEYSECRETSTRING' | base64`
 
-For example: `echo -n '10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk' | base64`.
-An example response: `MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`.
+   For example: `echo -n '10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk' | base64`.
+   An example response: `MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`.
 
-Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
+   Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
 
 3. This encoded result can now be used in a basic authorization header. 
-For example, `authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
+   For example, `authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
 
 
