@@ -78,17 +78,18 @@ The API key and secret are long-lived, static values that do not expire.
 
 ## Encode API Key and Secret
 
-You must first base64 encode your API key and secret before using them to make an API call.
+1. Take the values of `apiKey` and `apiSecret` and convert them into a string with the format {{KEY}}:{{SECRET}}, with a colon seperating the two values. 
 
-The format is {{KEY}}:{{SECRET}}, with a colon seperating the two values. Using the response `apiKey` and `apiSecret` values above as an example,
-the encoded version is `10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
+For example: `10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
 
-Then, use the following command in your terminal window to encode: `echo -n 'KEYSECRETSTRING' | base64`
+2. Use the following command in your terminal window to encode the string: `echo -n 'KEYSECRETSTRING' | base64`
 
-The result will look like this: `MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`
+For example: `echo -n '10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk' | base64`.
+An example response: `MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`.
 
 Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
 
-This encoded result can now be used in a basic authorization header. For example, `authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
+3. This encoded result can now be used in a basic authorization header. 
+For example, `authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
 
 
