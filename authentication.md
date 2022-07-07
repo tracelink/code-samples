@@ -38,7 +38,7 @@ from your broswer as the **Token**.
 
 ![Postman Token](images/postman_token.png)
 
-3. Use exact json below as the payload body. You do not need to replace any values here. 
+3. Use the json below as the payload body. Do not replace any values, including the ownerID. 
 
 ```json
 {
@@ -55,7 +55,7 @@ from your broswer as the **Token**.
 }
 ```
 
-Here is an example of the response you should receive: 
+Here is an example response: 
 
 ```json
 {
@@ -74,24 +74,21 @@ Here is an example of the response you should receive:
 }
 ```
 
-The API key and secret long-lived, static values that do not expire. 
+The API key and secret are long-lived, static values that do not expire. 
 
 ## Encode API Key and Secret
 
-In order to make an API call using your API key and secret, they will need to be base64 encoded.
+You must first base64 encode your API key and secret before using them to make an API call.
 
-Use the format {{KEY}}:{{SECRET}}, where a colon is separating the two values. Using the response values above as an example,
-`10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
+The format is {{KEY}}:{{SECRET}}, with a colon seperating the two values. Using the response `apiKey` and `apiSecret` values above as an example,
+the encoded version is `10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
 
-Use the following command in your terminal window:
-`echo -n 'KEYSECRETSTRING' | base64`
+Then, use the following command in your terminal window to encode: `echo -n 'KEYSECRETSTRING' | base64`
 
-The result will look like this:
-`MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`
+The result will look like this: `MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`
 
-Alternatively you can use an online resource such as https://www.base64encode.org/.
+Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
 
-This value can now be used in a basic authorization header. For example,
-`authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
+This encoded result can now be used in a basic authorization header. For example, `authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
 
 
