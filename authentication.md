@@ -38,7 +38,7 @@ from your browser as the **Token**.
 
 ![Postman Token](images/postman_token.png)
 
-3. Use the json below as the payload body. Do not replace any values, including the ownerID. 
+3. Click the **Body** tab and use the JSON below. Do not replace any values, including the ownerID. Ensure **raw** and JSON are selected.
 
 ```json
 {
@@ -54,6 +54,8 @@ from your browser as the **Token**.
     }
 }
 ```
+
+![Postman Token](images/postman_body.png)
 
 Here is an example response: 
 
