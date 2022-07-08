@@ -12,7 +12,7 @@
 
 - `_store_js_production_processNetworkOwnerId`
 - `_store_js_production_processNetworkId`
-- `_store_js_production_token`
+- `_store_js_production_token` (a short lived token)
 
 ### Chrome
 
@@ -93,5 +93,21 @@ The API key and secret are long-lived, static values that do not expire.
 
 3. This encoded result can now be used in a basic authorization header. 
    For example, `authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
+
+
+### Python 
+
+```python
+import base64
+
+def create_token(api_key, api_secret):
+    combine = api_key + ':' + api_secret
+    step_two = combine.encode("UTF-8")
+    encoded_token = base64.b64encode(step_two).decode("UTF-8")
+    headers = {"Authorization" : "Basic %s" % encoded_token}
+    print(headers)
+
+create_token('10e1c36c-2f49-46f3-b5f52-e28b5d671b5f','jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk')
+```
 
 
