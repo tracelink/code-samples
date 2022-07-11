@@ -4,7 +4,7 @@
 
 1. You must be able to login to the Opus Platform and access APT-SCWM. 
 
-2. Once logged into Opus on your browser, select the desired process. For example, Direct Supplier Incident. 
+2. Once logged into Opus on your browser, select the desired process. For example, **Direct Supplier Incident**. 
 
 ![Opus in Browser](images/opus_apt.png)
 
@@ -104,10 +104,8 @@ def create_token(api_key, api_secret):
     combine = api_key + ':' + api_secret
     step_two = combine.encode("UTF-8")
     encoded_token = base64.b64encode(step_two).decode("UTF-8")
-    headers = {"Authorization" : "Basic %s" % encoded_token}
-    print(headers)
-
-create_token('10e1c36c-2f49-46f3-b5f52-e28b5d671b5f','jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk')
+    auth_header = {"Authorization" : "Basic %s" % encoded_token}
+    print(auth_header)
 ```
 
 
