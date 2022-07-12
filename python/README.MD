@@ -33,7 +33,7 @@ All requests have three main components:
 - **Payload**
 	- Provides the details of the request
 
-The [samples payloads](https://github.com/tracelink/code-samples/tree/auth/python/payload_samples) show the minimum required or commonly used payload data and provide a method for specifying parameters for header and payload data. These sample files contain only contain the payload section for clarity, but longer versions are available in our API documentation.  
+The [sample payloads](https://github.com/tracelink/code-samples/tree/auth/python/payload_samples) show the minimum required or commonly used payload data and provide a method for specifying parameters for header and payload data. These sample files contain only contain the payload section for clarity, but longer versions are available in our API documentation.  
 
 # Next  
 
