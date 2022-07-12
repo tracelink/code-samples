@@ -27,6 +27,12 @@ Folders are added as the language samples become available.
 
 [Python](python/README.MD)
 
+## Support
+
+If you find a bug or have feature request related to the code in this repository you can open a GitHub [issue](https://github.com/tracelink/code-samples/issues). 
+
+If you are having a technical issue with the API that requires troubleshooting, please [open a support ticket](https://www.tracelink.com/support).
+
 ## License
 
 [MIT License](https://github.com/tracelink/code-samples/blob/4264373bdd1b093344538053709cfa538f36af47/LICENSE)
