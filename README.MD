@@ -9,12 +9,10 @@ and cross-functional trade partners throughout the supply chain by digitally exe
 business processes, which increases speed and improves the effectiveness of the supply chain. Agile Process Teams allows
 companies to create multiple networks that use the following processes for this digital collaboration:
 
-Incidents - Direct Supplier
-Incidents - Indirect Supplier
-Incidents - External Manufacturing
-Incidents - Internal Manufacturing
-Change Requests
-Tasks
+- Incidents: Direct Supplier, Indirect Supplier
+- Incidents: External Manufacturing, Internal Manufacturing
+- Change Requests
+- Tasks
 
 Currently, our API only have supports incident management. Additional functionality is coming soon and will be added
 to this repository.
@@ -31,6 +29,6 @@ Folders are added as the language samples become available.
 
 ## License
 
-[MIT License][LICENSE]
+[MIT License][https://github.com/tracelink/code-samples/blob/4264373bdd1b093344538053709cfa538f36af47/LICENSE]
 
 Copyright (c) 2022 TraceLink
