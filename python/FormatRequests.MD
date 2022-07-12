@@ -1,39 +1,39 @@
 # Formatting API Requests  
 
-## HTTP Request  
-
-### Request URL  
+## HTTP Request URL
 
 Your administrator can provide the URL you will use for submitting requests.  
 These requests will use the **POST** verb.
 
-### Request Headers  
+## Request Header  
 
 To authenticate with the APT application, include the following in the header of your HTTP request:  
 A **Token** that is your authorization to make requests.  
 A **Content Type** that identifies the format of the data passed.  In this case it will be *application/json*.  
 
-### Request Body  
+## Payload  
 
 This is the data that you will be submitting to the application to process.  In APT a request body has two distinct parts:  
 
-#### Header  
+### Header  
 
-This is not to be confused with HTTP headers.  The request body header identifies how APT will process your request.  These items include:  
-- **headerVersion:** Integer, **Required**.The version identifier for the call. Valid value is 1.  
-- **eventName:** String, **Required**.The fully qualified name of the add event response.  *This value will change depending on the event requested*.  
-- **ownerId:** String, **Required**. The identifier for the Owner company associated with the request.  
-- **processNetworkId:** String, **Required**. The network that contains the incident process. This must be a valid network at the Owner company.  
-- **appName:** String, **Required**. The application that owns the event. Valid value is *agile-process-teams*.  
-- **dataspace:** String, **Required**. The dataspace within the environment where the request is being made. Valid value for the Production and Validation environments is **default**.    
+The request body header identifies how APT processes your request.  All items below are required:
 
-#### Payload
-The payload is the request body.  Each event will have different parameters and requirements.  A properly constructed JavaScript Object Notation (JSON) object is required as a payload.  The samples folders contain the payload bodies with examples of all the data required for each request event.  
-**You need to provide the corresponding data for your own environment for these samples to work properly.**  
+| Name                 | Type    | Description                                                                                                                                           |
+| -------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `headerVersion`      | integer | The version identifier for the call. Valid value is `1`.                                                                                              |
+| `eventName`          | string  | The fully qualified name of the add event response. For valid values, see [event name mapping](EventNames.MD)                                         |
+| `ownerID`            | string  | The identifier of the Owner company associated with the request. See [authentication](../authentication.md).                                          |
+| `processNetworkId`   | string  | The network network containing the incident process. This must be a valid network in the Owner company. See [authentication](../authentication.md).   |
+| `appName`            | string  | The application that owns the event. Valid value is `agile-process-teams`.                                                                            |
+| `dataspace`          | string  | The dataspace inside within the environment where the request is being made. Valid value is `default`.                                                |   
 
-*You can either dynamically create and use a JSON object at runtime or create a file with the appropriate values for importing as needed.*  
+### Body
+A properly constructed JSON object is required as a payload. You can either dynamically create and use a JSON object at runtime or create a file with the appropriate values for importing as needed.
 
-A simple example of a complete request is as follows:  
+Each event has different parameters and requirements and is based on the value of `eventName` in the payload header. The samples folders contains payload bodies with examples containing everything required for each request event.
+
+A simple example of a complete payload body:
 ```
 {
     "header": {
@@ -54,5 +54,4 @@ A simple example of a complete request is as follows:
 ```
 
 # Next  
-Determine the correct **eventName** to use in your header using the [Event name mapping](EventNames.MD) guide.  
-Refer to the [Using the API readme](UsingTheAPI.MD) for a walk-through.  
+Follow [Using the API](UsingTheAPI.MD) for a walk-through.
