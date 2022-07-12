@@ -2,7 +2,7 @@
 
 ## Communicating with Agile Process Teams using code  
 
-This repository provides developers with code samples for interacting with TraceLink's Agile Process Teams (APT) app.
+This repository provides developers with code samples for interacting with the Agile Process Teams (APT) app.
 
 APT is a multienterprise work management app that allows Owners to collaborate with cross-enterprise
 and cross-functional trade partners throughout the supply chain by digitally executing, managing, and tracking shared
@@ -14,7 +14,7 @@ companies to create multiple networks that use the following processes for this 
 - Change Requests
 - Tasks
 
-Currently, our API only have supports incident management. Additional functionality is coming soon and will be added
+Currently, our API only supports incident management. Additional functionality is coming soon and will be added
 to this repository.
 
 ## Prerequisites
