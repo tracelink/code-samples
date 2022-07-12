@@ -14,8 +14,8 @@ companies to create multiple networks that use the following processes for this 
 - Change Requests
 - Tasks
 
-Currently, our API only supports incident management. Additional functionality is coming soon and will be added
-to this repository.
+Currently, our API only supports incident management. Additional functionality will be added to this repository as it becomes 
+available.
 
 ## Prerequisites
 
