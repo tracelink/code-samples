@@ -29,6 +29,6 @@ Folders are added as the language samples become available.
 
 ## License
 
-[MIT License][https://github.com/tracelink/code-samples/blob/4264373bdd1b093344538053709cfa538f36af47/LICENSE]
+[MIT License](https://github.com/tracelink/code-samples/blob/4264373bdd1b093344538053709cfa538f36af47/LICENSE)
 
 Copyright (c) 2022 TraceLink
