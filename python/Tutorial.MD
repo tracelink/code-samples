@@ -219,31 +219,31 @@ Prepare a comment payload file called `comment_payload.json` that looks like the
 }
 ```
 
-You can load your payload comment file and update the `processId` number dynamically. Enter the following in your Python terminal:
+Do not worry that your `processId` does not match the example. You can load the payload comment file and update the `processId` number dynamically. Enter the following in your Python terminal:
 ```
 >>> comment_payload_file = 'comment_payload.json'
 >>> comment_payload = utils.read_payload_file(comment_payload_file)
 >>> comment_payload
 {'processId': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
-Your payload has been loaded properly, but the id is still wrong.  You can use the update() function to change the value stored in the 'id' key.
+Your payload has been loaded properly, but the `processId` is still wrong. Use the update() function to change the stored value:
 ```
 >>> comment_payload.update({"processId": "fd04dd70-c162-43ef-8118-539ca01de471"})
 >>> comment_payload
 {'processId': 'fd04dd70-c162-43ef-8118-539ca01de471', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
-You can use the same process to change your eventName to use the comment event name:
+You can use the same process to change the `eventName`:
 ```
 >>> event_data.update({"eventName": "agile-process-teams:add-comment-for-incident:v1"})
 >>> event_data
 {'eventName': 'agile-process-teams:add-comment-for-incident:v1', 'ownerId': '2aaeed40-3912-427e-a94f-51fd5a730345', 'processNetworkId': '61077cb2-601b-4c27-b11f-5e3910589931'}
 ```
-You now have updated payload and event data.  You decide to test this by resending the commands to build the request body and resend the request.  
+The payload and event data should now be updated. You can verify this by resending the commands to build the request body and resend the request.  
 ```
 >>> request_body = utils.create_payload(event_data, payload_data)
 >>> comment_result = utils.post_reqeust(request_headers, requst_body)
 ```
-Sending this request, you find that your hard work has paid off.  
+The response:  
 ```
 {
     "header": {
@@ -261,8 +261,8 @@ Sending this request, you find that your hard work has paid off.
 ```
 
 ## Next steps
-You will need a mechanism to create or update your payload data whether it's stored in a file or submitted at runtime and discarded.  
-You will also need a method to maintain or refer to the id number of specific incidents.  
+You will need a mechanism to create or update your payload data whether it is stored in a file or submitted at runtime and discarded.  
+You will also need a method to maintain or refer to the `processId` number of each incident.  
 
-#### Not working as expected?
+## Troubleshooting
 Review the[troubleshooting primer](Troubleshooting.MD).
