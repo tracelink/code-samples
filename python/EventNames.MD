@@ -4,7 +4,7 @@ Event names are specific to selected operation and passed as the `eventName` in 
 
 ## Event names 
 
-Please consult [API documentation](https://opus.tracelink.com/documentation/2021.1/en-US/apt/Content/topics/api/landing_incident_apis.htm?tocpath=Set%20up%20APIs%7CIncident%20process%20APIs%7C_____0) for more information on each of these events and their use.
+Please reference [API documentation](https://opus.tracelink.com/documentation/2021.1/en-US/apt/Content/topics/api/landing_incident_apis.htm?tocpath=Set%20up%20APIs%7CIncident%20process%20APIs%7C_____0) for more information on each event type.
 
 ### Direct Supplier Incident  
 
@@ -64,4 +64,4 @@ Please consult [API documentation](https://opus.tracelink.com/documentation/2021
 
 # Next  
 
-Work through a simple tutorial in the [Using the API walk-through](UsingTheAPI.MD) guide.  
+Follow the [tutorial](Tutorial.MD) for an example using the APT API.  

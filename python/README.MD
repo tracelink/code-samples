@@ -33,11 +33,8 @@ All requests have three main components:
 - **Payload**
 	- Provides the details of the request
 
-The [sample payloads](https://github.com/tracelink/code-samples/tree/auth/python/payload_samples) show the minimum required or commonly used payload data and provide a method for specifying parameters for header and payload data. These sample files contain only contain the payload section for clarity, but longer versions are available in our API documentation.  
-
 # Next  
 
-[Basic request formatting](FormatRequests.MD) - Learn the request body requirements  
-[Event name mapping](EventNames.MD) - Shows the event name text to use in the header of each request type  
-[Using the API walk-through](UsingTheAPI.MD) - A simple, walk-through example  
-[Troubleshooting primer](Troubleshooting.MD) - A basic troubleshooting example  
+Review information on [authentication](../authentication.md). 
+Review [basic request formatting](FormatRequests.MD).
+Follow the [tutorial](Tutorial.MD) for an example using the APT API.
