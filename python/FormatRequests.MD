@@ -13,27 +13,27 @@ A **Content Type** that identifies the format of the data passed.  In this case 
 
 ## Payload  
 
-This is the data that you will be submitting to the application to process.  In APT a request body has two distinct parts:  
+This is the data submitted to the application to process, which contains a header and body.
 
 ### Header  
 
 The request body header identifies how APT processes your request.  All items below are required:
 
-| Name                 | Type    | Description                                                                                                                                           |
-| -------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `headerVersion`      | integer | The version identifier for the call. Valid value is `1`.                                                                                              |
-| `eventName`          | string  | The fully qualified name of the add event response. For valid values, see [event name mapping](EventNames.MD)                                         |
-| `ownerID`            | string  | The identifier of the Owner company associated with the request. See [authentication](../authentication.md).                                          |
-| `processNetworkId`   | string  | The network network containing the incident process. This must be a valid network in the Owner company. See [authentication](../authentication.md).   |
-| `appName`            | string  | The application that owns the event. Valid value is `agile-process-teams`.                                                                            |
-| `dataspace`          | string  | The dataspace inside within the environment where the request is being made. Valid value is `default`.                                                |   
+| Name                 | Type    | Description                                                            | Value                                                 |
+| -------------------- | ------- | ---------------------------------------------------------------------- | ----------------------------------------------------- |
+| `headerVersion`      | integer | The version identifier for the request                                 | `1`                                                   |
+| `eventName`          | string  | The fully qualified name of the request event.                         | See [event name mapping](EventNames.MD)               |
+| `ownerID`            | string  | The Owner company associated with the request.                         | See [authentication](../authentication.md).           |
+| `processNetworkId`   | string  | The network within the Owner company containing the process.           | See [authentication](../authentication.md).           |
+| `appName`            | string  | The application that owns the event.                                   | `agile-process-teams`.                                |
+| `dataspace`          | string  | The dataspace inside within the environment where the request is made. | `default`.                                            |   
 
 ### Body
-A properly constructed JSON object is required as a payload. You can either dynamically create and use a JSON object at runtime or create a file with the appropriate values for importing as needed.
+A properly constructed JSON object is required as the payload. You can dynamically create the JSON object at runtime or create a file with the appropriate values to import as needed.
 
-Each event has different parameters and requirements and is based on the value of `eventName` in the payload header. The samples folders contains payload bodies with examples containing everything required for each request event.
+The body parameters change depending on the `eventName` value passed in the body header. The [samples folder](https://github.com/tracelink/code-samples/tree/main/python/payload_samples) contains example payload bodies for each event type. Please reference [API documentation](https://opus.tracelink.com/documentation/2021.1/en-US/apt/Content/topics/api/landing_incident_apis.htm?tocpath=Set%20up%20APIs%7CIncident%20process%20APIs%7C_____0) for full details.
 
-A simple example of a complete payload body:
+An example of a complete payload body for adding a direct supplier incident:
 ```
 {
     "header": {

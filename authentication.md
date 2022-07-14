@@ -8,7 +8,7 @@
 
 ![Opus in Browser](images/opus_apt.png)
 
-3. Using the directions below for your designated, generate the following values:
+3. Using the directions below for your designated browser, generate the following values:
 
 - `_store_js_production_processNetworkOwnerId`
 - `_store_js_production_processNetworkId`
@@ -33,8 +33,8 @@ Select the **Storage** tab from the Web Developer Tools pane. From the left hand
 ### Postman
 
 1. Set up a POST call to `https://valvir-opus.tracelink.com/api/events`.
-2. Under the **Authorization** tab select **Bearer Token** as the **Type** and insert the `_store_js_production_token` obtained
-from your browser as the **Token**.
+2. Under the **Authorization** tab select **Bearer Token** as the **Type** and insert the `_store_js_production_token`, obtained
+from your browser, as the **Token**.
 
 ![Postman Token](images/postman_token.png)
 
