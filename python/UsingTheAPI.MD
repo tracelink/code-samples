@@ -14,7 +14,7 @@ In its simplest form, an Agile Process Teams request body has two main items: a 
 {
     "header": {
         "headerVersion": 1,
-        "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
+        "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
         "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
         "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
         "appName": "agile-process-teams",
@@ -95,7 +95,7 @@ Now that we have usable payload data, we need to inform APT how to process the p
 To do this we need to declare some values for use in the header of our request body.   
 You return to your open Python terminal and enter the following:  
 ```
->>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
+>>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v3",
                   "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
                   "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"}
 ```
@@ -134,7 +134,7 @@ Body of event request:
     "header": {
         "appName": "agile-process-teams",
         "dataspace": "default",
-        "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
+        "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
         "headerVersion": 1,
         "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
         "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
@@ -168,7 +168,7 @@ An example Python terminal session from start to finish could look like this:
 >>> my_file = 'addIncident.json'
 >>> my_token = token_received_from_other_processes
 
->>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
+>>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v3",
                   "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
                   "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"}
 >>> request_headers = utils.create_headers(my_token)
@@ -181,7 +181,7 @@ A successful request would return a response similar to:
 {
     "header": {
         "headerVersion": 1,
-        "eventName": "agile-process-teams:add-direct-supplier-incident-response:v2",
+        "eventName": "agile-process-teams:add-direct-supplier-incident-response:v3",
         "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
         "isErr": false,
         "errCode": "200_OK",
