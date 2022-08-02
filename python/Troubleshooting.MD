@@ -54,7 +54,7 @@ Response message {
 The **errMsg** item tells you the validation of the payload object failed.  In this case, the application determined the payload contains the following error: The aptBusinessObjectSummary entry is missing.  
 
 The Direct Supplier Incident API document shows that an entry for aptBusinessObjectSummary is required.  
-![API document snip](APIdocSnip.PNG)  
+![API document snip](../images/APIdocSnip.PNG)  
 
 You update your payload to add an aptBusinessObjectSummary entry similar to this:  
 ```
