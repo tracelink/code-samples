@@ -43,7 +43,7 @@ The APT API uses JSON for passing data. The minimum required data to submit a di
 }
 ```
 
-However, for this example, we will include more than the miniumum information. Create a payload file containing the below and name it **addIncident.json**.  
+However, for this example, we will include more than the miniumum information. Create a payload file containing the below and name it `addIncident.json`.  
 ```
 {
 	"payload": {
@@ -113,7 +113,8 @@ In your Python terminal, enter the following:
 
 ## Preview Request
 
-If you wish to check your request prior to sending it, the **utils.py** file has a mock request function that will print your payload in formatted JSON, making it easier to check against the API documentation.  
+If you wish to check your request prior to sending it, the `utils.py` file has a mock request function that will print your payload in formatted JSON, making it easier to check against the API documentation.
+
 In your Python terminal, enter the following:  
 ```
 >>> utils.mock_request(request_header, request_body)
@@ -149,13 +150,11 @@ Body of event request:
 
 ## Send Request
 
-You are ready to submit your request when you have the following:
-	- A request header.  ex: {'Authorization': 'Bearer my_token', 'Content-Type': 'application/json'}  
-	- A request body.  ex: {"header": {event headers}, "payload": {your generated payload}}
+Once you have a request header, body header, and body payload you are ready to submit your request.
 
 The `utils.py` file contains a function to send your request and capture the response.
 
-An example Python terminal session from start to finish could look like this:
+An example Python terminal session:
 ```
 >>> import utils
 >>> my_file = 'addIncident.json'
@@ -169,7 +168,7 @@ An example Python terminal session from start to finish could look like this:
 >>> request_body = utils.create_payload(event_data, payload_data)
 >>> result = utils.post_request(request_headers, request_body)
 ```
-An example successful request:
+An example successful response:
 ```
 {
     "header": {
@@ -203,7 +202,7 @@ To ensure your value stored properly, enter the following in your Python termina
 
 ## Add Incident Comment
 
-Prepare a comment payload file called `comment_payload.json` that looks like the below:
+Prepare a comment payload file called `comment_payload.json` containing the below:
 ```
 {
 	"payload": {
@@ -226,7 +225,7 @@ Do not worry that your `processId` does not match the example. You can load the 
 >>> comment_payload
 {'processId': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
-Your payload has been loaded properly, but the `processId` is still wrong. Use the update() function to change the stored value:
+Your payload has been loaded properly, but the `processId` is still wrong. Use the `update()` function to change the stored value:
 ```
 >>> comment_payload.update({"processId": "fd04dd70-c162-43ef-8118-539ca01de471"})
 >>> comment_payload
