@@ -1,39 +1,39 @@
 # Formatting API Requests  
 
-## HTTP Request  
-
-### Request URL  
+## HTTP Request URL
 
 Your administrator can provide the URL you will use for submitting requests.  
 These requests will use the **POST** verb.
 
-### Request Headers  
+## Request Header  
 
 To authenticate with the APT application, include the following in the header of your HTTP request:  
 A **Token** that is your authorization to make requests.  
 A **Content Type** that identifies the format of the data passed.  In this case it will be *application/json*.  
 
-### Request Body  
+## Payload  
 
-This is the data that you will be submitting to the application to process.  In APT a request body has two distinct parts:  
+This is the data submitted to the application for processing, which contains a header and body.
 
-#### Header  
+### Header  
 
-This is not to be confused with HTTP headers.  The request body header identifies how APT will process your request.  These items include:  
-- **headerVersion:** Integer, **Required**.The version identifier for the call. Valid value is 1.  
-- **eventName:** String, **Required**.The fully qualified name of the add event response.  *This value will change depending on the event requested*.  
-- **ownerId:** String, **Required**. The identifier for the Owner company associated with the request.  
-- **processNetworkId:** String, **Required**. The network that contains the incident process. This must be a valid network at the Owner company.  
-- **appName:** String, **Required**. The application that owns the event. Valid value is *agile-process-teams*.  
-- **dataspace:** String, **Required**. The dataspace within the environment where the request is being made. Valid value for the Production and Validation environments is **default**.    
+The request body header identifies how APT processes your request.  All items below are required:
 
-#### Payload
-The payload is the request body.  Each event will have different parameters and requirements.  A properly constructed JavaScript Object Notation (JSON) object is required as a payload.  The samples folders contain the payload bodies with examples of all the data required for each request event.  
-**You need to provide the corresponding data for your own environment for these samples to work properly.**  
+| Name                 | Type    | Description                                                            | Value                                      |
+| -------------------- | ------- | ---------------------------------------------------------------------- | ------------------------------------------ |
+| `headerVersion`      | integer | The version identifier for the request                                 | `1`                                        |
+| `eventName`          | string  | The fully qualified name of the request event.                         | See [event name mapping](EventNames.MD)    |
+| `ownerID`            | string  | The Owner company associated with the request.                         | See [authentication](../authentication.md) |
+| `processNetworkId`   | string  | The network within the Owner company containing the process.           | See [authentication](../authentication.md) |
+| `appName`            | string  | The application that owns the event.                                   | `"agile-process-teams"`                    |
+| `dataspace`          | string  | The dataspace inside within the environment where the request is made. | `"default"`                                |   
 
-*You can either dynamically create and use a JSON object at runtime or create a file with the appropriate values for importing as needed.*  
+### Body
+A properly constructed JSON object is required as the payload. You can dynamically create the JSON object at runtime or create a file with the appropriate values to import as needed.
 
-A simple example of a complete request is as follows:  
+The body parameters change depending on the `eventName` value passed in the body header. Please reference [API documentation](https://opus.tracelink.com/documentation/2021.1/en-US/apt/Content/topics/api/landing_incident_apis.htm?tocpath=Set%20up%20APIs%7CIncident%20process%20APIs%7C_____0) for more information on each event type. The [samples folder](https://github.com/tracelink/code-samples/tree/main/python/payload_samples) contains example payload bodies for each event type.  
+
+An example of a complete payload body for adding a direct supplier incident:
 ```
 {
     "header": {
@@ -53,6 +53,6 @@ A simple example of a complete request is as follows:
 }
 ```
 
-# Next  
-Determine the correct **eventName** to use in your header using the [Event name mapping](EventNames.MD) guide.  
-Refer to the [Using the API readme](UsingTheAPI.MD) for a walk-through.  
+# Next
+Review [event name mapping](EventNames.MD) for each event type.  
+Follow [the quickstart](Quickstart.MD) for an example using the APT-SCIM API.
