@@ -1,5 +1,12 @@
 # Authentication 
 
+This process involves:
+
+1. Obtaining a short-lived token
+2. Exhanging the token for a long-lived API key and secret
+3. Encoding the API key and secret
+4. Formatting a basic authorization header 
+
 ## Prerequisites 
 
 1. You must be able to login to the Opus Platform and access APT-SCWM. 
@@ -11,8 +18,8 @@
 3. Using the directions below for your designated browser, generate the following values:
 
 - `_store_js_production_token`, a short lived token valid for one session
-- `_store_js_production_processNetworkOwnerId`, passed in the [body header](https://github.com/tracelink/code-samples/blob/main/python/FormatRequests.MD)
-- `_store_js_production_processNetworkId`, passed in the [body header](https://github.com/tracelink/code-samples/blob/main/python/FormatRequests.MD) 
+- `_store_js_production_processNetworkOwnerId`, passed in the [body header](https://github.com/tracelink/code-samples/blob/main/python/FormatRequests.MD#header)
+- `_store_js_production_processNetworkId`, passed in the [body header](https://github.com/tracelink/code-samples/blob/main/python/FormatRequests.MD#header) 
 
 ### Chrome
 
@@ -28,11 +35,13 @@ From the Firefox menu, navigate to **Tools** > **Web Developer Tools**.
 Select the **Storage** tab from the Web Developer Tools pane. From the left hand navigation menu, click **Local Section** and then
 `https://opus.tracelink.com`. You should now see a list of key/value pairs. 
 
+![Key Value Pairs](images/firefox_apt.png)
+
 ## Generate API Key and Secret
 
 ### Postman
 
-1. Set up a POST call to `https://valvir-opus.tracelink.com/api/events`.
+1. Set up a call to `https://valvir-opus.tracelink.com/api/events` with `POST` as the HTTP method.
 2. Under the **Authorization** tab select **Bearer Token** as the **Type** and insert `_store_js_production_token`, obtained
 from your browser, as the **Token**.
 

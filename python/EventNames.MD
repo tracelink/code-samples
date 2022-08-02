@@ -64,4 +64,4 @@ Please reference [API documentation](https://opus.tracelink.com/documentation/20
 
 # Next  
 
-Follow the [tutorial](Tutorial.MD) for an example using the APT API.  
+Follow the [quickstart](quickstart.MD) for an example using the APT-SCIM API.  

@@ -1,8 +1,8 @@
-# APT API Tutorial 
+# APT-SCIM API Quickstart 
 
-This tutorial reviews: 
+This quickstart covers: 
 
-1. Creating a direct supplier incident using the APT API
+1. Creating a direct supplier incident using the APT-SCIM API
 2. Using the response data to add a comment to the created incident   
 
 ## Request Body
@@ -31,7 +31,7 @@ Many requests share common values in the header. The `headerVersion`, `appName`,
 
 ### Create Payload File
 
-The APT API uses JSON for passing data. The minimum required data to submit a direct supplier incident is a summary of the incident and an impact priority level.  An example of the minimum required payload:
+The APT-SCIM API uses JSON for passing data. The minimum required data to submit a direct supplier incident is a summary of the incident and an impact priority level.  An example of the minimum required payload:
 ```
 {
 "payload": {
