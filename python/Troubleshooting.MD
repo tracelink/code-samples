@@ -19,7 +19,6 @@ Assume you submit the following request:
     },
     "payload": {
         "aptBusinessObjectDescription": "Several packages missing or damaged.",
-        "aptBusinessObjectSummary": "Incomplete shipment received (second try).",
         "createdByPartner": false,
         "deviationType": "UNPLANNED",
         "directSupplierImpact": {
