@@ -264,4 +264,4 @@ You will need a mechanism to create or update your payload data whether it is st
 You will also need a method to maintain or refer to the `processId` number of each incident.  
 
 ## Troubleshooting
-Review the[troubleshooting primer](Troubleshooting.MD).
+Review the [troubleshooting primer](Troubleshooting.MD).
