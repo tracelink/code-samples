@@ -96,13 +96,13 @@ The API key and secret are long-lived, static values that do not expire.
 
 2. Use the following command in your terminal window to encode the string: `echo -n 'KEYSECRETSTRING' | base64`
 
-   For example: `echo -n '`a12b3c45d-6e78-90f1-g234-h56i7j890k1l:mn2o3pq4RsTuVwXyZAbc5defghIjklMn`' | base64`.
-   An example response: `YGExMmIzYzQ1ZC02ZTc4LTkwZjEtZzIzNC1oNTZpN2o4OTBrMWw6bW4ybzNwcTRSc1R1VndYeVpBYmM1ZGVmZ2hJamtsTW5g`.
+   For example: `echo -n 'a12b3c45d-6e78-90f1-g234-h56i7j890k1l:mn2o3pq4RsTuVwXyZAbc5defghIjklMn' | base64`.
+   An example response: `YTEyYjNjNDVkLTZlNzgtOTBmMS1nMjM0LWg1Nmk3ajg5MGsxbDptbjJvM3BxNFJzVHVWd1h5WkFiYzVkZWZnaElqa2xNbg==`.
 
    Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
 
 3. This encoded result can now be used in a basic authorization header. 
-   For example, `authorization: Basic YGExMmIzYzQ1ZC02ZTc4LTkwZjEtZzIzN...6bW4ybzNwcTRSc1R1VndYeVpBYmM1ZGVmZ2hJamtsTW5g`.
+   For example, `authorization: Basic YTEyYjNjNDVkLTZlNzgtOTBmMS1nMjM0LW...bDpjJvM3BxNFJzVHVWd1h5WkFiYzVkZWZnaElqa2xNbg==`.
 
 
 ### Python 
