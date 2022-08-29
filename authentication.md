@@ -79,8 +79,8 @@ Here is an example response:
     "licensePlate": "lrYvpv-0Cj4nC"
   },
   "payload": {
-    "apiKey": "10e1c36c-2f49-46f3-b552-e28b5d671b5f",
-    "apiSecret": "jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk"
+    "apiKey": "e19e1c68c-2f49-46f3-b552-e28b7d671b2f",
+    "apiSecret": "jt2x1xa0TxKbRyMhPMuuObcabnNxspFs"
   }
 }
 ```
@@ -91,17 +91,17 @@ The API key and secret are long-lived, static values that do not expire.
 
 1. Take the values of `apiKey` and `apiSecret` and convert them into a string with the format {{KEY}}:{{SECRET}}, with a colon seperating the two values. 
 
-   For example: `10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk`.
+   For example: `e19e1c68c-2f49-46f3-b552-e28b7d671b2f:jt2x1xa0TxKbRyMhPMuuObcabnNxspFs`.
 
 2. Use the following command in your terminal window to encode the string: `echo -n 'KEYSECRETSTRING' | base64`
 
-   For example: `echo -n '10e1c36c-2f49-46f3-b552-e28b5d671b5f:jt3x1xz0LxLbRyMhPMuuObbabnNxbpFk' | base64`.
-   An example response: `MTBlMWMzNmMtMmY0OS00NmYzLWI1NTItZTI4YjVkNjcxYjVmOmp0M3gxeHowTHhMYlJ5TWhQTXV1T2JiYWJuTnhicEZr`.
+   For example: `echo -n '`e19e1c68c-2f49-46f3-b552-e28b7d671b2f:jt2x1xa0TxKbRyMhPMuuObcabnNxspFs`' | base64`.
+   An example response: `YGUxOWUxYzY4Yy0yZjQ5LTQ2ZjMtYjU1Mi1lMjhiN2Q2NzFiMmY6anQyeDF4YTBUeEtiUnlNaFBNdXVPYmNhYm5OeHNwRnNg`.
 
    Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
 
 3. This encoded result can now be used in a basic authorization header. 
-   For example, `authorization: Basic NGFiZjAyMjItZmU…M3Y2ZzFvZEFPQ1F5RUFKSkI3TWpNOFRFNVpw`.
+   For example, `authorization: Basic YGUxOWUxYzY4Yy0yZjQ5LTQ2Zj...BUeEtiUnlNaFBNdXVPYmNhYm5OeHNwRnNg`.
 
 
 ### Python 
