@@ -25,7 +25,8 @@ This process involves:
 
 From the Chrome menu, navigate to **View** > **Developer** > **Developer Tools**.
 Select the **Application** tab from the Developer Tools pane. From the left hand navigation menu, under the storage section, select
-**Local Storage** from the dropdown. Then, click `https://opus.tracelink.com`. You should now see a list of key/value pairs. 
+**Local Storage** from the dropdown. Then, click `https://opus.tracelink.com`. You should now see a list of key/value pairs. The
+values in the screenshot below were redacted. 
 
 ![Key Value Pairs](images/chrome_apt.png)
 
@@ -33,7 +34,7 @@ Select the **Application** tab from the Developer Tools pane. From the left hand
 
 From the Firefox menu, navigate to **Tools** > **Web Developer Tools**.
 Select the **Storage** tab from the Web Developer Tools pane. From the left hand navigation menu, click **Local Section** and then
-`https://opus.tracelink.com`. You should now see a list of key/value pairs. 
+`https://opus.tracelink.com`. You should now see a list of key/value pairs. The values in the screenshot below were redacted. 
 
 ![Key Value Pairs](images/firefox_apt.png)
 
@@ -76,11 +77,11 @@ Here is an example response:
     "ownerId": "00000000-0000-0000-0000-000000000000",
     "isErr": false,
     "errCode": "200_OK",
-    "licensePlate": "lrYvpv-0Cj4nC"
+    "licensePlate": "abCdef-0Ab1cD"
   },
   "payload": {
-    "apiKey": "e19e1c68c-2f49-46f3-b552-e28b7d671b2f",
-    "apiSecret": "jt2x1xa0TxKbRyMhPMuuObcabnNxspFs"
+    "apiKey": "XXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+    "apiSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   }
 }
 ```
@@ -91,17 +92,17 @@ The API key and secret are long-lived, static values that do not expire.
 
 1. Take the values of `apiKey` and `apiSecret` and convert them into a string with the format {{KEY}}:{{SECRET}}, with a colon seperating the two values. 
 
-   For example: `e19e1c68c-2f49-46f3-b552-e28b7d671b2f:jt2x1xa0TxKbRyMhPMuuObcabnNxspFs`.
+   For example: `a12b3c45d-6e78-90f1-g234-h56i7j890k1l:mn2o3pq4RsTuVwXyZAbc5defghIjklMn`.
 
 2. Use the following command in your terminal window to encode the string: `echo -n 'KEYSECRETSTRING' | base64`
 
-   For example: `echo -n '`e19e1c68c-2f49-46f3-b552-e28b7d671b2f:jt2x1xa0TxKbRyMhPMuuObcabnNxspFs`' | base64`.
-   An example response: `YGUxOWUxYzY4Yy0yZjQ5LTQ2ZjMtYjU1Mi1lMjhiN2Q2NzFiMmY6anQyeDF4YTBUeEtiUnlNaFBNdXVPYmNhYm5OeHNwRnNg`.
+   For example: `echo -n '`a12b3c45d-6e78-90f1-g234-h56i7j890k1l:mn2o3pq4RsTuVwXyZAbc5defghIjklMn`' | base64`.
+   An example response: `YGExMmIzYzQ1ZC02ZTc4LTkwZjEtZzIzNC1oNTZpN2o4OTBrMWw6bW4ybzNwcTRSc1R1VndYeVpBYmM1ZGVmZ2hJamtsTW5g`.
 
    Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
 
 3. This encoded result can now be used in a basic authorization header. 
-   For example, `authorization: Basic YGUxOWUxYzY4Yy0yZjQ5LTQ2Zj...BUeEtiUnlNaFBNdXVPYmNhYm5OeHNwRnNg`.
+   For example, `authorization: Basic YGExMmIzYzQ1ZC02ZTc4LTkwZjEtZzIzN...6bW4ybzNwcTRSc1R1VndYeVpBYmM1ZGVmZ2hJamtsTW5g`.
 
 
 ### Python 
