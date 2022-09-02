@@ -276,7 +276,7 @@ Use the same methods outlined above to generate a request similar to the followi
    }
 }
 ```
-The response provides all information currently on record for the incident:
+The response provides the complete record for the incident:
 ```
 {
 "header": {
