@@ -258,6 +258,101 @@ The response:
     }
 }
 ```
+## Read the details of your newly created incident
+In a previous step, you stored your incident id as a variable in your session.  You can use this stored variable to retrieve details about the incident.  
+Use the same methods outlined above to generate a request similar to the following:
+```
+{
+   "header": {
+       "headerVersion": 1,
+       "eventName": "agile-process-teams:read-directSupplierIncident:v3",
+       "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+       "appName": "agile-process-teams",
+       "dataspace": "default",
+       "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
+   },
+   "payload": {
+       "id": "fd04dd70-c162-43ef-8118-539ca01de471"
+   }
+}
+```
+The response provides all information currently on record for the incident:
+```
+{
+"header": {
+	"headerVersion": 1,
+	"eventName": "agile-process-teams:read-directSupplierIncident-response:v3",
+	"ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"isErr": false,
+	"errCode": "200_OK",
+	"licensePlate": "Y7yRFr-tRpXpc"
+},
+"payload": {
+	"createdByUserId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"schemaVersion": 3,
+	"data": {
+		"aptBusinessObjectSummary": "Kinaxis - Late: PO, Exception ID: 37495023853_jlocky",
+		"aptBusinessObjectDescription": "Order:PO_B2710_S006_2101130836, Line:4, Type:PO",
+		"responsibleDepartmentAtPartner": "CONTRACT_MANAGEMENT",
+		"responsibleDepartmentAtCompany": "SUPPLY_CHAIN",
+		"businessPriority": "HIGH",
+		"incidentType": "MATERIAL_SHORTAGE",
+		"otherIncidentType": "Purchase Order Discrepancy",
+		"aptBusinessObjectImpactsLocationMasterData": [],
+		"currentlyAssignedPartnerUsersId": [
+			"94f94f37-2772-4b39-8041-9c2dcfcfff82"
+		],
+		"resolutionDueDate": 1661817600000,
+		"referenceIdentifiers": [
+			{
+				"referenceTransactionType": "PO_NUMBER",
+				"value": " Order:PO_B2710_S006_2101130836, Line:4, Type:PO"
+			}
+		],
+		"response": {},
+		"responsiblePartyAtPartnerUserId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
+		"responsiblePartyAtCompanyUserId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
+		"currentlyAssignedCompanyUsersId": [
+			"b2491d20-0f8b-41f5-b7aa-a4e4a04afbce"
+		],
+		"primaryPartnerLocationId": "2e485684-fdd7-4ad1-8735-af4deed325f0",
+		"fkProcessNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+		"aptBusinessObjectId": "USPT-1151",
+		"aptBusinessObjectIntegerIdentifier": 1151,
+		"createdByPartner": false,
+		"aptBusinessObjectAssignedToCompanyPartnerMasterData": {
+			"partnerId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
+			"toIdType": "partnerMasterData"
+		},
+		"followerId": [
+			"b2491d20-0f8b-41f5-b7aa-a4e4a04afbce"
+		],
+		"aptBusinessObjectNumericIdentifierDerivedField": "1151",
+		"businessPriorityDerivedField": "c",
+		"incidentConclusion": {
+			"resolutionType": "NOT_AN_ISSUE",
+			"isReoccuring": true,
+			"dateClosed": 1661528887906,
+			"finalRootCause": "OTHER"
+		},
+		"advanceMetrics": {
+			"timeToClose": 3,
+			"closedOnTime": true
+		}
+	},
+	"dataVersion": 2,
+	"ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"objectType": "agile-process-teams:directSupplierIncident",
+	"currentBaseState": "Closed",
+	"schemaId": "agile-process-teams:directSupplierIncident",
+	"lastUpdatedByUserId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"contextualOwnerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"id": "fd04dd70-c162-43ef-8118-539ca01de471",
+	"lastUpdatedDateTime": 1661528888803,
+	"creationDateTime": 1661276934457
+}
+}
+```
 
 ## Next steps
 You will need a mechanism to create or update your payload data whether it is stored in a file or submitted at runtime and discarded.  
