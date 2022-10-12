@@ -37,4 +37,4 @@ All requests have three main components:
 
 1. Review information on [authentication](../authentication.md). 
 2. Review [basic request formatting](FormatRequests.MD).
-3. Follow the [quickstart](Quickstart.MD) for an example using the APT-SCIM API.
+3. Follow the [quickstart](Quickstart.MD) for an example using the APT-SCWM API.

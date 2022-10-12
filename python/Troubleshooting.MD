@@ -1,6 +1,6 @@
 # Troubleshooting Errors
 
-The APT-SCIM API responds to each request with a status code and text describing the result of the request.  
+The APT-SCWM API responds to each request with a status code and text describing the result of the request.  
 
 Successful requests use a **200** status code and provide a payload.
 
@@ -34,7 +34,7 @@ Assume you submit the following request:
     }
 }
 ```
-APT-SCIM returns a response similar to the following:  
+APT-SCWM returns a response similar to the following:  
 ```
 comment_response = utils.post_request(reqHeader, comment_request)
 Response status code: 400
