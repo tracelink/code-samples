@@ -1,6 +1,6 @@
-# APT-SCWM API Quickstart 
+# APT-SCWM API Quickstart
 
-This quickstart covers: 
+This quickstart covers:
 
 1. Creating a direct supplier incident using the APT-SCWM API
 2. Using the response data to add a comment to the created incident   
@@ -64,7 +64,7 @@ However, for this example, we will include more than the miniumum information. C
 }
 ```
 
-The `utils.py` file has functions to help build the payload for your request body. The `read_payload_file(filename)` function reads the contents of the file, loads it into a JSON object, and does some minor processing for insertion into the request body. 
+The `utils.py` file has functions to help build the payload for your request body. The `read_payload_file(filename)` function reads the contents of the file, loads it into a JSON object, and does some minor processing for insertion into the request body.
 
 In your Python terminal, enter the following:  
 ```
@@ -74,7 +74,7 @@ In your Python terminal, enter the following:
 ```
 If you already use a JSON payload as part of your other processes, you can the `accept_json_payload(payload_in)` function instead. This function accepts a JSON object, checks for proper format, and does some minor processing for insertion into the request body.
 
-In the Python terminal, enter the following: 
+In the Python terminal, enter the following:
 ```
 >>> my_json_data = result_from_some_other_process()
 >>> payload_data = utils.accept_json_payload(my_json_data)
@@ -99,7 +99,7 @@ Now, create the full request body. In your Python terminal, enter the following:
 >>> request_body = utils.create_payload(event_data, payload_data)
 ```
 
-## Request Header 
+## Request Header
 
 The `utils.py` file provides a function to create a request header that can be reused until token expiration.  
 
@@ -185,7 +185,7 @@ An example successful response:
 }
 ```
 
-## Response Handling 
+## Response Handling
 
 The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a string, not a JSON object. To get this identifier, enter the following in your Python terminal:
 ```
