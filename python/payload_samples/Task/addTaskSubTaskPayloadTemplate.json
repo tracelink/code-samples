@@ -1,0 +1,58 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:add-sub-task-to-task:v2",
+    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+    "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "taskId": "ff060ac0-035d-11eb-8738-0242ac110017",
+    "subTaskName": "Sub-Task 01234",
+    "subTaskType": "Sub-Task Type ABC",
+    "startDate": 1651133945000,
+    "subTaskDueDate": 1641133945000,
+    "partnerCompany": {
+      "partnerId": "be9c8cea-72bc-459c-97b9-ef3f7c73ccc8",
+      "toIdType": "companyMasterData"
+    },
+    "responsiblePartyAtPartner": "bb75c388-16f7-4a18-9c77-f418d928359e",
+    "responsibleDepartmentAtPartner": "SUPPLY_CHAIN",
+    "currentlyAssignedCompanyUsers": [
+      "bb75c388-16f7-4a18-9c77-f418d928359e"
+    ],
+    "currentlyAssignedPartnerUsers": [
+      "ff060ac0-035d-11eb-8738-0242ac110017",
+      "feb32fd0-035d-11eb-bb87-0242ac110017"
+    ],
+    "isSubmittedToPartner": false,
+    "referenceIdentifiers": {
+      "referenceTransactionType": "BILL_OF_LADING",
+      "value": "GTIN-1161187176294956"
+    },
+    "relatedProcesses": [
+      {
+        "processId": "c8c2b7ab-fcfd-448e-8964-798e42fb9aea",
+        "processType": "incident",
+        "relationship": "Contains"
+      }
+    ],
+    "aptCommentBox": [
+      {
+        "aptComment": {
+          "commentText": "add DSI.",
+          "visibilityType": "Public"
+        },
+        "addAttachment": [
+          {
+            "fileSize": "5mb",
+            "fileName": "File1",
+            "requestIdentifier": "fc58cbf8-1098-4f66-bf37-763922bd36b3",
+            "visibilityType": "Public"
+          }
+        ]
+      }
+    ]
+  }
+}
