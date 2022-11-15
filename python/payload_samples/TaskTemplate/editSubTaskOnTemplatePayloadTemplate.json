@@ -1,0 +1,23 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:edit-sub-task-on-template:v3",
+    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+    "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ff060ac0-035d-11eb-8738-0242ac110017",
+    "subTaskName": "Sub-Task 56789",
+    "subTaskType": "Sub-Task Type ABC",
+    "subTaskDueDate": 1631133945000,
+    "currentlyAssignedCompanyUsers": [
+      "dcceedb1-fc3c-45d8-9d45-9e159f901d2c"
+    ],
+    "currentlyAssignedPartnerUsers": [
+      "7713c743-dd56-4074-83f3-c961b52b1519",
+      "bb75c388-16f7-4a18-9c77-f418d928359e"
+    ]
+  }
+}
