@@ -1,0 +1,94 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:add-change:v3",
+    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+    "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "partnerCompany": {
+      "partnerId": "be9c8cea-72bc-459c-97b9-ef3f7c73ccc8",
+      "toIdType": "companyMasterData"
+    },
+    "isVisible": true,
+    "aptBusinessObjectSummary": "Scanner Upgrade",
+    "aptBusinessObjectDescription": "Replace existing scanners at Warehouse B with upgraded model",
+    "responsiblePartyAtCompany": "c75e31c1-a977-42f4-afd1-5cb9468a3b00",
+    "responsibleDepartmentAtCompany": "BUSINESS_DEVELOPMENT",
+    "responsiblePartyAtPartner": "dab0a960-01d3-4fe1-aad2-696875beeea9",
+    "responsibleDepartmentAtPartner": "BUSINESS_DEVELOPMENT",
+    "currentlyAssignedPartnerUsers": [
+      "c75e31c1-a977-42f4-afd1-5cb9468a3b00"
+    ],
+    "currentlyAssignedCompanyUsers": [
+      "dab0a960-01d3-4fe1-aad2-696875beeea9"
+    ],
+    "businessPriority": "MEDIUM",
+    "changeType": "SUPPLIER",
+    "implementationDueDate": 1611981070772,
+    "implementationTeam": "implementationTeam",
+    "initiatingCompany": {
+      "partnerId": "be9c8cea-72bc-459c-97b9-ef3f7c73ccc8",
+      "toIdType": "companyMasterData"
+    },
+    "subjectMatterExpert": [
+      {
+        "subjectMatterExpertEmail": "BSpitzer@gmail.com",
+        "subjectMatterExpertName": "Brent Spitzer"
+      }
+    ],
+    "changeImpact": {
+      "changeReferenceIdentifiers": [
+        {
+          "referenceTransactionType": "INVOICE_NUMBER",
+          "value": "55512345"
+        }
+      ],
+      "riskType": "NONTECHNICAL_LOW_RISK",
+      "implementationNeededByDate": 1611981070772,
+      "businessScopeImpact": "OTHER",
+      "otherBusinessScopeImpact": "User-Defined Business Scope",
+      "reasonForChange": "STREAMLINE_OPERATIONS",
+      "reasonForChangeNotes": "Lorem ipsum dolor sit amet. Consectetur adipiscing elitales.",
+      "potentialRisks": "potential Risks",
+      "evaluationsOfChange": "Evaluations Of Change"
+    },
+    "createdByPartner": false,
+    "productId": [
+      "f2ea770f-a4cb-4b3f-86ed-08d12e740d5c",
+      "7da13dd1-b0bc-422e-9213-c70206748021"
+    ],
+    "impactedLocation": [
+      {
+        "locationId": "113b11be-e74b-4c8d-b7e5-b5503f4828a3",
+        "locationType": "companyLocationMasterData",
+        "locationContact": "Elias Davis",
+        "toIdType": "companyLocationMasterData"
+      }
+    ],
+    "relatedProcesses": [
+      {
+        "processId": "a02c7f2a-9b95-441a-a2f0-1b1000e10aa2",
+        "processType": "Incident"
+      }
+    ],
+    "aptCommentBox": [
+      {
+        "aptComment": {
+          "commentText": "Lorem ipsum dolor sit amet. Nam nec mi eu tortor suscipit sodales.",
+          "visibilityType": "Internal"
+        },
+        "addAttachment": [
+          {
+            "fileName": "82kb",
+            "fileSize": "changeScope_Approved.doc",
+            "visibilityType": "Public",
+            "requestIdentifier": "85bb3620-4721-45cc-bb91-d5da7e3824e0"
+          }
+        ]
+      }
+    ]
+  }
+}

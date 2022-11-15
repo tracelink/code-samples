@@ -1,0 +1,14 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:get-activity-history-for-change:v1",
+    "ownerId": "tracelink",
+    "processNetworkId": "a70ca41a-ef4d-4b5a-b243-26cff72434ce",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+    "processType": "change"
+  }
+}
