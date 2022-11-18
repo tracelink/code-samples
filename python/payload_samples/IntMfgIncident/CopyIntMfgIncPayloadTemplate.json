@@ -1,11 +1,19 @@
 {
-    "payload": {
-        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
-        "aptBusinessObjectSummary": "Container damaged in transit (second occurrence)",
-        "copyGeneralInfo": true,
-        "copymaterialInfo": true,
-        "copyImpactInfo": false,
-        "copyReferenceIds": true,
-        "copyRelatedProcesses": true
-    }
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:copy-internal-manufacturing-incident:v1",
+    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+    "processNetworkId": "a70ca41a-ef4d-4b5a-b243-26cff72434ce",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+    "aptBusinessObjectSummary": "Container damaged in transit (second occurrence)",
+    "copyGeneralInfo": true,
+    "copymaterialInfo": true,
+    "copyImpactInfo": false,
+    "copyReferenceIds": true,
+    "copyRelatedProcesses": true
+  }
 }
