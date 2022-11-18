@@ -2,36 +2,36 @@
   "header": {
     "headerVersion": 1,
     "eventName": "agile-process-teams:add-external-manufacturing-incident:v3",
-    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-    "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
     "appName": "agile-process-teams",
     "dataspace": "default"
   },
   "payload": {
     "partnerCompany": {
-      "partnerId": "be9c8cea-72bc-459c-97b9-ef3f7c73ccc8",
+      "partnerId": "PARTNER_COMPANY_ID",
       "toIdType": "companyMasterData"
     },
-    "partnerLocationId": "bb75c388-16f7-4a18-9c77-f418d928359e",
+    "partnerLocationId": "LOCATION_ID",
     "aptBusinessObjectSummary": "Missing Shipment",
     "aptBusinessObjectDescription": "Shipment XYZ missing at Location ABC",
     "deviationType": "PLANNED",
-    "responsiblePartyAtCompany": "ff060ac0-035d-11eb-8738-0242ac110017",
+    "responsiblePartyAtCompany": "COMPANY_USER_ID",
     "responsibleDepartmentAtCompany": "CUSTOMER_SERVICE",
-    "responsiblePartyAtPartner": "bb75c388-16f7-4a18-9c77-f418d928359e",
+    "responsiblePartyAtPartner": "PARTNER_USER_ID",
     "responsibleDepartmentAtPartner": "SUPPLY_CHAIN",
     "currentlyAssignedCompanyUsers": [
-      "bb75c388-16f7-4a18-9c77-f418d928359e"
+      "COMPANY_USER_ID"
     ],
     "currentlyAssignedPartnerUsers": [
-      "ff060ac0-035d-11eb-8738-0242ac110017",
-      "feb32fd0-035d-11eb-bb87-0242ac110017"
+      "PARTNER_USER_ID",
+      "PARTNER_USER_ID"
     ],
     "materialType": "FINISHED_GOOD",
     "materialSubtype": "CHEMICAL_API",
     "materialProblem": "MATERIAL_SHORTAGE",
     "originatingLocation": {
-      "originatingLocationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+      "originatingLocationId": "LOCATION_ID",
       "toIdType": "partnerLocationMasterData"
     },
     "resolutionDueDate": 1651133945000,
@@ -98,21 +98,21 @@
         "dateEscalationReportRequested": 1641133945000
       },
       "impactedProducts": [
-        "613ac6ab-2940-45c4-b214-ea84feb4e931"
+        "PRODUCT_ID"
       ],
       "potentiallyImpactedProducts": [
-        "fc58cbf8-1098-4f66-bf37-763922bd36b3",
-        "613ac6ab-2940-45c4-b214-ea84feb4e931"
+        "PRODUCT_ID",
+        "PRODUCT_ID"
       ],
       "impactedLocations": {
-        "locationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+        "locationId": "LOCATION_ID",
         "toIdType": "companyLocationMasterData",
         "locationType": "INTERNAL",
         "locationContact": "edavis"
       },
       "potentiallyImpactedLocations": [
         {
-          "locationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
+          "locationId": "LOCATION_ID",
           "toIdType": "companyLocationMasterData",
           "locationType": "INTERNAL",
           "locationContact": "edavis"
@@ -124,20 +124,20 @@
           {
             "fileSize": "5mb",
             "fileName": "aptEscalationReportBox1",
-            "requestIdentifier": "53e27ae1-6f5b-45c9-a6ab-5e480d652f4e",
+            "requestIdentifier": "REQUEST_IDENTIFIER_ID",
             "visibilityType": "Public"
           },
           {
             "fileSize": "5mb",
             "fileName": "aptEscalationReportBox2",
-            "requestIdentifier": "83bd02d6-ee59-46b3-ad40-2b5c86888623",
+            "requestIdentifier": "REQUEST_IDENTIFIER_ID",
             "visibilityType": "Public"
           }
         ]
       },
       "relatedProcesses": [
         {
-          "processId": "c8c2b7ab-fcfd-448e-8964-798e42fb9aea",
+          "processId": "PROCESS_ID",
           "processType": "incident"
         }
       ],
@@ -151,7 +151,7 @@
             {
               "fileSize": "5mb",
               "fileName": "File1",
-              "requestIdentifier": "fc58cbf8-1098-4f66-bf37-763922bd36b3",
+              "requestIdentifier": "REQUEST_IDENTIFIER_ID",
               "visibilityType": "Public"
             }
           ]

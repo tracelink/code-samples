@@ -13,8 +13,8 @@ For this example, we are working backwards from the request body. In its simples
     "header": {
         "headerVersion": 1,
         "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+        "ownerId": "YOUR_OWNER_ID",
+        "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
         "appName": "agile-process-teams",
         "dataspace": "default"
     },
@@ -127,8 +127,8 @@ Body of event request:
         "dataspace": "default",
         "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
         "headerVersion": 1,
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
+        "ownerId": "YOUR_OWNER_ID",
+        "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
     },
     "payload": {
         "aptBusinessObjectSummary": "Incomplete shipment received.",
@@ -161,8 +161,8 @@ An example Python terminal session:
 >>> my_token = token_received_from_other_processes
 
 >>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-                  "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-                  "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"}
+                  "ownerId": "YOUR_OWNER_ID",
+                  "processNetworkId": "YOUR_PROCESS_NETWORK_ID"}
 >>> request_headers = utils.create_headers(my_token)
 >>> payload_data = utils.read_payload_file(my_file)
 >>> request_body = utils.create_payload(event_data, payload_data)
@@ -174,13 +174,13 @@ An example successful response:
     "header": {
         "headerVersion": 1,
         "eventName": "agile-process-teams:add-direct-supplier-incident-response:v2",
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+        "ownerId": "YOUR_OWNER_ID",
         "isErr": false,
         "errCode": "200_OK",
         "licensePlate": "qL0BJs"
     },
     "payload": {
-        "id": "fd04dd70-c162-43ef-8118-539ca01de471"
+        "id": "ITEM_ID"
     }
 }
 ```
@@ -197,7 +197,7 @@ The `id` in a successful response payload is the identifier of the created incid
 To ensure your value stored properly, enter the following in your Python terminal:
 ```
 >>> incident_id
-'fd04dd70-c162-43ef-8118-539ca01de471'
+'ITEM_ID'
 ```
 
 ## Add Incident Comment
@@ -206,7 +206,7 @@ Prepare a comment payload file called `comment_payload.json` containing the belo
 ```
 {
 	"payload": {
-		"processId": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+		"processId": "ITEM_ID",
 		"processType": "directSupplierIncident",
 		"aptCommentBox":{
 			"aptComment":{
@@ -223,13 +223,13 @@ Do not worry that your `processId` does not match the example. You can load the 
 >>> comment_payload_file = 'comment_payload.json'
 >>> comment_payload = utils.read_payload_file(comment_payload_file)
 >>> comment_payload
-{'processId': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
+{'processId': 'ITEM_ID', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 Your payload has been loaded properly, but the `processId` is still wrong. Use the `update()` function to change the stored value:
 ```
->>> comment_payload.update({"processId": "fd04dd70-c162-43ef-8118-539ca01de471"})
+>>> comment_payload.update({"processId": "ITEM_ID"})
 >>> comment_payload
-{'processId': 'fd04dd70-c162-43ef-8118-539ca01de471', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
+{'processId': 'ITEM_ID', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 You can use the same process to change the `eventName`:
 ```
@@ -248,13 +248,13 @@ The response:
     "header": {
         "headerVersion": 1,
         "eventName": "agile-process-teams:add-comment-for-incident-response:v1",
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+        "ownerId": "YOUR_OWNER_ID",
         "isErr": false,
         "errCode": "200_OK",
         "licensePlate": "vXPsFz"
     },
     "payload": {
-        "id": "a67d7261-33b1-4be6-9760-61ae8fe9eed3"
+        "id": "COMMENT_ID"
     }
 }
 ```
@@ -266,13 +266,13 @@ Use the same methods outlined above to generate a request similar to the followi
    "header": {
        "headerVersion": 1,
        "eventName": "agile-process-teams:read-directSupplierIncident:v3",
-       "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+       "ownerId": "YOUR_OWNER_ID",
        "appName": "agile-process-teams",
        "dataspace": "default",
-       "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
+       "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
    },
    "payload": {
-       "id": "fd04dd70-c162-43ef-8118-539ca01de471"
+       "id": "ITEM_ID"
    }
 }
 ```
@@ -282,13 +282,13 @@ The response provides the complete record for the incident:
 "header": {
 	"headerVersion": 1,
 	"eventName": "agile-process-teams:read-directSupplierIncident-response:v3",
-	"ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"ownerId": "YOUR_OWNER_ID",
 	"isErr": false,
 	"errCode": "200_OK",
 	"licensePlate": "Y7yRFr-tRpXpc"
 },
 "payload": {
-	"createdByUserId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"createdByUserId": "YOUR_OWNER_ID",
 	"schemaVersion": 3,
 	"data": {
 		"aptBusinessObjectSummary": "Kinaxis - Late: PO, Exception ID: 37495023853_jlocky",
@@ -300,7 +300,7 @@ The response provides the complete record for the incident:
 		"otherIncidentType": "Purchase Order Discrepancy",
 		"aptBusinessObjectImpactsLocationMasterData": [],
 		"currentlyAssignedPartnerUsersId": [
-			"94f94f37-2772-4b39-8041-9c2dcfcfff82"
+			"YOUR_OWNER_ID"
 		],
 		"resolutionDueDate": 1661817600000,
 		"referenceIdentifiers": [
@@ -316,7 +316,7 @@ The response provides the complete record for the incident:
 			"b2491d20-0f8b-41f5-b7aa-a4e4a04afbce"
 		],
 		"primaryPartnerLocationId": "2e485684-fdd7-4ad1-8735-af4deed325f0",
-		"fkProcessNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+		"fkProcessNetworkId": "YOUR_PROCESS_NETWORK_ID",
 		"aptBusinessObjectId": "USPT-1151",
 		"aptBusinessObjectIntegerIdentifier": 1151,
 		"createdByPartner": false,
@@ -341,13 +341,13 @@ The response provides the complete record for the incident:
 		}
 	},
 	"dataVersion": 2,
-	"ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"ownerId": "YOUR_OWNER_ID",
 	"objectType": "agile-process-teams:directSupplierIncident",
 	"currentBaseState": "Closed",
 	"schemaId": "agile-process-teams:directSupplierIncident",
-	"lastUpdatedByUserId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-	"contextualOwnerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-	"id": "fd04dd70-c162-43ef-8118-539ca01de471",
+	"lastUpdatedByUserId": "YOUR_OWNER_ID",
+	"contextualOwnerId": "YOUR_OWNER_ID",
+	"id": "ITEM_ID",
 	"lastUpdatedDateTime": 1661528888803,
 	"creationDateTime": 1661276934457
 }

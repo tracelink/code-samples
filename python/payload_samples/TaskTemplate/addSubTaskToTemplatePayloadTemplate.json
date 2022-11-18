@@ -1,30 +1,30 @@
-{
+TEMPLATE_ID{
   "header": {
     "headerVersion": 1,
     "eventName": "agile-process-teams:add-sub-task-to-template:v2",
-    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-    "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
     "appName": "agile-process-teams",
     "dataspace": "default"
   },
   "payload": {
-    "templateId": "ff060ac0-035d-11eb-8738-0242ac110017",
+    "templateId": "TEMPLATE_ID",
     "subTaskName": "Sub-Task 01234",
     "subTaskType": "Sub-Task Type XYZ",
     "completionRequiredWithinDays": 7,
     "businessPriority": "LOW",
     "partnerCompany": {
-      "partnerId": "be9c8cea-72bc-459c-97b9-ef3f7c73ccc8",
+      "partnerId": "PARTNER_COMPANY_ID",
       "toIdType": "companyMasterData"
     },
-    "responsiblePartyAtPartner": "bb75c388-16f7-4a18-9c77-f418d928359e",
+    "responsiblePartyAtPartner": "PARTNER_USER_ID",
     "responsibleDepartmentAtPartner": "SUPPLY_CHAIN",
     "currentlyAssignedCompanyUsers": [
-      "dcceedb1-fc3c-45d8-9d45-9e159f901d2c",
-      "11935532-e603-4700-9aed-b14b4ac2a7d8"
+      "COMPANY_USER_ID",
+      "COMPANY_USER_ID"
     ],
     "currentlyAssignedPartnerUsers": [
-      "7713c743-dd56-4074-83f3-c961b52b1519"
+      "PARTNER_USER_ID"
     ],
     "referenceIdentifiers": [
       {
@@ -34,7 +34,7 @@
     ],
     "relatedProcesses": [
       {
-        "processId": "c8c2b7ab-fcfd-448e-8964-798e42fb9aea",
+        "processId": "PROCESS_ID",
         "processType": "incident",
         "relationship": "Contains"
       }

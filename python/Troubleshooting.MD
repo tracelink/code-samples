@@ -14,8 +14,8 @@ Assume you submit the following request:
         "dataspace": "default",
         "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
         "headerVersion": 1,
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
+        "ownerId": "YOUR_OWNER_ID",
+        "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
     },
     "payload": {
         "aptBusinessObjectDescription": "Several packages missing or damaged.",

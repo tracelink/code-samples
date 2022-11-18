@@ -2,13 +2,13 @@
   "header": {
     "headerVersion": 1,
     "eventName": "agile-process-teams:edit-comment-for-change:v1",
-    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-    "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
     "appName": "agile-process-teams",
     "dataspace": "default"
   },
   "payload": {
-    "commentId": "a67d7261-33b1-4be6-9760-61ae8fe9eed3",
+    "commentId": "COMMENT_ID",
     "processType": "change",
     "aptCommentBox": {
       "aptComment": {
@@ -16,7 +16,7 @@
         "visibilityType": "Public"
       },
       "removeAttachment": [
-        "9d84028a-abcd-11eb-90b4-e933a8e8da5e"
+        "ATTACHMENT_ID"
       ]
     }
   }
