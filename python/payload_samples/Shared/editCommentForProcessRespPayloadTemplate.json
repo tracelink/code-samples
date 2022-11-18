@@ -1,16 +1,24 @@
 {
-    "payload": {
-        "commentId": "a67d7261-33b1-4be6-9760-61ae8fe9eed3",
-        "processType": "directSupplierincident",
-        "id": "9d84028a-61ae-11eb-90b4-e933a8e8da5e",
-        "aptCommentBox": {
-            "aptComment": {
-                "commentText": "Incorrect order uploaded",
-                "visibilityType": "Public"
-            },
-            "removeAttachment" : [
-                "9d84028a-abcd-11eb-90b4-e933a8e8da5e"
-            ]
-        }
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:edit-comment-for-incident:v1",
+    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+    "processNetworkId": "a70ca41a-ef4d-4b5a-b243-26cff72434ce",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "commentId": "a67d7261-33b1-4be6-9760-61ae8fe9eed3",
+    "processType": "directSupplierincident",
+    "id": "9d84028a-61ae-11eb-90b4-e933a8e8da5e",
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "Incorrect order uploaded",
+        "visibilityType": "Public"
+      },
+      "removeAttachment": [
+        "9d84028a-abcd-11eb-90b4-e933a8e8da5e"
+      ]
     }
+  }
 }

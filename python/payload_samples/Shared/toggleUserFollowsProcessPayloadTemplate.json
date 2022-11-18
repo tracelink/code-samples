@@ -1,7 +1,15 @@
 {
-    "payload": {
-        "id": "e5701ae7-b447-423a-85c9-b57557fb7007",
-        "processType": "incident",
-        "follow": true
-    }
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:toggle-user-follows-incident:v1",
+    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+    "processNetworkId": "a70ca41a-ef4d-4b5a-b243-26cff72434ce",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "e5701ae7-b447-423a-85c9-b57557fb7007",
+    "processType": "incident",
+    "follow": true
+  }
 }
