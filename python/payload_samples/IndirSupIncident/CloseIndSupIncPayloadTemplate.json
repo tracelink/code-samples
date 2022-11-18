@@ -1,15 +1,24 @@
 {
-    "payload": {
-        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
-        "resolutionType": "RESOLVED",
-        "isReoccuring": true,
-        "impactedLocation": "8b99b7d8-d65b-4333-92fd-9d551ff2c07e",
-        "aptCommentBox": [
-            "aptComment":{
-                "commentText": "Specs updated to correct version (v12.0). Were able to repackage with little loss",
-                "visibilityType": "Public"
-                ]
-            }
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:close-indirect-supplier-incident:v2",
+    "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+    "processNetworkId": "a70ca41a-ef4d-4b5a-b243-26cff72434ce",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
+    "resolutionType": "RESOLVED",
+    "isReoccuring": true,
+    "impactedLocation": "8b99b7d8-d65b-4333-92fd-9d551ff2c07e",
+    "aptCommentBox": [
+      {
+        "aptComment": {
+          "commentText": "Specs updated to correct version (v12.0). Were able to repackage with little loss",
+          "visibilityType": "Public"
         }
-    }
+      }
+    ]
+  }
 }
