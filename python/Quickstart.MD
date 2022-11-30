@@ -5,9 +5,14 @@ This quickstart covers:
 1. Creating a direct supplier incident using the APT-SCWM API
 2. Using the response data to add a comment to the created incident   
 
+*This example uses Python version 3.10 or later entering commands in a Python terminal.*  
+
 ## Request Body
 
-For this example, we are working backwards from the request body. In its simplest form, the request body contains a header and a payload.  A simple request body resembles the following:
+Use the following command to import the JSON and Requests libraries  
+```import json, requests```  
+
+For this example, we are working backwards from the request body. In its simplest form, the request body contains a header and a payload.  A request body resembles the following:
 ```
 {
     "header": {
@@ -27,11 +32,11 @@ For this example, we are working backwards from the request body. In its simples
 }
 ```
 
-Many requests share common values in the header. The `headerVersion`, `appName`, and `dataspace` do not change. For a single company, the `ownerId` and `processNetworkId` values are likely to remain the same. This means you may only need to determine the `eventName`. The payload will change with each new request depending on the selected `eventName`. As the integrator, you can store these values after creation or generate and use them dynamically at runtime.  
+Many requests share common values in the header. The `headerVersion`, `appName`, and `dataspace` do not change often. For a single company, the `ownerId` and `processNetworkId` values are likely to remain the same. This means you may only need to determine the `eventName` for the request you submit. The payload will change with each new request depending on the selected `eventName`. As the integrator, you can store these values after creation or generate and use them dynamically at runtime.  
 
-### Create Payload File
+### Create a Payload
 
-The APT-SCWM API uses JSON for passing data. The minimum required data to submit a direct supplier incident is a summary of the incident and an impact priority level.  An example of the minimum required payload:
+The APT-SCWM API uses JSON for passing data. The minimum required data to submit a direct supplier incident is a summary of the incident and an impact priority level.  Below is a basic example of the minimum required payload:
 ```
 {
 "payload": {
@@ -43,9 +48,13 @@ The APT-SCWM API uses JSON for passing data. The minimum required data to submit
 }
 ```
 
-However, for this example, we will include more than the miniumum information. Create a payload file containing the below and name it `addIncident.json`.  
+We can store payloads in text files and read them into our Python session as we need them. You may use any text editor capable of specifying the JSON file type to create a file containing your payload data.  
+
+We can also dynamically create and modify payloads as needed during a session.  
+
+For this example, type or copy the following into a Python terminal:  
 ```
-{
+my_payload = {
 	"payload": {
 		"aptBusinessObjectSummary": "Incomplete shipment received.",
 		"aptBusinessObjectDescription": "Several packages missing or damaged.",
@@ -53,9 +62,9 @@ However, for this example, we will include more than the miniumum information. C
 		"materialType": "FINISHED_GOOD",
 		"materialSubtype": "SHIPPED",
 		"materialProblem": "SHORT_SHIPMENT_RECEIVED",
-		"isEscalated": false,
-		"createdByPartner": false,
-		"isSubmittedToPartner": false,
+		"isEscalated": False,
+		"createdByPartner": False,
+		"isSubmittedToPartner": False,
 		"directSupplierImpact": {
 			"businessImpact": "Business Impact",
 			"businessPriority": "HIGH"
@@ -63,16 +72,29 @@ However, for this example, we will include more than the miniumum information. C
 		}
 }
 ```
+This creates a dictionary object.  You can verify this in your terminal by entering the command `type(my_payload)`.  The response should be `<class 'dict'>`.
 
-The `utils.py` file has functions to help build the payload for your request body. The `read_payload_file(filename)` function reads the contents of the file, loads it into a JSON object, and does some minor processing for insertion into the request body.
+You can use the `.get('item')` method to refer to the individual elements inside the payload.  For example, if you enter `my_payload.get('payload')`, you will get the above with the "payload" section omitted.  It's not really omitted, you are seeing inside the payload element.  
+You can continue navigating the payload object by referencing further items.  Try entering the following: `my_payload.get('payload').get('isEscalated')`.  Your response should look something like this:  
+`False`  
+
+Take care when using boolean values.  Python represents them as `True` or `False`.  By contrast, JSON uses `true` and `false`.  This seemingly insignificant difference can cause difficulties when working in a terminal session.  
+
+Before we submit our request, we must format our data as a JSON object.
 
 In your Python terminal, enter the following:  
 ```
->>> import utils
->>> my_file = 'addIncident.json'
+# >>> import utils
+>>> my_file = 'addIncident.json'  # include full path if needed
+>>> with open(my_file, 'r') as file_in:
+>>>   data = file_in.read()
+>>> json_object = json.loads(data)
+
+If you want to keep the 'payload' identifier in your string, omit this step
+>>> my_payload = j_object.get("payload")
 >>> payload_data = utils.read_payload_file(my_file)
-```
-If you already use a JSON payload as part of your other processes, you can the `accept_json_payload(payload_in)` function instead. This function accepts a JSON object, checks for proper format, and does some minor processing for insertion into the request body.
+```  
+If you already use a JSON payload as part of your other processes, you can use the `accept_json_payload(payload_in)` function instead. This function accepts a JSON object, checks for proper format, and does some minor processing for insertion into the request body.
 
 In the Python terminal, enter the following:
 ```
