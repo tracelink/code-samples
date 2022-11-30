@@ -47,8 +47,16 @@ The APT-SCWM API uses JSON for passing data. The minimum required data to submit
     }
 }
 ```
-
 We can store payloads in text files and read them into our Python session as we need them. You may use any text editor capable of specifying the JSON file type to create a file containing your payload data.  
+You could use Python to load data from this file with code similar to the following:  
+```
+my_file = 'addIncident.json'  # include full path if needed
+with open(my_file, 'r') as file_in:
+    data = file_in.read()
+json_object = json.loads(data)
+```
+This would read the contents of a file and assign it to a variable formatted as a JSON string.  
+*The file must contain **only** a properly formatted JSON object.*  
 
 We can also dynamically create and modify payloads as needed during a session.  
 
@@ -84,10 +92,7 @@ Before we submit our request, we must format our data as a JSON object.
 
 In your Python terminal, enter the following:  
 ```
-my_file = 'addIncident.json'  # include full path if needed
-with open(my_file, 'r') as file_in:
-  data = file_in.read()
-json_object = json.loads(data)
+
 
 If you want to keep the 'payload' identifier in your string, omit this step
 my_payload = j_object.get("payload")
