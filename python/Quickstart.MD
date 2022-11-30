@@ -84,22 +84,21 @@ Before we submit our request, we must format our data as a JSON object.
 
 In your Python terminal, enter the following:  
 ```
-# >>> import utils
->>> my_file = 'addIncident.json'  # include full path if needed
->>> with open(my_file, 'r') as file_in:
->>>   data = file_in.read()
->>> json_object = json.loads(data)
+my_file = 'addIncident.json'  # include full path if needed
+with open(my_file, 'r') as file_in:
+  data = file_in.read()
+json_object = json.loads(data)
 
 If you want to keep the 'payload' identifier in your string, omit this step
->>> my_payload = j_object.get("payload")
->>> payload_data = utils.read_payload_file(my_file)
+my_payload = j_object.get("payload")
+payload_data = utils.read_payload_file(my_file)
 ```  
 If you already use a JSON payload as part of your other processes, you can use the `accept_json_payload(payload_in)` function instead. This function accepts a JSON object, checks for proper format, and does some minor processing for insertion into the request body.
 
 In the Python terminal, enter the following:
 ```
->>> my_json_data = result_from_some_other_process()
->>> payload_data = utils.accept_json_payload(my_json_data)
+my_json_data = result_from_some_other_process()
+payload_data = utils.accept_json_payload(my_json_data)
 ```
 
 ### Header
@@ -108,7 +107,7 @@ Now that you have usable payload data, you need to inform APT how to process the
 
 In your Python terminal, enter the following, replacing values with your own:
 ```
->>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
+event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
                   "ownerId": "REPLACE_WITH_YOURS",
                   "processNetworkId": "REPLACE_WITH_YOURS"}
 ```
@@ -118,7 +117,7 @@ Please note there is no error handling logic in these samples, you need to creat
 
 Now, create the full request body. In your Python terminal, enter the following:
 ```
->>> request_body = utils.create_payload(event_data, payload_data)
+request_body = utils.create_payload(event_data, payload_data)
 ```
 
 ## Request Header
@@ -127,9 +126,9 @@ The `utils.py` file provides a function to create a request header that can be r
 
 In your Python terminal, enter the following:  
 ```
->>> my_token = however_you_get_your_token()
->>> my_header = utils.create_headers(my_token)
->>> my_header
+my_token = however_you_get_your_token()
+my_header = utils.create_headers(my_token)
+my_header
 {'Authorization': 'Bearer tokenhere', 'Content-Type': 'application/json'}
 ```
 
@@ -139,7 +138,7 @@ If you wish to check your request prior to sending it, the `utils.py` file has a
 
 In your Python terminal, enter the following:  
 ```
->>> utils.mock_request(request_header, request_body)
+utils.mock_request(request_header, request_body)
 HTML request header:
 {'Authorization': 'Bearer my_token', 'Content-Type': 'application/json'}
 Body of event request:
@@ -178,17 +177,17 @@ The `utils.py` file contains a function to send your request and capture the res
 
 An example Python terminal session:
 ```
->>> import utils
->>> my_file = 'addIncident.json'
->>> my_token = token_received_from_other_processes
+import utils
+my_file = 'addIncident.json'
+my_token = token_received_from_other_processes
 
->>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
+event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
                   "ownerId": "YOUR_OWNER_ID",
                   "processNetworkId": "YOUR_PROCESS_NETWORK_ID"}
->>> request_headers = utils.create_headers(my_token)
->>> payload_data = utils.read_payload_file(my_file)
->>> request_body = utils.create_payload(event_data, payload_data)
->>> result = utils.post_request(request_headers, request_body)
+request_headers = utils.create_headers(my_token)
+payload_data = utils.read_payload_file(my_file)
+request_body = utils.create_payload(event_data, payload_data)
+result = utils.post_request(request_headers, request_body)
 ```
 An example successful response:
 ```
@@ -211,14 +210,14 @@ An example successful response:
 
 The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a string, not a JSON object. To get this identifier, enter the following in your Python terminal:
 ```
->>> import json
->>> response_json = json.loads(result.text)
->>> incident_id = response_json.get('payload').get('id')
+import json
+response_json = json.loads(result.text)
+incident_id = response_json.get('payload').get('id')
 ```
 
 To ensure your value stored properly, enter the following in your Python terminal:
 ```
->>> incident_id
+incident_id
 'ITEM_ID'
 ```
 
@@ -242,27 +241,27 @@ Prepare a comment payload file called `comment_payload.json` containing the belo
 
 Do not worry that your `processId` does not match the example. You can load the payload comment file and update the `processId` number dynamically. Enter the following in your Python terminal:
 ```
->>> comment_payload_file = 'comment_payload.json'
->>> comment_payload = utils.read_payload_file(comment_payload_file)
->>> comment_payload
+comment_payload_file = 'comment_payload.json'
+comment_payload = utils.read_payload_file(comment_payload_file)
+comment_payload
 {'processId': 'ITEM_ID', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 Your payload has been loaded properly, but the `processId` is still wrong. Use the `update()` function to change the stored value:
 ```
->>> comment_payload.update({"processId": "ITEM_ID"})
->>> comment_payload
+comment_payload.update({"processId": "ITEM_ID"})
+comment_payload
 {'processId': 'ITEM_ID', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
 ```
 You can use the same process to change the `eventName`:
 ```
->>> event_data.update({"eventName": "agile-process-teams:add-comment-for-incident:v1"})
->>> event_data
+event_data.update({"eventName": "agile-process-teams:add-comment-for-incident:v1"})
+event_data
 {'eventName': 'agile-process-teams:add-comment-for-incident:v1', 'ownerId': '2aaeed40-3912-427e-a94f-51fd5a730345', 'processNetworkId': '61077cb2-601b-4c27-b11f-5e3910589931'}
 ```
 The payload and event data should now be updated. You can verify this by resending the commands to build the request body and resend the request.  
 ```
->>> request_body = utils.create_payload(event_data, payload_data)
->>> comment_result = utils.post_reqeust(request_headers, requst_body)
+request_body = utils.create_payload(event_data, payload_data)
+comment_result = utils.post_reqeust(request_headers, requst_body)
 ```
 The response:  
 ```
