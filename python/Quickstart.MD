@@ -7,7 +7,7 @@ This quickstart covers:
 
 *This example uses Python version 3.10 or later entering commands in a Python terminal.*  
 
-To follow along with the example, open your preferred Python terminal and use a single session through the entire process.  
+**To follow along with the example, open your preferred Python terminal and use a single session through the entire process.**  
 
 ## Create Your Request  
 
@@ -125,7 +125,7 @@ APT-SCWM uses and event driven API that communicates using the POST verb of the 
 **Type or copy the following into your Python terminal**  
 ```
 url = "URL_FROM_YOUR_ADMINISTRATOR"
-response = requests.request("POST", url, headers=request_header, data=request_body)
+result = requests.request("POST", url, headers=request_header, data=request_body)
 ```
 An example successful response:
 ```
@@ -146,60 +146,54 @@ An example successful response:
 
 ## Response Handling
 
-The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a string, not a JSON object. To get this identifier, enter the following in your Python terminal:
+The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a string, not a JSON object. To work with this data, convert it to a Python dictionary.  
+**Type or copy the following into your Python terminal**  
 ```
-import json
 response_json = json.loads(result.text)
 incident_id = response_json.get('payload').get('id')
 ```
 
-To ensure your value stored properly, enter the following in your Python terminal:
-```
-incident_id
-'ITEM_ID'
-```
+You may now reference your created incident id by using its variable name.
 
 ## Add Incident Comment
 
-Prepare a comment payload file called `comment_payload.json` containing the below:
+The APT-SCWM shared API contains processes for adding, editing, or listing comments for incidents along with other utility functions.  The header of this request body is slightly different (in this case only the `eventName` changes) and uses the same authorization configuration as the previous request.  
+If you are building or modifying your requests programmatically, you could use the `ITEM_ID` you created in the previous step.  The JSON library allows us to use `json.loads(string)` to create a dictionary from an existing JSON object and then use the `json.dumps(dictionary)` to convert our modified dictionary back to a JSON object.  
+
+**Type or copy the following into your Python terminal**  
 ```
-{
-	"payload": {
-		"processId": "ITEM_ID",
-		"processType": "directSupplierIncident",
-		"aptCommentBox":{
-			"aptComment":{
-				"commentText": "Please provide a list of missing items and we will replace them.",
-				"visibilityType": "Public"
-				}
-			}
-		}
+comment_request = {
+  "header": {
+    "appName": "agile-process-teams",
+    "dataspace": "default",
+    "eventName": "agile-process-teams:add-comment-for-incident:v1",
+    "headerVersion": 1,
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
+    },
+  "payload": {
+    "processId": "my_incident_id",
+    "processType": "directSupplierIncident",
+    "aptCommentBox":{
+      "aptComment":{
+        "commentText": "Please provide a list of missing items and we will replace them.",
+        "visibilityType": "Public"
+      }
+    }
+  }
 }
 ```
-
-Do not worry that your `processId` does not match the example. You can load the payload comment file and update the `processId` number dynamically. Enter the following in your Python terminal:
+Remember that we created a dictionary object with the above data.  If we wish to update the `ITEM_ID` with the result from the previous step, we can use the `.update()` method.  
+Let's make this a little more efficient.
+**Type or copy the following into your Python terminal**  
 ```
-comment_payload_file = 'comment_payload.json'
-comment_payload = utils.read_payload_file(comment_payload_file)
-comment_payload
-{'processId': 'ITEM_ID', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
+comment_request.get('payload').update({'processId': incident_id})
 ```
-Your payload has been loaded properly, but the `processId` is still wrong. Use the `update()` function to change the stored value:
+After making our desired modifications, we can convert our dictionary to a JSON string and send our request.
+**Type or copy the following into your Python terminal**  
 ```
-comment_payload.update({"processId": "ITEM_ID"})
-comment_payload
-{'processId': 'ITEM_ID', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
-```
-You can use the same process to change the `eventName`:
-```
-event_data.update({"eventName": "agile-process-teams:add-comment-for-incident:v1"})
-event_data
-{'eventName': 'agile-process-teams:add-comment-for-incident:v1', 'ownerId': '2aaeed40-3912-427e-a94f-51fd5a730345', 'processNetworkId': '61077cb2-601b-4c27-b11f-5e3910589931'}
-```
-The payload and event data should now be updated. You can verify this by resending the commands to build the request body and resend the request.  
-```
-request_body = utils.create_payload(event_data, payload_data)
-comment_result = utils.post_reqeust(request_headers, requst_body)
+comment_request_json = json.dumps(comment_request)  
+comment_result = requests.request("POST", url, headers=request_header, data=comment_request)
 ```
 The response:  
 ```
@@ -210,7 +204,7 @@ The response:
         "ownerId": "YOUR_OWNER_ID",
         "isErr": false,
         "errCode": "200_OK",
-        "licensePlate": "vXPsFz"
+        "licensePlate": "LICENSE_PLATE_ID"
     },
     "payload": {
         "id": "COMMENT_ID"
@@ -231,7 +225,7 @@ Use the same methods outlined above to generate a request similar to the followi
        "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
    },
    "payload": {
-       "id": "ITEM_ID"
+       "id": "COMMENT_ID"
    }
 }
 ```
@@ -244,14 +238,14 @@ The response provides the complete record for the incident:
 	"ownerId": "YOUR_OWNER_ID",
 	"isErr": false,
 	"errCode": "200_OK",
-	"licensePlate": "Y7yRFr-tRpXpc"
+	"licensePlate": "LICENSE_PLATE_ID"
 },
 "payload": {
 	"createdByUserId": "YOUR_OWNER_ID",
 	"schemaVersion": 3,
 	"data": {
-		"aptBusinessObjectSummary": "Kinaxis - Late: PO, Exception ID: 37495023853_jlocky",
-		"aptBusinessObjectDescription": "Order:PO_B2710_S006_2101130836, Line:4, Type:PO",
+		"aptBusinessObjectSummary": "Kinaxis - Late: PO, Exception ID: MY_EXCEPTION_ID",
+		"aptBusinessObjectDescription": "Order: MY_ORDER_ID",
 		"responsibleDepartmentAtPartner": "CONTRACT_MANAGEMENT",
 		"responsibleDepartmentAtCompany": "SUPPLY_CHAIN",
 		"businessPriority": "HIGH",
@@ -265,28 +259,28 @@ The response provides the complete record for the incident:
 		"referenceIdentifiers": [
 			{
 				"referenceTransactionType": "PO_NUMBER",
-				"value": " Order:PO_B2710_S006_2101130836, Line:4, Type:PO"
+				"value": " Order: MY_ORDER_ID"
 			}
 		],
 		"response": {},
-		"responsiblePartyAtPartnerUserId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
-		"responsiblePartyAtCompanyUserId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
+		"responsiblePartyAtPartnerUserId": "MY_PARTNER_ID",
+		"responsiblePartyAtCompanyUserId": "MY_USER_ID",
 		"currentlyAssignedCompanyUsersId": [
-			"b2491d20-0f8b-41f5-b7aa-a4e4a04afbce"
+			"MY_USER_ID"
 		],
-		"primaryPartnerLocationId": "2e485684-fdd7-4ad1-8735-af4deed325f0",
+		"primaryPartnerLocationId": "MY_LOCATION_ID",
 		"fkProcessNetworkId": "YOUR_PROCESS_NETWORK_ID",
-		"aptBusinessObjectId": "USPT-1151",
-		"aptBusinessObjectIntegerIdentifier": 1151,
+		"aptBusinessObjectId": "USPT-10101",
+		"aptBusinessObjectIntegerIdentifier": 10101,
 		"createdByPartner": false,
 		"aptBusinessObjectAssignedToCompanyPartnerMasterData": {
-			"partnerId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
+			"partnerId": "MY_PARTNER_ID",
 			"toIdType": "partnerMasterData"
 		},
 		"followerId": [
-			"b2491d20-0f8b-41f5-b7aa-a4e4a04afbce"
+			"MY_USER_ID"
 		],
-		"aptBusinessObjectNumericIdentifierDerivedField": "1151",
+		"aptBusinessObjectNumericIdentifierDerivedField": "10101",
 		"businessPriorityDerivedField": "c",
 		"incidentConclusion": {
 			"resolutionType": "NOT_AN_ISSUE",
@@ -312,11 +306,7 @@ The response provides the complete record for the incident:
 }
 }
 ```
-# Parked Text  
-Use the following command to import the JSON and Requests libraries  
-**type or copy the following into a Python terminal:**
-```import json, requests```  
-
+Remember, you can use the `json.loads(string)` method to convert this result to a useful dictionary object for further processing.  
 
 ## Next steps
 You will need a mechanism to create or update your payload data whether it is stored in a file or submitted at runtime and discarded.  
