@@ -7,154 +7,91 @@ This quickstart covers:
 
 *This example uses Python version 3.10 or later entering commands in a Python terminal.*  
 
-## Request Body
+To follow along with the example, open your preferred Python terminal and use a single session through the entire process.  
 
-Use the following command to import the JSON and Requests libraries  
-```import json, requests```  
+## Create Your Request  
 
-For this example, we are working backwards from the request body. In its simplest form, the request body contains a header and a payload.  A request body resembles the following:
+
+### Request Body  
+
+For this example, we create the request body first.  In its simplest form, the request body contains a header and a payload and conforms to this format:
+```
+{
+  "header":{},
+  "payload":{}
+}
+```
+**Type or copy the following into your Python terminal**  
+```
+request_body = {
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+    },
+  "payload": {
+    "aptBusinessObjectSummary": "Incomplete shipment received.",
+    "aptBusinessObjectDescription": "Several packages missing or damaged.",
+    "deviationType": "UNPLANNED",
+    "materialType": "FINISHED_GOOD",
+    "materialSubtype": "SHIPPED",
+    "materialProblem": "SHORT_SHIPMENT_RECEIVED",
+    "isEscalated": False,
+    "createdByPartner": False,
+    "isSubmittedToPartner": False,
+    "directSupplierImpact": {
+      "businessImpact": "Business Impact",
+      "businessPriority": "HIGH"
+    }
+  }
+}
+```
+This creates a dictionary object containing the `header` and `payload` elements we discussed earlier.  You can work through the items in this dictionary using standard Python methods.  This allows you to make any desired modifications prior to packaging and submitting your request.  
+
+As an example, let's change the priority of this incident from `HIGH` to `MEDIUM`.  To change this value, we must reference the `businessPriority` item.  To reach this value, reference the `directSupplierImpact` element of the `payload`.  
+**Type or copy the following into your Python terminal**
+```
+request_body.get('payload').get('directSupplierImpact').update({'businessPriority': 'MEDIUM'})
+```
+We use the `.get()` method for each element in our tree that we wish to access.  The `.update()` method allows us to change a value by referencing its key.
+Use care to include the braces `{}` when updating an item.
+
+### Request Header
+APT-SCWM uses tokens for authentication.  For single interactive requests, you can use a bearer token (a token that usually expires within an hour) or a longer-lived token for automated processes.  The token is a string that contains 'user:password' in Base64 encoding.
+
+**Type or copy the following into your Python terminal**  
+```
+method = 'Basic'
+token = 'YOUR_TOKEN_HERE'
+request_headers = {"Authorization": "{0} {1}".format(method, token), "Content-Type": "application/json"}
+```
+The resulting headers variable will look similar to  
+`{'Authorization': 'Basic YOUR_TOKEN_HERE', 'Content-Type': 'application/json'}`  
+
+You are free to use any method you wish to create the request header.  APT-SCWM requires at a minimum an `Authorization` item containing a method and a token along with a `Content-Type` of `application/json`.
+
+## Package Your Request  
+At this point you have a request body and a request header.  You have made all required modifications using the Python dictionary methods.  APT-SCWM requires requests formatted as JSON (JavaScript Object Notation).  
+
+Until now, we have been using a Python terminal without any additional packages.  It's time to add the JSON library so we can translate our dictionary into a format accepted by APT-SCWM.  The JSON library is included in the Python installation by default, so no extra installations are required.  
+
+You may wish to verify your request prior to submission.  The `json.dumps()`` method of the json library can help.  Use this method against your existing `request_body` dictionary to see what the `json.dumps()` method will generate.  
+
+**Type or copy the following into your Python terminal**  
+`print(json.dumps(request_body, indent=4, sort_keys=False))`
+The response is similar to:  
 ```
 {
     "header": {
         "headerVersion": 1,
-        "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
+        "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
         "ownerId": "YOUR_OWNER_ID",
         "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
         "appName": "agile-process-teams",
         "dataspace": "default"
-    },
-    "payload": {
-        "aptBusinessObjectSummary": "Raw materials shortage at Location XYZ",
-        "directSupplierImpact": {
-            "businessPriority": "MEDIUM"
-        }
-    }
-}
-```
-
-Many requests share common values in the header. The `headerVersion`, `appName`, and `dataspace` do not change often. For a single company, the `ownerId` and `processNetworkId` values are likely to remain the same. This means you may only need to determine the `eventName` for the request you submit. The payload will change with each new request depending on the selected `eventName`. As the integrator, you can store these values after creation or generate and use them dynamically at runtime.  
-
-### Create a Payload
-
-The APT-SCWM API uses JSON for passing data. The minimum required data to submit a direct supplier incident is a summary of the incident and an impact priority level.  Below is a basic example of the minimum required payload:
-```
-{
-"payload": {
-    "aptBusinessObjectSummary": "Automation test from samples folder.",
-     "directSupplierImpact": {
-        "businessPriority": "LOW"
-        }
-    }
-}
-```
-We can store payloads in text files and read them into our Python session as we need them. You may use any text editor capable of specifying the JSON file type to create a file containing your payload data.  
-You could use Python to load data from this file with code similar to the following:  
-```
-my_file = 'addIncident.json'  # include full path if needed
-with open(my_file, 'r') as file_in:
-    data = file_in.read()
-json_object = json.loads(data)
-```
-This would read the contents of a file and assign it to a variable formatted as a JSON string.  
-*The file must contain **only** a properly formatted JSON object.*  
-
-We can also dynamically create and modify payloads as needed during a session.  
-
-For this example, type or copy the following into a Python terminal:  
-```
-my_payload = {
-	"payload": {
-		"aptBusinessObjectSummary": "Incomplete shipment received.",
-		"aptBusinessObjectDescription": "Several packages missing or damaged.",
-		"deviationType": "UNPLANNED",
-		"materialType": "FINISHED_GOOD",
-		"materialSubtype": "SHIPPED",
-		"materialProblem": "SHORT_SHIPMENT_RECEIVED",
-		"isEscalated": False,
-		"createdByPartner": False,
-		"isSubmittedToPartner": False,
-		"directSupplierImpact": {
-			"businessImpact": "Business Impact",
-			"businessPriority": "HIGH"
-			}
-		}
-}
-```
-This creates a dictionary object.  You can verify this in your terminal by entering the command `type(my_payload)`.  The response should be `<class 'dict'>`.
-
-You can use the `.get('item')` method to refer to the individual elements inside the payload.  For example, if you enter `my_payload.get('payload')`, you will get the above with the "payload" section omitted.  It's not really omitted, you are seeing inside the payload element.  
-You can continue navigating the payload object by referencing further items.  Try entering the following: `my_payload.get('payload').get('isEscalated')`.  Your response should look something like this:  
-`False`  
-
-Take care when using boolean values.  Python represents them as `True` or `False`.  By contrast, JSON uses `true` and `false`.  This seemingly insignificant difference can cause difficulties when working in a terminal session.  
-
-Before we submit our request, we must format our data as a JSON object.
-
-In your Python terminal, enter the following:  
-```
-
-
-If you want to keep the 'payload' identifier in your string, omit this step
-my_payload = j_object.get("payload")
-payload_data = utils.read_payload_file(my_file)
-```  
-If you already use a JSON payload as part of your other processes, you can use the `accept_json_payload(payload_in)` function instead. This function accepts a JSON object, checks for proper format, and does some minor processing for insertion into the request body.
-
-In the Python terminal, enter the following:
-```
-my_json_data = result_from_some_other_process()
-payload_data = utils.accept_json_payload(my_json_data)
-```
-
-### Header
-
-Now that you have usable payload data, you need to inform APT how to process the payload.  
-
-In your Python terminal, enter the following, replacing values with your own:
-```
-event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-                  "ownerId": "REPLACE_WITH_YOURS",
-                  "processNetworkId": "REPLACE_WITH_YOURS"}
-```
-This dictionary is passed in as a parameter to the `utils.create_payload(event_in, payload_in)` function.  This function places the header and payload JSON items properly in the request body.  
-
-Please note there is no error handling logic in these samples, you need to create your own.
-
-Now, create the full request body. In your Python terminal, enter the following:
-```
-request_body = utils.create_payload(event_data, payload_data)
-```
-
-## Request Header
-
-The `utils.py` file provides a function to create a request header that can be reused until token expiration.  
-
-In your Python terminal, enter the following:  
-```
-my_token = however_you_get_your_token()
-my_header = utils.create_headers(my_token)
-my_header
-{'Authorization': 'Bearer tokenhere', 'Content-Type': 'application/json'}
-```
-
-## Preview Request
-
-If you wish to check your request prior to sending it, the `utils.py` file has a mock request function that will print your payload in formatted JSON, making it easier to check against the API documentation.
-
-In your Python terminal, enter the following:  
-```
-utils.mock_request(request_header, request_body)
-HTML request header:
-{'Authorization': 'Bearer my_token', 'Content-Type': 'application/json'}
-Body of event request:
-{
-    "header": {
-        "appName": "agile-process-teams",
-        "dataspace": "default",
-        "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-        "headerVersion": 1,
-        "ownerId": "YOUR_OWNER_ID",
-        "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
     },
     "payload": {
         "aptBusinessObjectSummary": "Incomplete shipment received.",
@@ -168,42 +105,38 @@ Body of event request:
         "isSubmittedToPartner": false,
         "directSupplierImpact": {
             "businessImpact": "Business Impact",
-            "businessPriority": "HIGH"
-            }
+            "businessPriority": "MEDIUM"
         }
+    }
 }
+```  
+Note that your `False` values have been converted to `false` according to the JSON specification.  Everything looks good, so we can convert our dictionary to a JSON string.  
+
+**Type or copy the following into your Python terminal**  
+```
+import json
+request_body_json = json.dumps(request_body)
 ```
 
 ## Send Request
-
-Once you have a request header, body header, and body payload you are ready to submit your request.
-
-The `utils.py` file contains a function to send your request and capture the response.
-
-An example Python terminal session:
+Once your request header and request body are complete you are ready to submit your request.  
+You will need the URL for the APT-SCWM environment.  Contact your administrator for this information.  
+APT-SCWM uses and event driven API that communicates using the POST verb of the request/response model.  Create a variable to hold the response so you can work with your results.
+**Type or copy the following into your Python terminal**  
 ```
-import utils
-my_file = 'addIncident.json'
-my_token = token_received_from_other_processes
-
-event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-                  "ownerId": "YOUR_OWNER_ID",
-                  "processNetworkId": "YOUR_PROCESS_NETWORK_ID"}
-request_headers = utils.create_headers(my_token)
-payload_data = utils.read_payload_file(my_file)
-request_body = utils.create_payload(event_data, payload_data)
-result = utils.post_request(request_headers, request_body)
+url = "URL_FROM_YOUR_ADMINISTRATOR"
+response = requests.request("POST", url, headers=request_header, data=request_body)
 ```
 An example successful response:
 ```
 {
     "header": {
         "headerVersion": 1,
-        "eventName": "agile-process-teams:add-direct-supplier-incident-response:v2",
+        "eventName": "agile-process-teams:add-direct-supplier-incident-response:v3",
         "ownerId": "YOUR_OWNER_ID",
         "isErr": false,
         "errCode": "200_OK",
-        "licensePlate": "qL0BJs"
+        "licensePlate": "LICENSE_PLATE_ID"
     },
     "payload": {
         "id": "ITEM_ID"
@@ -379,6 +312,11 @@ The response provides the complete record for the incident:
 }
 }
 ```
+# Parked Text  
+Use the following command to import the JSON and Requests libraries  
+**type or copy the following into a Python terminal:**
+```import json, requests```  
+
 
 ## Next steps
 You will need a mechanism to create or update your payload data whether it is stored in a file or submitted at runtime and discarded.  
