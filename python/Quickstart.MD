@@ -49,7 +49,7 @@ request_body = {
   }
 }
 ```
-This creates a dictionary object containing the `header` and `payload` elements we discussed earlier.  You can work through the items in this dictionary using standard Python methods.  This allows you to make any desired modifications prior to packaging and submitting your request.  
+This creates a dictionary object containing the `header` and `payload` elements we discussed earlier.  You can work with the items in this dictionary using standard Python methods.  This allows you to make any desired modifications prior to packaging and submitting your request.  
 
 As an example, let's change the priority of this incident from `HIGH` to `MEDIUM`.  To change this value, we must reference the `businessPriority` item.  To reach this value, reference the `directSupplierImpact` element of the `payload`.  
 **Type or copy the following into your Python terminal**
