@@ -133,7 +133,7 @@ request_body_json = json.dumps(request_body)
 ## Send Request
 Once your request header and request body are complete you are ready to submit your request.  
 You will need the URL for the APT-SCWM environment.  Contact your administrator for this information.  
-APT-SCWM uses and event driven API that communicates using the POST verb of the request/response model.  Create a variable to hold the response so you can work with your results.
+APT-SCWM uses and event driven API that communicates using the POST verb of the request/response model.  Create a variable to hold the response so you can work with your results.  
 **Type or copy the following into your Python terminal**  
 ```
 import requests
