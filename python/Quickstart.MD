@@ -57,7 +57,13 @@ As an example, let's change the priority of this incident from `HIGH` to `MEDIUM
 request_body.get('payload').get('directSupplierImpact').update({'businessPriority': 'MEDIUM'})
 ```
 We use the `.get()` method for each element in our tree that we wish to access.  The `.update()` method allows us to change a value by referencing its key.
-Use care to include the braces `{}` when updating an item.
+Use care to include the braces `{}` when updating an item.  
+
+Take a moment to add your `ownerId` and `processNetworkId` values using the method outlined above.  Some sample code is below as a hint:  
+```
+request_body.get('header').update({'ownerId': owner_id})
+request_body.get('header').update({'processNetworkId': network_id})
+```
 
 ### Request Header
 APT-SCWM uses tokens for authentication.  For single interactive requests, you can use a bearer token (a token that usually expires within an hour) or a longer-lived token for automated processes.  The token is a string that contains 'user:password' in Base64 encoding.
@@ -190,6 +196,9 @@ Remember that we created a dictionary object with the above data.  If we wish to
 Let's make this a little more efficient.
 **Type or copy the following into your Python terminal**  
 ```
+comment_request.get('header').update({'ownerId': owner_id})
+comment_request.get('header').update({'processNetworkId': network_id})
+
 comment_request.get('payload').update({'processId': incident_id})
 ```
 After making our desired modifications, we can convert our dictionary to a JSON string and send our request.
@@ -231,7 +240,15 @@ read_request = {
        "id": "COMMENT_ID"
    }
 }
+```
+You can then prepare and send your request.  
+```
+read_request.get('header').update({'ownerId': owner_id})
+read_request.get('header').update({'processNetworkId': network_id})
+read_request.get('payload').update({'id': incident_id})
+
 ...
+
 read_request_json = json.dumps(read_request)  
 read_result = requests.request("POST", url, headers=request_header, data=read_request_json)
 ```
