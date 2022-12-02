@@ -52,6 +52,7 @@ request_body = {
 This creates a dictionary object containing the `header` and `payload` elements we discussed earlier.  You can work with the items in this dictionary using standard Python methods.  This allows you to make any desired modifications prior to packaging and submitting your request.  
 
 As an example, let's change the priority of this incident from `HIGH` to `MEDIUM`.  To change this value, we must reference the `businessPriority` item.  To reach this value, reference the `directSupplierImpact` element of the `payload`.  
+
 **Type or copy the following into your Python terminal**
 ```
 request_body.get('payload').get('directSupplierImpact').update({'businessPriority': 'MEDIUM'})
@@ -134,6 +135,7 @@ request_body_json = json.dumps(request_body)
 Once your request header and request body are complete you are ready to submit your request.  
 You will need the URL for the APT-SCWM environment.  Contact your administrator for this information.  
 APT-SCWM uses and event driven API that communicates using the POST verb of the request/response model.  Create a variable to hold the response so you can work with your results.  
+
 **Type or copy the following into your Python terminal**  
 ```
 import requests
@@ -159,7 +161,8 @@ An example successful response:
 
 ## Response Handling
 
-The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a string, not a JSON object. To work with this data, convert it to a Python dictionary.  
+The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a JSON object that has been converted to a string for transmission. To work with this data, convert it to a Python dictionary.  
+
 **Type or copy the following into your Python terminal**  
 ```
 response_json = json.loads(result.text)
@@ -197,7 +200,8 @@ comment_request = {
 }
 ```
 Remember that we created a dictionary object with the above data.  If we wish to update the `ITEM_ID` with the result from the previous step, we can use the `.update()` method.  
-Let's make this a little more efficient.
+Let's make this a little more efficient.  
+
 **Type or copy the following into your Python terminal**  
 ```
 comment_request.get('header').update({'ownerId': owner_id})
@@ -205,7 +209,8 @@ comment_request.get('header').update({'processNetworkId': network_id})
 
 comment_request.get('payload').update({'processId': incident_id})
 ```
-After making our desired modifications, we can convert our dictionary to a JSON string and send our request.
+After making our desired modifications, we can convert our dictionary to a JSON string and send our request.  
+
 **Type or copy the following into your Python terminal**  
 ```
 comment_request_json = json.dumps(comment_request)  
