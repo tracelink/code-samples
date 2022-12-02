@@ -79,7 +79,7 @@ method = 'Basic'
 token = 'YOUR_TOKEN_HERE'
 request_headers = {"Authorization": "{0} {1}".format(method, token), "Content-Type": "application/json"}
 ```
-The resulting headers variable will look similar to  
+The resulting `headers` variable will look similar to  
 `{'Authorization': 'Basic YOUR_TOKEN_HERE', 'Content-Type': 'application/json'}`  
 
 You are free to use any method you wish to create the request header.  APT-SCWM requires at a minimum an `Authorization` item containing a method and a token along with a `Content-Type` of `application/json`.
