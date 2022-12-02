@@ -200,7 +200,7 @@ comment_request = {
 }
 ```
 Remember that we created a dictionary object with the above data.  If we wish to update the `ITEM_ID` with the result from the previous step, we can use the `.update()` method.  
-Let's make this a little more efficient.  
+Let's make our modifications and add a comment.  
 
 **Type or copy the following into your Python terminal**  
 ```
