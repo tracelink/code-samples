@@ -81,7 +81,10 @@ Until now, we have been using a Python terminal without any additional packages.
 You may wish to verify your request prior to submission.  The `json.dumps()`` method of the json library can help.  Use this method against your existing `request_body` dictionary to see what the `json.dumps()` method will generate.  
 
 **Type or copy the following into your Python terminal**  
-`print(json.dumps(request_body, indent=4, sort_keys=False))`
+```
+import json
+print(json.dumps(request_body, indent=4, sort_keys=False))
+```
 The response is similar to:  
 ```
 {
@@ -114,7 +117,6 @@ Note that your `False` values have been converted to `false` according to the JS
 
 **Type or copy the following into your Python terminal**  
 ```
-import json
 request_body_json = json.dumps(request_body)
 ```
 
@@ -124,8 +126,9 @@ You will need the URL for the APT-SCWM environment.  Contact your administrator 
 APT-SCWM uses and event driven API that communicates using the POST verb of the request/response model.  Create a variable to hold the response so you can work with your results.
 **Type or copy the following into your Python terminal**  
 ```
+import requests
 url = "URL_FROM_YOUR_ADMINISTRATOR"
-result = requests.request("POST", url, headers=request_header, data=request_body)
+result = requests.request("POST", url, headers=request_header, data=request_body_json)
 ```
 An example successful response:
 ```
@@ -193,7 +196,7 @@ After making our desired modifications, we can convert our dictionary to a JSON 
 **Type or copy the following into your Python terminal**  
 ```
 comment_request_json = json.dumps(comment_request)  
-comment_result = requests.request("POST", url, headers=request_header, data=comment_request)
+comment_result = requests.request("POST", url, headers=request_header, data=comment_request_json)
 ```
 The response:  
 ```
@@ -215,7 +218,7 @@ The response:
 In a previous step, you stored your incident id as a variable in your session.  You can use this stored variable to retrieve details about the incident.  
 Use the same methods outlined above to generate a request similar to the following:
 ```
-{
+read_request = {
    "header": {
        "headerVersion": 1,
        "eventName": "agile-process-teams:read-directSupplierIncident:v3",
@@ -228,6 +231,9 @@ Use the same methods outlined above to generate a request similar to the followi
        "id": "COMMENT_ID"
    }
 }
+...
+read_request_json = json.dumps(read_request)  
+read_result = requests.request("POST", url, headers=request_header, data=read_request_json)
 ```
 The response provides the complete record for the incident:
 ```
