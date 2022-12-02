@@ -342,7 +342,7 @@ Remember, you can use the `json.loads(string)` method to convert this result to 
 
 ## Next steps
 You will need a mechanism to create or update your payload data whether it is stored in a file or submitted at runtime and discarded.  
-You will also need a method to maintain or refer to the `processId` number of each incident.  
+You will also need a method to maintain or refer to the `id` number of each incident.  
 
 ## Troubleshooting
 Review the [troubleshooting primer](Troubleshooting.MD).
