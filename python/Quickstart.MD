@@ -61,6 +61,10 @@ Use care to include the braces `{}` when updating an item.
 
 Take a moment to add your `ownerId` and `processNetworkId` values using the method outlined above.  Some sample code is below as a hint:  
 ```
+# establish a couple of variables for convenience later
+ownerId = "YOUR_OWNER_ID"
+network_id = "YOUR_PROCESS_NETWORK_ID"
+
 request_body.get('header').update({'ownerId': owner_id})
 request_body.get('header').update({'processNetworkId': network_id})
 ```
