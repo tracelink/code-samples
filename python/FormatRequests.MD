@@ -54,5 +54,5 @@ An example of a complete payload body for adding a direct supplier incident:
 ```
 
 # Next
-Review [event name mapping](EventNames.MD) for each event type.  
+Review [event name mapping](eventNames.json) for each event type.  
 Follow [the quickstart](Quickstart.MD) for an example using the APT-SCWM API.
