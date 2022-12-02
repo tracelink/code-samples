@@ -89,7 +89,7 @@ At this point you have a request body and a request header.  You have made all r
 
 Until now, we have been using a Python terminal without any additional packages.  It's time to add the JSON library so we can translate our dictionary into a format accepted by APT-SCWM.  The JSON library is included in the Python installation by default, so no extra installations are required.  
 
-You may wish to verify your request prior to submission.  The `json.dumps()`` method of the json library can help.  Use this method against your existing `request_body` dictionary to see what the `json.dumps()` method will generate.  
+You may wish to verify your request prior to submission.  The `json.dumps()` method of the json library can help.  Use this method against your existing `request_body` dictionary to see what the `json.dumps()` method will generate.  
 
 **Type or copy the following into your Python terminal**  
 ```
