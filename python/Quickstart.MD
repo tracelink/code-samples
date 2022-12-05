@@ -130,6 +130,7 @@ Note that your `False` values have been converted to `false` according to the JS
 ```
 request_body_json = json.dumps(request_body)
 ```
+Note that we have omitted the `indent=4, sort_keys=False` options from the `json.dumps()` command that we included in the print statement.  We used these for clarity when print, but are not necessary when creating our JSON string.
 
 ## Send Request
 Once your request header and request body are complete you are ready to submit your request.  
