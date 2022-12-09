@@ -1,4 +1,4 @@
-TEMPLATE_ID{
+{
   "header": {
     "headerVersion": 1,
     "eventName": "agile-process-teams:add-sub-task-to-template:v2",
