@@ -1,4 +1,4 @@
-PRODUCT_ID{
+{
   "header": {
     "headerVersion": 1,
     "eventName": "agile-process-teams:edit-external-manufacturing-incident:v3",

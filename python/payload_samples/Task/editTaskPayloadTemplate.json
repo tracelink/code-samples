@@ -1,4 +1,4 @@
-TASK_ID{
+{
   "header": {
     "headerVersion": 1,
     "eventName": "agile-process-teams:edit-task:v3",

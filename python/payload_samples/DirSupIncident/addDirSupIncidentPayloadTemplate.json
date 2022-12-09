@@ -1,4 +1,4 @@
-PARTNER_USER_ID{
+{
   "header": {
     "headerVersion": 1,
     "eventName": "agile-process-teams:add-direct-supplier-incident:v3",

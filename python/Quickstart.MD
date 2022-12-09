@@ -14,14 +14,14 @@ This quickstart covers:
 
 ### Request Body  
 
-For this example, we create the request body first.  In its simplest form, the request body contains a header and a payload and conforms to this format:
+For this example, create the request body first.  In its simplest form, the request body contains a header and a payload and conforms to this format:
 ```
 {
   "header":{},
   "payload":{}
 }
 ```
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 request_body = {
   "header": {
@@ -49,15 +49,15 @@ request_body = {
   }
 }
 ```
-This creates a dictionary object containing the `header` and `payload` elements we discussed earlier.  You can work with the items in this dictionary using standard Python methods.  This allows you to make any desired modifications prior to packaging and submitting your request.  
+This creates a dictionary object containing the `header` and `payload` elements discussed earlier.  Make any necessary changes before submitting the request.  
 
-As an example, let's change the priority of this incident from `HIGH` to `MEDIUM`.  To change this value, we must reference the `businessPriority` item.  To reach this value, reference the `directSupplierImpact` element of the `payload`.  
+For example, change the priority of this incident from `HIGH` to `MEDIUM`.  To change this value, reference the `businessPriority` item.  To reach this value, reference the `directSupplierImpact` element of the `payload`.  
 
-**Type or copy the following into your Python terminal**
+**Type or copy the following into your Python terminal, replacing necessary values**
 ```
 request_body.get('payload').get('directSupplierImpact').update({'businessPriority': 'MEDIUM'})
 ```
-We use the `.get()` method for each element in our tree that we wish to access.  The `.update()` method allows us to change a value by referencing its key.
+Use the `.get()` method for each element in our tree that we wish to access.  The `.update()` method allows changing a value by referencing its key.
 Use care to include the braces `{}` when updating an item.  
 
 Take a moment to add your `ownerId` and `processNetworkId` values using the method outlined above.  Some sample code is below as a hint:  
@@ -71,27 +71,27 @@ request_body.get('header').update({'processNetworkId': network_id})
 ```
 
 ### Request Header
-APT-SCWM uses tokens for authentication.  For single interactive requests, you can use a bearer token (a token that usually expires within an hour) or a longer-lived token for automated processes.  The token is a string that contains 'user:password' in Base64 encoding.
+APT-SCWM uses tokens for authentication. For single interactive requests, use a short-lived bearer token, which lasts for an hour, or a longer-lived token for automated processes.  The token is a string that contains 'user:password' in Base64 encoding.
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 method = 'Basic'
 token = 'YOUR_TOKEN_HERE'
 request_headers = {"Authorization": "{0} {1}".format(method, token), "Content-Type": "application/json"}
 ```
-The resulting `headers` variable will look similar to  
+The resulting `headers` variable will look similar to:  
 `{'Authorization': 'Basic YOUR_TOKEN_HERE', 'Content-Type': 'application/json'}`  
 
 You are free to use any method you wish to create the request header.  APT-SCWM requires at a minimum an `Authorization` item containing a method and a token along with a `Content-Type` of `application/json`.
 
 ## Package Your Request  
-At this point you have a request body and a request header.  You have made all required modifications using the Python dictionary methods.  APT-SCWM requires requests formatted as JSON (JavaScript Object Notation).  
+At this point you should have a request body, request header, and made all required modifications using Python dictionary methods.  APT-SCWM requires requests formatted as JSON (JavaScript Object Notation).  
 
 Until now, we have been using a Python terminal without any additional packages.  It's time to add the JSON library so we can translate our dictionary into a format accepted by APT-SCWM.  The JSON library is included in the Python installation by default, so no extra installations are required.  
 
-You may wish to verify your request prior to submission.  The `json.dumps()` method of the json library can help.  Use this method against your existing `request_body` dictionary to see what the `json.dumps()` method will generate.  
+If you wish to verify your request prior to submission, use the json.dumps() method of the json library against your existing request_body dictionary.  
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 import json
 print(json.dumps(request_body, indent=4, sort_keys=False))
@@ -124,20 +124,20 @@ The response is similar to:
     }
 }
 ```  
-Note that your `False` values have been converted to `false` according to the JSON specification.  Everything looks good, so we can convert our dictionary to a JSON string.  
+Note that your `False` values have been converted to `false` according to the JSON specification.  Convert the dictionary to a JSON string for submission.  
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 request_body_json = json.dumps(request_body)
 ```
 Note that we have omitted the `indent=4, sort_keys=False` options from the `json.dumps()` command that we included in the print statement.  We used these for clarity when print, but are not necessary when creating our JSON string.
 
 ## Send Request
-Once your request header and request body are complete you are ready to submit your request.  
-You will need the URL for the APT-SCWM environment.  Contact your administrator for this information.  
-APT-SCWM uses and event driven API that communicates using the POST verb of the request/response model.  Create a variable to hold the response so you can work with your results.  
+Once the request header and request body are complete the request is ready to submit.  
+This requires a URL for the APT-SCWM environment. Contact your administrator for this information.  
+APT-SCWM uses an event driven API that communicates using the POST verb for all API calls.  
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 import requests
 url = "URL_FROM_YOUR_ADMINISTRATOR"
@@ -162,22 +162,20 @@ An example successful response:
 
 ## Response Handling
 
-The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a JSON object that has been converted to a string for transmission. To work with this data, convert it to a Python dictionary.  
+The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a JSON object that is converted to a string for transmission. To work with this data, convert it to a Python dictionary.  
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 response_json = json.loads(result.text)
 incident_id = response_json.get('payload').get('id')
 ```
 
-You may now reference your created incident id by using its variable name.
-
 ## Add Incident Comment
 
 The APT-SCWM shared API contains processes for adding, editing, or listing comments for incidents along with other utility functions.  The header of this request body is slightly different (in this case only the `eventName` changes) and uses the same authorization configuration as the previous request.  
-If you are building or modifying your requests programmatically, you could use the `ITEM_ID` you created in the previous step.  The JSON library allows us to use `json.loads(string)` to create a dictionary from an existing JSON object and then use the `json.dumps(dictionary)` to convert our modified dictionary back to a JSON object.  
+If you are building or modifying your requests programmatically, use the `ITEM_ID` created in the previous step.  The JSON library allows using `json.loads(string)` to create a dictionary from an existing JSON object and then use the `json.dumps(dictionary)` to convert the modified dictionary back to a JSON object.  
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 comment_request = {
   "header": {
@@ -200,19 +198,18 @@ comment_request = {
   }
 }
 ```
-Remember that we created a dictionary object with the above data.  If we wish to update the `ITEM_ID` with the result from the previous step, we can use the `.update()` method.  
-Let's make our modifications and add a comment.  
+Use the `.update()` method to update the `ITEM_ID`.  
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 comment_request.get('header').update({'ownerId': owner_id})
 comment_request.get('header').update({'processNetworkId': network_id})
 
 comment_request.get('payload').update({'processId': incident_id})
 ```
-After making our desired modifications, we can convert our dictionary to a JSON string and send our request.  
+After making the desired modifications, convert the dictionary to a JSON string and send the request.  
 
-**Type or copy the following into your Python terminal**  
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
 comment_request_json = json.dumps(comment_request)  
 comment_result = requests.request("POST", url, headers=request_header, data=comment_request_json)
@@ -234,7 +231,9 @@ The response:
 }
 ```
 ## Read the details of your newly created incident
-In a previous step, you stored your incident id as a variable in your session.  You can use this stored variable to retrieve details about the incident.  
+
+
+Use the previously stored incident id to retrieve details about the incident.
 Use the same methods outlined above to generate a request similar to the following:
 ```
 read_request = {
@@ -251,7 +250,7 @@ read_request = {
    }
 }
 ```
-You can then prepare and send your request.  
+Prepare and send your request.  
 ```
 read_request.get('header').update({'ownerId': owner_id})
 read_request.get('header').update({'processNetworkId': network_id})
@@ -339,7 +338,6 @@ The response provides the complete record for the incident:
 }
 }
 ```
-Remember, you can use the `json.loads(string)` method to convert this result to a useful dictionary object for further processing.  
 
 ## Next steps
 You will need a mechanism to create or update your payload data whether it is stored in a file or submitted at runtime and discarded.  
