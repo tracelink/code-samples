@@ -15,7 +15,7 @@
     },
     "partnerLocationId": "LOCATION_ID",
     "indirectPartnerLocationId": "LOCATION_ID",
-    "responsiblePartyAtPartner": "COMMENT_ID",
+    "responsiblePartyAtPartner": "PARTNER_USER_ID",
     "currentlyAssignedPartnerUsers": [
       "PARTNER_USER_ID"
     ],

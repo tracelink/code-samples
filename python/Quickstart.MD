@@ -60,7 +60,8 @@ request_body.get('payload').get('directSupplierImpact').update({'businessPriorit
 Use the `.get()` method for each element in our tree that we wish to access.  The `.update()` method allows changing a value by referencing its key.
 Use care to include the braces `{}` when updating an item.  
 
-Take a moment to add your `ownerId` and `processNetworkId` values using the method outlined above.  Some sample code is below as a hint:  
+Take a moment to add your `ownerId` and `processNetworkId` values using the method outlined above.  
+Some sample code is below as a hint:  
 ```
 # establish a couple of variables for convenience later
 ownerId = "YOUR_OWNER_ID"

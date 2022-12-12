@@ -35,8 +35,8 @@
     },
     "subjectMatterExpert": [
       {
-        "subjectMatterExpertEmail": "BSpitzer@gmail.com",
-        "subjectMatterExpertName": "Brent Spitzer"
+        "subjectMatterExpertEmail": "JDoe@example.com",
+        "subjectMatterExpertName": "John Doe"
       }
     ],
     "changeImpact": {
@@ -82,8 +82,8 @@
         },
         "addAttachment": [
           {
-            "fileName": "82kb",
-            "fileSize": "changeScope_Approved.doc",
+            "fileName": "changeScope_Approved.doc",
+            "fileSize": "82kb",
             "visibilityType": "Public",
             "requestIdentifier": "REQUEST_IDENTIFIER_ID"
           }

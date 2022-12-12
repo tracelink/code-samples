@@ -15,8 +15,8 @@
     },
     "isVisible": true,
     "currentlyAssignedCompanyUsers": [
-      "COMPANY_USER_ID",
-      "COMPANY_USER_ID"
+      "COMPANY_USER_ID1",
+      "COMPANY_USER_ID2"
     ],
     "initiatingCompany": {
       "toId": "COMPANY_ID",
@@ -24,8 +24,8 @@
     },
     "subjectMatterExpert": [
       {
-        "subjectMatterExpertEmail": "John.Stephens@kendall.com",
-        "subjectMatterExpertName": "John Stephens"
+        "subjectMatterExpertEmail": "JDoe@example.com",
+        "subjectMatterExpertName": "John Doe"
       }
     ],
     "changeImpact": {
@@ -46,7 +46,7 @@
     },
     "impactedLocation": [
       {
-        "locationId": "LOCATION_ID",
+        "locationId": "COMPANY_LOCATION_ID",
         "locationType": "companyLocationMasterData",
         "locationContact": "Elias Davis",
         "toIdType": "companyLocationMasterData"

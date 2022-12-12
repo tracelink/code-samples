@@ -8,7 +8,7 @@
     "dataspace": "default"
   },
   "payload": {
-    "id": "YOUR_PROCESS_NETWORK_ID3",
+    "id": "YOUR_PROCESS_NETWORK_ID",
     "aptBusinessObjectSummary": "Copy of Task 01234",
     "copyGeneralInfo": true,
     "copySubTasks": true,

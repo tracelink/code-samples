@@ -8,7 +8,7 @@
     "dataspace": "default"
   },
   "payload": {
-    "id": "YOUR_PROCESS_NETWORK_ID3",
+    "id": "YOUR_PROCESS_NETWORK_ID",
     "isVisible": true,
     "aptBusinessObjectSummary": "Make a copy of a change",
     "copyParterInfo": false,

@@ -8,7 +8,7 @@
     "dataspace": "default"
   },
   "payload": {
-    "id": "COMMENT_ID",
+    "id": "TASK_TEMPLATE_ID",
     "templateName": "Copy of Template for customer service tasks",
     "copyGeneralInfo": true,
     "copySubTasks": true

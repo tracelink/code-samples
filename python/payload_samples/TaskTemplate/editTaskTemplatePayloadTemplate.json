@@ -8,7 +8,7 @@
     "dataspace": "default"
   },
   "payload": {
-    "id": "COMMENT_ID",
+    "id": "TEMPLATE_ID",
     "aptBusinessObjectDescription": "Updated template for customer service tasks",
     "completionRequiredWithinDays": 3,
     "businessPriority": "HIGH",

@@ -20,8 +20,8 @@
     "responsiblePartyAtPartner": "PARTNER_USER_ID",
     "responsibleDepartmentAtPartner": "SUPPLY_CHAIN",
     "currentlyAssignedCompanyUsers": [
-      "COMPANY_USER_ID",
-      "COMPANY_USER_ID"
+      "COMPANY_USER_ID1",
+      "COMPANY_USER_ID2"
     ],
     "currentlyAssignedPartnerUsers": [
       "PARTNER_USER_ID"

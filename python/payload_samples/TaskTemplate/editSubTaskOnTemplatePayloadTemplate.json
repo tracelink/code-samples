@@ -8,7 +8,7 @@
     "dataspace": "default"
   },
   "payload": {
-    "id": "ITEM_ID",
+    "id": "TEMPLATE_ID",
     "subTaskName": "Sub-Task 56789",
     "subTaskType": "Sub-Task Type ABC",
     "subTaskDueDate": 1631133945000,
@@ -16,8 +16,8 @@
       "COMPANY_USER_ID"
     ],
     "currentlyAssignedPartnerUsers": [
-      "PARTNER_USER_ID",
-      "PARTNER_USER_ID"
+      "PARTNER_USER_ID1",
+      "PARTNER_USER_ID2"
     ]
   }
 }

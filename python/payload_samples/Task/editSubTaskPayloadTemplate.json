@@ -10,8 +10,8 @@
   "payload": {
     "id": "ITEM_ID",
     "currentlyAssignedPartnerUsers": [
-      "PARTNER_USER_ID",
-      "PARTNER_USER_ID"
+      "PARTNER_USER_ID1",
+      "PARTNER_USER_ID2"
     ],
     "newBaseState": "InProgress"
   }
