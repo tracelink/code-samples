@@ -1,37 +1,45 @@
 {
-    "payload": {
-        "id": "fd04dd70-c162-43ef-8118-539ca01de471",
-        "indirectSupplierImpact": {
-            "businessImpact": "Business Impact",
-            "businessPriority": "HIGH",
-            "highPriorityReasons": [
-                "Reason1"
-            ],
-            "financialImpact": 164113394500,
-             "originatingLocationInvestigationDueDate": 1641133945000,
-            "dateResourcesDeployed": 1641133945000,
-            "dateEscalationReportRequested": 1641133945000
-        },
-        "impactedProducts": [
-            "613ac6ab-2940-45c4-b214-ea84feb4e931"
-        ],
-        "impactedLocations": {
-            "locationId": "524b43f0-0bdb-4221-84d8-fec090151b0a",
-            "toIdType": "companyLocationMasterData",
-            "locationType": "INTERNAL",
-            "locationContact": "edavis"
-        },
-        "referenceIdentifiers":[
-            {
-                "referenceTransactionType":"BILL OF LADING",
-                "value": "FZ-1896155146"
-            }
-        ],
-        "aptCommentBox":{
-            "aptComment":{
-                "commentText": "Re-assigning to Jen",
-                "visibilityType": "Internal"
-            }
-        }
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:edit-internal-manufacturing-incident:v3",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "indirectSupplierImpact": {
+      "businessImpact": "Business Impact",
+      "businessPriority": "HIGH",
+      "highPriorityReasons": [
+        "Reason1"
+      ],
+      "financialImpact": 100000.00,
+      "originatingLocationInvestigationDueDate": 1641133945000,
+      "dateResourcesDeployed": 1641133945000,
+      "dateEscalationReportRequested": 1641133945000
+    },
+    "impactedProducts": [
+      "PRODUCT_ID"
+    ],
+    "impactedLocations": {
+      "locationId": "LOCATION_ID",
+      "toIdType": "companyLocationMasterData",
+      "locationType": "INTERNAL",
+      "locationContact": "edavis"
+    },
+    "referenceIdentifiers": [
+      {
+        "referenceTransactionType": "BILL OF LADING",
+        "value": "FZ-1896155146"
+      }
+    ],
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "Re-assigning to Jen",
+        "visibilityType": "Internal"
+      }
     }
+  }
 }

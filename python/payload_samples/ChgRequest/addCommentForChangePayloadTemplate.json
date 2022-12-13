@@ -1,0 +1,28 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:add-comment-for-change:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "processType": "change",
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "Attaching updated scanner PO per Jen's request",
+        "visibilityType": "Public"
+      },
+      "addAttachment": [
+        {
+          "fileName": "INC-4098_shipping-order.pdf",
+          "fileSize": "3mb",
+          "visibilityType": "Public",
+          "requestIdentifier": "REQUEST_IDENTIFIER_ID"
+        }
+      ]
+    }
+  }
+}

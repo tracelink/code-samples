@@ -1,0 +1,17 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:copy-task:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "YOUR_PROCESS_NETWORK_ID",
+    "aptBusinessObjectSummary": "Copy of Task 01234",
+    "copyGeneralInfo": true,
+    "copySubTasks": true,
+    "copyRelatedProcesses": true
+  }
+}

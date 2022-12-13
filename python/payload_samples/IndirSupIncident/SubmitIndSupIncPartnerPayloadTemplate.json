@@ -1,5 +1,13 @@
- {
-    "payload": {
-        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a"
-    }
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:submit-indirect-supplier-incident-to-partner:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID"
+  }
 }

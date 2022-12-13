@@ -1,9 +1,17 @@
 {
-    "payload": {
-        "id": "fd04dd70-c162-43ef-8118-539ca01de471",
-        "directSupplierResponse": {
-            "finalResponseInformation": "Lorem ipsum dolor sit amet. Curabitur finibus posuere orci et efficitur."
-        },
-        "submitFinalResponse": true
-    }
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:edit-direct-supplier-incident:v3",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "directSupplierResponse": {
+      "finalResponseInformation": "Final response comment from supplier."
+    },
+    "submitFinalResponse": true
+  }
 }

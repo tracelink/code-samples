@@ -1,19 +1,27 @@
 {
-    "payload": {
-        "id": "4ec1229a-d46f-4fc0-878f-188d318db55a",
-        "aptCommentBox": {
-            "aptComment": {
-                "commentText": "Reopening INC-4097 based on additional info on damaged cargo (see attached email)",
-                "visibilityType": "Public"
-            },
-            "addAttachment": [
-                {
-                    "fileName": "INC-4097_12Jun2021.pdf",
-                    "fileSize": "2mb",
-                    "visibilityType": "Public",
-                    "requestIdentifier": "a67d7261-33b1-4be6-9760-61ae8fe9eed3"
-                }
-            ]
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:reopen-direct-supplier-incident:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "Reopening INC-4097 based on additional info on damaged cargo (see attached email)",
+        "visibilityType": "Public"
+      },
+      "addAttachment": [
+        {
+          "fileName": "INC-4097_12Jun2021.pdf",
+          "fileSize": "2mb",
+          "visibilityType": "Public",
+          "requestIdentifier": "COMMENT_ID"
         }
+      ]
     }
+  }
 }

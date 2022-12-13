@@ -1,134 +1,112 @@
-# APT-SCWM API Quickstart 
+# APT-SCWM API Quickstart
 
-This quickstart covers: 
+This quickstart covers:
 
 1. Creating a direct supplier incident using the APT-SCWM API
 2. Using the response data to add a comment to the created incident   
 
-## Request Body
+*This example uses Python version 3.10 or later entering commands in a Python terminal.*  
 
-For this example, we are working backwards from the request body. In its simplest form, the request body contains a header and a payload.  A simple request body resembles the following:
+**To follow along with the example, open your preferred Python terminal and use a single session through the entire process.**  
+
+## Create Your Request  
+
+
+### Request Body  
+
+For this example, create the request body first.  In its simplest form, the request body contains a header and a payload and conforms to this format:
+```
+{
+  "header":{},
+  "payload":{}
+}
+```
+**Type or copy the following into your Python terminal, replacing necessary values**  
+```
+request_body = {
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+    },
+  "payload": {
+    "aptBusinessObjectSummary": "Incomplete shipment received.",
+    "aptBusinessObjectDescription": "Several packages missing or damaged.",
+    "deviationType": "UNPLANNED",
+    "materialType": "FINISHED_GOOD",
+    "materialSubtype": "SHIPPED",
+    "materialProblem": "SHORT_SHIPMENT_RECEIVED",
+    "isEscalated": False,
+    "createdByPartner": False,
+    "isSubmittedToPartner": False,
+    "directSupplierImpact": {
+      "businessImpact": "Business Impact",
+      "businessPriority": "HIGH"
+    }
+  }
+}
+```
+This creates a dictionary object containing the `header` and `payload` elements discussed earlier.  Make any necessary changes before submitting the request.  
+
+For example, change the priority of this incident from `HIGH` to `MEDIUM`.  To change this value, reference the `businessPriority` item.  To reach this value, reference the `directSupplierImpact` element of the `payload`.  
+
+**Type or copy the following into your Python terminal, replacing necessary values**
+```
+request_body.get('payload').get('directSupplierImpact').update({'businessPriority': 'MEDIUM'})
+```
+Use the `.get()` method for each element in our tree that we wish to access.  The `.update()` method allows changing a value by referencing its key.
+Use care to include the braces `{}` when updating an item.  
+
+Take a moment to add your `ownerId` and `processNetworkId` values using the method outlined above.  
+Some sample code is below as a hint:  
+```
+# establish a couple of variables for convenience later
+ownerId = "YOUR_OWNER_ID"
+network_id = "YOUR_PROCESS_NETWORK_ID"
+
+request_body.get('header').update({'ownerId': owner_id})
+request_body.get('header').update({'processNetworkId': network_id})
+```
+
+### Request Header
+APT-SCWM uses tokens for authentication. For single interactive requests, use a short-lived bearer token, which lasts for an hour, or a longer-lived token for automated processes.  The token is a string that contains 'user:password' in Base64 encoding.
+
+**Type or copy the following into your Python terminal, replacing necessary values**  
+```
+method = 'Basic'
+token = 'YOUR_TOKEN_HERE'
+request_headers = {"Authorization": "{0} {1}".format(method, token), "Content-Type": "application/json"}
+```
+The resulting `headers` variable will look similar to:  
+`{'Authorization': 'Basic YOUR_TOKEN_HERE', 'Content-Type': 'application/json'}`  
+
+You are free to use any method you wish to create the request header.  APT-SCWM requires at a minimum an `Authorization` item containing a method and a token along with a `Content-Type` of `application/json`.
+
+## Package Your Request  
+At this point you should have a request body, request header, and made all required modifications using Python dictionary methods.  APT-SCWM requires requests formatted as JSON (JavaScript Object Notation).  
+
+Until now, we have been using a Python terminal without any additional packages.  It's time to add the JSON library so we can translate our dictionary into a format accepted by APT-SCWM.  The JSON library is included in the Python installation by default, so no extra installations are required.  
+
+If you wish to verify your request prior to submission, use the json.dumps() method of the json library against your existing request_body dictionary.  
+
+**Type or copy the following into your Python terminal, replacing necessary values**  
+```
+import json
+print(json.dumps(request_body, indent=4, sort_keys=False))
+```
+The response is similar to:  
 ```
 {
     "header": {
         "headerVersion": 1,
-        "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+        "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
+        "ownerId": "YOUR_OWNER_ID",
+        "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
         "appName": "agile-process-teams",
         "dataspace": "default"
-    },
-    "payload": {
-        "aptBusinessObjectSummary": "Raw materials shortage at Location XYZ",
-        "directSupplierImpact": {
-            "businessPriority": "MEDIUM"
-        }
-    }
-}
-```
-
-Many requests share common values in the header. The `headerVersion`, `appName`, and `dataspace` do not change. For a single company, the `ownerId` and `processNetworkId` values are likely to remain the same. This means you may only need to determine the `eventName`. The payload will change with each new request depending on the selected `eventName`. As the integrator, you can store these values after creation or generate and use them dynamically at runtime.  
-
-### Create Payload File
-
-The APT-SCWM API uses JSON for passing data. The minimum required data to submit a direct supplier incident is a summary of the incident and an impact priority level.  An example of the minimum required payload:
-```
-{
-"payload": {
-    "aptBusinessObjectSummary": "Automation test from samples folder.",
-     "directSupplierImpact": {
-        "businessPriority": "LOW"
-        }
-    }
-}
-```
-
-However, for this example, we will include more than the miniumum information. Create a payload file containing the below and name it `addIncident.json`.  
-```
-{
-	"payload": {
-		"aptBusinessObjectSummary": "Incomplete shipment received.",
-		"aptBusinessObjectDescription": "Several packages missing or damaged.",
-		"deviationType": "UNPLANNED",
-		"materialType": "FINISHED_GOOD",
-		"materialSubtype": "SHIPPED",
-		"materialProblem": "SHORT_SHIPMENT_RECEIVED",
-		"isEscalated": false,
-		"createdByPartner": false,
-		"isSubmittedToPartner": false,
-		"directSupplierImpact": {
-			"businessImpact": "Business Impact",
-			"businessPriority": "HIGH"
-			}
-		}
-}
-```
-
-The `utils.py` file has functions to help build the payload for your request body. The `read_payload_file(filename)` function reads the contents of the file, loads it into a JSON object, and does some minor processing for insertion into the request body. 
-
-In your Python terminal, enter the following:  
-```
->>> import utils
->>> my_file = 'addIncident.json'
->>> payload_data = utils.read_payload_file(my_file)
-```
-If you already use a JSON payload as part of your other processes, you can the `accept_json_payload(payload_in)` function instead. This function accepts a JSON object, checks for proper format, and does some minor processing for insertion into the request body.
-
-In the Python terminal, enter the following: 
-```
->>> my_json_data = result_from_some_other_process()
->>> payload_data = utils.accept_json_payload(my_json_data)
-```
-
-### Header
-
-Now that you have usable payload data, you need to inform APT how to process the payload.  
-
-In your Python terminal, enter the following, replacing values with your own:
-```
->>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-                  "ownerId": "REPLACE_WITH_YOURS",
-                  "processNetworkId": "REPLACE_WITH_YOURS"}
-```
-This dictionary is passed in as a parameter to the `utils.create_payload(event_in, payload_in)` function.  This function places the header and payload JSON items properly in the request body.  
-
-Please note there is no error handling logic in these samples, you need to create your own.
-
-Now, create the full request body. In your Python terminal, enter the following:
-```
->>> request_body = utils.create_payload(event_data, payload_data)
-```
-
-## Request Header 
-
-The `utils.py` file provides a function to create a request header that can be reused until token expiration.  
-
-In your Python terminal, enter the following:  
-```
->>> my_token = however_you_get_your_token()
->>> my_header = utils.create_headers(my_token)
->>> my_header
-{'Authorization': 'Bearer tokenhere', 'Content-Type': 'application/json'}
-```
-
-## Preview Request
-
-If you wish to check your request prior to sending it, the `utils.py` file has a mock request function that will print your payload in formatted JSON, making it easier to check against the API documentation.
-
-In your Python terminal, enter the following:  
-```
->>> utils.mock_request(request_header, request_body)
-HTML request header:
-{'Authorization': 'Bearer my_token', 'Content-Type': 'application/json'}
-Body of event request:
-{
-    "header": {
-        "appName": "agile-process-teams",
-        "dataspace": "default",
-        "eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-        "headerVersion": 1,
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
     },
     "payload": {
         "aptBusinessObjectSummary": "Incomplete shipment received.",
@@ -142,105 +120,100 @@ Body of event request:
         "isSubmittedToPartner": false,
         "directSupplierImpact": {
             "businessImpact": "Business Impact",
-            "businessPriority": "HIGH"
-            }
+            "businessPriority": "MEDIUM"
         }
+    }
 }
+```  
+Note that your `False` values have been converted to `false` according to the JSON specification.  Convert the dictionary to a JSON string for submission.  
+
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
+request_body_json = json.dumps(request_body)
+```
+Note that we have omitted the `indent=4, sort_keys=False` options from the `json.dumps()` command that we included in the print statement.  We used these for clarity when print, but are not necessary when creating our JSON string.
 
 ## Send Request
+Once the request header and request body are complete the request is ready to submit.  
+This requires a URL for the APT-SCWM environment. Contact your administrator for this information.  
+APT-SCWM uses an event driven API that communicates using the POST verb for all API calls.  
 
-Once you have a request header, body header, and body payload you are ready to submit your request.
-
-The `utils.py` file contains a function to send your request and capture the response.
-
-An example Python terminal session:
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
->>> import utils
->>> my_file = 'addIncident.json'
->>> my_token = token_received_from_other_processes
-
->>> event_data = {"eventName": "agile-process-teams:add-direct-supplier-incident:v2",
-                  "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-                  "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"}
->>> request_headers = utils.create_headers(my_token)
->>> payload_data = utils.read_payload_file(my_file)
->>> request_body = utils.create_payload(event_data, payload_data)
->>> result = utils.post_request(request_headers, request_body)
+import requests
+url = "URL_FROM_YOUR_ADMINISTRATOR"
+result = requests.request("POST", url, headers=request_header, data=request_body_json)
 ```
 An example successful response:
 ```
 {
     "header": {
         "headerVersion": 1,
-        "eventName": "agile-process-teams:add-direct-supplier-incident-response:v2",
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+        "eventName": "agile-process-teams:add-direct-supplier-incident-response:v3",
+        "ownerId": "YOUR_OWNER_ID",
         "isErr": false,
         "errCode": "200_OK",
-        "licensePlate": "qL0BJs"
+        "licensePlate": "LICENSE_PLATE_ID"
     },
     "payload": {
-        "id": "fd04dd70-c162-43ef-8118-539ca01de471"
+        "id": "ITEM_ID"
     }
 }
 ```
 
-## Response Handling 
+## Response Handling
 
-The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a string, not a JSON object. To get this identifier, enter the following in your Python terminal:
-```
->>> import json
->>> response_json = json.loads(result.text)
->>> incident_id = response_json.get('payload').get('id')
-```
+The `id` in a successful response payload is the identifier of the created incident. Notice that the response is a JSON object that is converted to a string for transmission. To work with this data, convert it to a Python dictionary.  
 
-To ensure your value stored properly, enter the following in your Python terminal:
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
->>> incident_id
-'fd04dd70-c162-43ef-8118-539ca01de471'
+response_json = json.loads(result.text)
+incident_id = response_json.get('payload').get('id')
 ```
 
 ## Add Incident Comment
 
-Prepare a comment payload file called `comment_payload.json` containing the below:
+The APT-SCWM shared API contains processes for adding, editing, or listing comments for incidents along with other utility functions.  The header of this request body is slightly different (in this case only the `eventName` changes) and uses the same authorization configuration as the previous request.  
+If you are building or modifying your requests programmatically, use the `ITEM_ID` created in the previous step.  The JSON library allows using `json.loads(string)` to create a dictionary from an existing JSON object and then use the `json.dumps(dictionary)` to convert the modified dictionary back to a JSON object.  
+
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
-{
-	"payload": {
-		"processId": "4ec1229a-d46f-4fc0-878f-188d318db55a",
-		"processType": "directSupplierIncident",
-		"aptCommentBox":{
-			"aptComment":{
-				"commentText": "Please provide a list of missing items and we will replace them.",
-				"visibilityType": "Public"
-				}
-			}
-		}
+comment_request = {
+  "header": {
+    "appName": "agile-process-teams",
+    "dataspace": "default",
+    "eventName": "agile-process-teams:add-comment-for-incident:v1",
+    "headerVersion": 1,
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
+    },
+  "payload": {
+    "processId": "my_incident_id",
+    "processType": "directSupplierIncident",
+    "aptCommentBox":{
+      "aptComment":{
+        "commentText": "Please provide a list of missing items and we will replace them.",
+        "visibilityType": "Public"
+      }
+    }
+  }
 }
 ```
+Use the `.update()` method to update the `ITEM_ID`.  
 
-Do not worry that your `processId` does not match the example. You can load the payload comment file and update the `processId` number dynamically. Enter the following in your Python terminal:
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
->>> comment_payload_file = 'comment_payload.json'
->>> comment_payload = utils.read_payload_file(comment_payload_file)
->>> comment_payload
-{'processId': '4ec1229a-d46f-4fc0-878f-188d318db55a', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
+comment_request.get('header').update({'ownerId': owner_id})
+comment_request.get('header').update({'processNetworkId': network_id})
+
+comment_request.get('payload').update({'processId': incident_id})
 ```
-Your payload has been loaded properly, but the `processId` is still wrong. Use the `update()` function to change the stored value:
+After making the desired modifications, convert the dictionary to a JSON string and send the request.  
+
+**Type or copy the following into your Python terminal, replacing necessary values**  
 ```
->>> comment_payload.update({"processId": "fd04dd70-c162-43ef-8118-539ca01de471"})
->>> comment_payload
-{'processId': 'fd04dd70-c162-43ef-8118-539ca01de471', 'processType': 'directSupplierIncident', 'aptCommentBox': {'aptComment': {'commentText': 'Please provide a list of missing items and we will replace them.', 'visibilityType': 'Public'}}}
-```
-You can use the same process to change the `eventName`:
-```
->>> event_data.update({"eventName": "agile-process-teams:add-comment-for-incident:v1"})
->>> event_data
-{'eventName': 'agile-process-teams:add-comment-for-incident:v1', 'ownerId': '2aaeed40-3912-427e-a94f-51fd5a730345', 'processNetworkId': '61077cb2-601b-4c27-b11f-5e3910589931'}
-```
-The payload and event data should now be updated. You can verify this by resending the commands to build the request body and resend the request.  
-```
->>> request_body = utils.create_payload(event_data, payload_data)
->>> comment_result = utils.post_reqeust(request_headers, requst_body)
+comment_request_json = json.dumps(comment_request)  
+comment_result = requests.request("POST", url, headers=request_header, data=comment_request_json)
 ```
 The response:  
 ```
@@ -248,33 +221,46 @@ The response:
     "header": {
         "headerVersion": 1,
         "eventName": "agile-process-teams:add-comment-for-incident-response:v1",
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+        "ownerId": "YOUR_OWNER_ID",
         "isErr": false,
         "errCode": "200_OK",
-        "licensePlate": "vXPsFz"
+        "licensePlate": "LICENSE_PLATE_ID"
     },
     "payload": {
-        "id": "a67d7261-33b1-4be6-9760-61ae8fe9eed3"
+        "id": "COMMENT_ID"
     }
 }
 ```
 ## Read the details of your newly created incident
-In a previous step, you stored your incident id as a variable in your session.  You can use this stored variable to retrieve details about the incident.  
+
+
+Use the previously stored incident id to retrieve details about the incident.
 Use the same methods outlined above to generate a request similar to the following:
 ```
-{
+read_request = {
    "header": {
        "headerVersion": 1,
        "eventName": "agile-process-teams:read-directSupplierIncident:v3",
-       "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+       "ownerId": "YOUR_OWNER_ID",
        "appName": "agile-process-teams",
        "dataspace": "default",
-       "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d"
+       "processNetworkId": "YOUR_PROCESS_NETWORK_ID"
    },
    "payload": {
-       "id": "fd04dd70-c162-43ef-8118-539ca01de471"
+       "id": "COMMENT_ID"
    }
 }
+```
+Prepare and send your request.  
+```
+read_request.get('header').update({'ownerId': owner_id})
+read_request.get('header').update({'processNetworkId': network_id})
+read_request.get('payload').update({'id': incident_id})
+
+...
+
+read_request_json = json.dumps(read_request)  
+read_result = requests.request("POST", url, headers=request_header, data=read_request_json)
 ```
 The response provides the complete record for the incident:
 ```
@@ -282,17 +268,17 @@ The response provides the complete record for the incident:
 "header": {
 	"headerVersion": 1,
 	"eventName": "agile-process-teams:read-directSupplierIncident-response:v3",
-	"ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"ownerId": "YOUR_OWNER_ID",
 	"isErr": false,
 	"errCode": "200_OK",
-	"licensePlate": "Y7yRFr-tRpXpc"
+	"licensePlate": "LICENSE_PLATE_ID"
 },
 "payload": {
-	"createdByUserId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"createdByUserId": "YOUR_OWNER_ID",
 	"schemaVersion": 3,
 	"data": {
-		"aptBusinessObjectSummary": "Kinaxis - Late: PO, Exception ID: 37495023853_jlocky",
-		"aptBusinessObjectDescription": "Order:PO_B2710_S006_2101130836, Line:4, Type:PO",
+		"aptBusinessObjectSummary": "Kinaxis - Late: PO, Exception ID: MY_EXCEPTION_ID",
+		"aptBusinessObjectDescription": "Order: MY_ORDER_ID",
 		"responsibleDepartmentAtPartner": "CONTRACT_MANAGEMENT",
 		"responsibleDepartmentAtCompany": "SUPPLY_CHAIN",
 		"businessPriority": "HIGH",
@@ -300,34 +286,34 @@ The response provides the complete record for the incident:
 		"otherIncidentType": "Purchase Order Discrepancy",
 		"aptBusinessObjectImpactsLocationMasterData": [],
 		"currentlyAssignedPartnerUsersId": [
-			"94f94f37-2772-4b39-8041-9c2dcfcfff82"
+			"YOUR_OWNER_ID"
 		],
 		"resolutionDueDate": 1661817600000,
 		"referenceIdentifiers": [
 			{
 				"referenceTransactionType": "PO_NUMBER",
-				"value": " Order:PO_B2710_S006_2101130836, Line:4, Type:PO"
+				"value": " Order: MY_ORDER_ID"
 			}
 		],
 		"response": {},
-		"responsiblePartyAtPartnerUserId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
-		"responsiblePartyAtCompanyUserId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
+		"responsiblePartyAtPartnerUserId": "MY_PARTNER_ID",
+		"responsiblePartyAtCompanyUserId": "MY_USER_ID",
 		"currentlyAssignedCompanyUsersId": [
-			"b2491d20-0f8b-41f5-b7aa-a4e4a04afbce"
+			"MY_USER_ID"
 		],
-		"primaryPartnerLocationId": "2e485684-fdd7-4ad1-8735-af4deed325f0",
-		"fkProcessNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
-		"aptBusinessObjectId": "USPT-1151",
-		"aptBusinessObjectIntegerIdentifier": 1151,
+		"primaryPartnerLocationId": "MY_LOCATION_ID",
+		"fkProcessNetworkId": "YOUR_PROCESS_NETWORK_ID",
+		"aptBusinessObjectId": "USPT-10101",
+		"aptBusinessObjectIntegerIdentifier": 10101,
 		"createdByPartner": false,
 		"aptBusinessObjectAssignedToCompanyPartnerMasterData": {
-			"partnerId": "b2491d20-0f8b-41f5-b7aa-a4e4a04afbce",
+			"partnerId": "MY_PARTNER_ID",
 			"toIdType": "partnerMasterData"
 		},
 		"followerId": [
-			"b2491d20-0f8b-41f5-b7aa-a4e4a04afbce"
+			"MY_USER_ID"
 		],
-		"aptBusinessObjectNumericIdentifierDerivedField": "1151",
+		"aptBusinessObjectNumericIdentifierDerivedField": "10101",
 		"businessPriorityDerivedField": "c",
 		"incidentConclusion": {
 			"resolutionType": "NOT_AN_ISSUE",
@@ -341,13 +327,13 @@ The response provides the complete record for the incident:
 		}
 	},
 	"dataVersion": 2,
-	"ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
+	"ownerId": "YOUR_OWNER_ID",
 	"objectType": "agile-process-teams:directSupplierIncident",
 	"currentBaseState": "Closed",
 	"schemaId": "agile-process-teams:directSupplierIncident",
-	"lastUpdatedByUserId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-	"contextualOwnerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-	"id": "fd04dd70-c162-43ef-8118-539ca01de471",
+	"lastUpdatedByUserId": "YOUR_OWNER_ID",
+	"contextualOwnerId": "YOUR_OWNER_ID",
+	"id": "ITEM_ID",
 	"lastUpdatedDateTime": 1661528888803,
 	"creationDateTime": 1661276934457
 }
@@ -356,7 +342,7 @@ The response provides the complete record for the incident:
 
 ## Next steps
 You will need a mechanism to create or update your payload data whether it is stored in a file or submitted at runtime and discarded.  
-You will also need a method to maintain or refer to the `processId` number of each incident.  
+You will also need a method to retain the `id` number for each incident you wish to reference.  
 
 ## Troubleshooting
 Review the [troubleshooting primer](Troubleshooting.MD).

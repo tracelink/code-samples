@@ -39,8 +39,8 @@ An example of a complete payload body for adding a direct supplier incident:
     "header": {
         "headerVersion": 1,
         "eventName": "agile-process-teams:add-direct-supplier-incident:v3",
-        "ownerId": "94f94f37-2772-4b39-8041-9c2dcfcfff82",
-        "processNetworkId": "945feb8e-09a7-4fef-9a8a-b3c5b56f87d",
+        "ownerId": "YOUR_OWNER_ID",
+        "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
         "appName": "agile-process-teams",
         "dataspace": "default"
             },
@@ -54,5 +54,5 @@ An example of a complete payload body for adding a direct supplier incident:
 ```
 
 # Next
-Review [event name mapping](EventNames.MD) for each event type.  
+Review [event name mapping](eventNames.json) for each event type.  
 Follow [the quickstart](Quickstart.MD) for an example using the APT-SCWM API.
