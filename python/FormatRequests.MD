@@ -22,7 +22,7 @@ The request body header identifies how APT processes your request.  All items be
 | Name                 | Type    | Description                                                            | Value                                      |
 | -------------------- | ------- | ---------------------------------------------------------------------- | ------------------------------------------ |
 | `headerVersion`      | integer | The version identifier for the request                                 | `1`                                        |
-| `eventName`          | string  | The fully qualified name of the request event.                         | See [event name mapping](EventNames.MD)    |
+| `eventName`          | string  | The fully qualified name of the request event.                         | See [event name mapping](../EventNames.MD)    |
 | `ownerID`            | string  | The Owner company associated with the request.                         | See [authentication](../authentication.md) |
 | `processNetworkId`   | string  | The network within the Owner company containing the process.           | See [authentication](../authentication.md) |
 | `appName`            | string  | The application that owns the event.                                   | `"agile-process-teams"`                    |
