@@ -1,0 +1,26 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:add-task:v2",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "templateId": "TEMPLATE_ID",
+    "aptBusinessObjectSummary": "my summary",
+    "aptBusinessObjectDescription": "simple test of payload",
+    "businessPriority": "LOW",
+    "completionDueDate": 1672489485000,
+    "isVisible": false,
+    "aptCommentBox": [
+      {
+        "aptComment": {
+          "commentText": "my comment",
+          "visibilityType": "OwnerOnly"
+        }
+      }
+    ]
+  }
+}

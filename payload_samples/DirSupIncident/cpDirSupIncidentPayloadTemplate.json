@@ -1,0 +1,21 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:copy-direct-supplier-incident:v2",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "createdByPartner": false,
+    "aptBusinessObjectSummary": "Shipment Damage",
+    "copyGeneralInfo": true,
+    "copyPartnerInfo": false,
+    "copyMaterialInfo": true,
+    "copyImpactInfo": false,
+    "copyReferenceIds": false,
+    "copyRelatedProcesses": true
+  }
+}

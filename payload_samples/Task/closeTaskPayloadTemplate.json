@@ -1,0 +1,31 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:close-task:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "taskResolutionType": "COMPLETED",
+    "closingStatement": "All assigned purchase order sub-tasks completed. Final task approved to be closed by J. Watson.",
+    "aptCommentBox": [
+      {
+        "aptComment": {
+          "commentText": "add DSI.",
+          "visibilityType": "Public"
+        },
+        "addAttachment": [
+          {
+            "fileSize": "5mb",
+            "fileName": "File1",
+            "requestIdentifier": "REQUEST_IDENTIFIER_ID",
+            "visibilityType": "Public"
+          }
+        ]
+      }
+    ]
+  }
+}

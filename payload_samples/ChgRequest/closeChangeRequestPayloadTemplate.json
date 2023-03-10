@@ -1,0 +1,20 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:close-change:v2",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "resolutionType": "ACCEPTED",
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "Closing Request 001. Requested changes approved and complete.",
+        "visibilityType": "Public"
+      }
+    }
+  }
+}

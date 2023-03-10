@@ -1,0 +1,19 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:reopen-external-manufacturing-incident:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "INC-4098 closed prematurely - reopening to finalize record.",
+        "visibilityType": "Internal"
+      }
+    }
+  }
+}
