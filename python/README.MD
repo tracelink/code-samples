@@ -4,7 +4,7 @@ This repository provides developers with python code samples for interacting wit
 
 ## Installation
 
-NEEDS UPDATED
+NEEDS UPDATING
 
 ## Usage
 
@@ -22,7 +22,7 @@ Use the **utils.py** file for the following actions:
 
 ## Requests
 
-All requests have three main components: 
+All requests have three main components:
 
 - **Request URL**
 	- {{protocol}}://{{server}}/api/events  
@@ -35,6 +35,6 @@ All requests have three main components:
 
 # Next  
 
-1. Review information on [authentication](../authentication.md). 
+1. Review information on [authentication](../authentication.md).
 2. Review [basic request formatting](FormatRequests.MD).
 3. Follow the [quickstart](Quickstart.MD) for an example using the APT-SCWM API.
