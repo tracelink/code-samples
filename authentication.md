@@ -1,32 +1,32 @@
-# Authentication 
+# Authentication
 
 This process involves:
 
 1. Obtaining a short-lived token
 2. Exhanging the token for a long-lived API key and secret
 3. Encoding the API key and secret
-4. Formatting a basic authorization header 
+4. Formatting a basic authorization header
 
-## Prerequisites 
+## Prerequisites
 
-1. You must be able to login to the Opus Platform and access APT-SCWM. 
+1. You must be able to login to the Opus Platform and access APT-SCWM.
 
-2. Once logged into Opus on your browser, select the desired process. For example, **Direct Supplier Incident**. 
+2. Once logged into Opus on your browser, select the desired process. For example, **Direct Supplier Incident**.
 
 ![Opus in Browser](images/opus_apt.png)
 
 3. Using the directions below for your designated browser, generate the following values:
 
 - `_store_js_production_token`, a short lived token valid for one session
-- `_store_js_production_processNetworkOwnerId`, passed in the [body header](https://github.com/tracelink/code-samples/blob/main/python/FormatRequests.MD#header)
-- `_store_js_production_processNetworkId`, passed in the [body header](https://github.com/tracelink/code-samples/blob/main/python/FormatRequests.MD#header) 
+- `_store_js_production_processNetworkOwnerId`, passed in the [body header](python/FormatRequests.MD#header)
+- `_store_js_production_processNetworkId`, passed in the [body header](python/FormatRequests.MD#header)
 
 ### Chrome
 
 From the Chrome menu, navigate to **View** > **Developer** > **Developer Tools**.
 Select the **Application** tab from the Developer Tools pane. From the left hand navigation menu, under the storage section, select
 **Local Storage** from the dropdown. Then, click `https://opus.tracelink.com`. You should now see a list of key/value pairs. The
-values in the screenshot below were redacted. 
+values in the screenshot below were redacted.
 
 ![Key Value Pairs](images/chrome_apt.png)
 
@@ -34,7 +34,7 @@ values in the screenshot below were redacted.
 
 From the Firefox menu, navigate to **Tools** > **Web Developer Tools**.
 Select the **Storage** tab from the Web Developer Tools pane. From the left hand navigation menu, click **Local Section** and then
-`https://opus.tracelink.com`. You should now see a list of key/value pairs. The values in the screenshot below were redacted. 
+`https://opus.tracelink.com`. You should now see a list of key/value pairs. The values in the screenshot below were redacted.
 
 ![Key Value Pairs](images/firefox_apt.png)
 
@@ -67,7 +67,7 @@ from your browser, as the **Token**.
 
 ![Postman Token](images/postman_body.png)
 
-Here is an example response: 
+Here is an example response:
 
 ```json
 {
@@ -86,11 +86,11 @@ Here is an example response:
 }
 ```
 
-The API key and secret are long-lived, static values that do not expire. 
+The API key and secret are long-lived, static values that do not expire.
 
 ## Encode API Key and Secret
 
-1. Take the values of `apiKey` and `apiSecret` and convert them into a string with the format {{KEY}}:{{SECRET}}, with a colon seperating the two values. 
+1. Take the values of `apiKey` and `apiSecret` and convert them into a string with the format {{KEY}}:{{SECRET}}, with a colon seperating the two values.
 
    For example: `a12b3c45d-6e78-90f1-g234-h56i7j890k1l:mn2o3pq4RsTuVwXyZAbc5defghIjklMn`.
 
@@ -101,11 +101,11 @@ The API key and secret are long-lived, static values that do not expire.
 
    Alternatively, you can use an online resource such as https://www.base64encode.org/ to encode your string.
 
-3. This encoded result can now be used in a basic authorization header. 
+3. This encoded result can now be used in a basic authorization header.
    For example, `authorization: Basic YTEyYjNjNDVkLTZlNzgtOTBmMS1nMjM0LW...bDpjJvM3BxNFJzVHVWd1h5WkFiYzVkZWZnaElqa2xNbg==`.
 
 
-### Python 
+### Python
 
 ```python
 import base64
@@ -117,5 +117,3 @@ def create_token(api_key, api_secret):
     auth_header = {"Authorization" : "Basic %s" % encoded_token}
     print(auth_header)
 ```
-
-
