@@ -1,0 +1,13 @@
+{
+  "header": {
+    "appName": "masterdata-manager",
+    "dataspace": "default",
+    "eventName": "masterdata-manager:get-company-by-regulatory-identifier:v1",
+    "headerVersion": 1,
+    "ownerId": "YOUR_OWNER_ID"
+  },
+  "payload": {
+    "regulatoryCompanyIdentifier": "YOUR_COMPANY_ID",
+    "regulatoryCompanyIdentifierType": "GLN"
+  }
+}
