@@ -22,7 +22,7 @@ The request body header identifies how APT processes your request.  All items be
 | Name                 | Type    | Description                                                            | Value                                      |
 | -------------------- | ------- | ---------------------------------------------------------------------- | ------------------------------------------ |
 | `headerVersion`      | integer | The version identifier for the request                                 | `1`                                        |
-| `eventName`          | string  | The fully qualified name of the request event.                         | See [event name mapping](EventNames.MD)    |
+| `eventName`          | string  | The fully qualified name of the request event.                         | See [event name mapping](../EventNames.MD)    |
 | `ownerID`            | string  | The Owner company associated with the request.                         | See [authentication](../authentication.md) |
 | `processNetworkId`   | string  | The network within the Owner company containing the process.           | See [authentication](../authentication.md) |
 | `appName`            | string  | The application that owns the event.                                   | `"agile-process-teams"`                    |
@@ -31,7 +31,7 @@ The request body header identifies how APT processes your request.  All items be
 ### Body
 A properly constructed JSON object is required as the payload. You can dynamically create the JSON object at runtime or create a file with the appropriate values to import as needed.
 
-The body parameters change depending on the `eventName` value passed in the body header. Please reference [API documentation](https://opus.tracelink.com/documentation/2021.1/en-US/apt/Content/topics/api/landing_incident_apis.htm?tocpath=Set%20up%20APIs%7CIncident%20process%20APIs%7C_____0) for more information on each event type. The [samples folder](https://github.com/tracelink/code-samples/tree/main/python/payload_samples) contains example payload bodies for each event type.  
+The body parameters change depending on the `eventName` value passed in the body header. Please reference [API documentation](https://opus.tracelink.com/documentation/2021.1/en-US/apt/Content/topics/api/landing_incident_apis.htm?tocpath=Set%20up%20APIs%7CIncident%20process%20APIs%7C_____0) for more information on each event type. The [samples folder](../payload_samples) contains example payload bodies for each event type.  
 
 An example of a complete payload body for adding a direct supplier incident:
 ```
