@@ -44,13 +44,13 @@
       "potentialRisks": "potential Risks",
       "evaluationsOfChange": "Evaluations Of Change"
     },
-    "impactedLocation": [
+    "impactedLocation":
       {
         "locationId": "COMPANY_LOCATION_ID",
-        "locationType": "companyLocationMasterData",
+        "locationType": "Internal",
         "locationContact": "Elias Davis",
         "toIdType": "companyLocationMasterData"
       }
-    ]
+
   }
 }
