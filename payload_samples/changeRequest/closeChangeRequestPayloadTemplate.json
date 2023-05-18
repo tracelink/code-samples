@@ -13,7 +13,7 @@
     "aptCommentBox": {
       "aptComment": {
         "commentText": "Closing Request 001. Requested changes approved and complete.",
-        "visibilityType": "Public"
+        "visibilityType": "public"
       }
     }
   }

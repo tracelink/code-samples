@@ -12,7 +12,7 @@
     "aptCommentBox": {
       "aptComment": {
         "commentText": "Reopening Change Request 001",
-        "visibilityType": "Internal"
+        "visibilityType": "ownerOnly"
       }
     }
   }

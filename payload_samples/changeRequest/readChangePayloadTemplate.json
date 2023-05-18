@@ -7,4 +7,7 @@
     "appName": "agile-process-teams",
     "dataspace": "default"
   },
-  "payload": {"id": "CHANGE_ID"}
+  "payload": {
+    "id": "CHANGE_ID"
+  }
+}

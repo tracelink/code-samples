@@ -11,7 +11,7 @@
     "id": "YOUR_PROCESS_NETWORK_ID",
     "isVisible": true,
     "aptBusinessObjectSummary": "Make a copy of a change",
-    "copyParterInfo": false,
+    "copyPartnerInfo": false,
     "copyGeneralInfo": true,
     "copyImpactInfo": true,
     "copyReferenceIds": false,

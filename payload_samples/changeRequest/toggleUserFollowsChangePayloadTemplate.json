@@ -8,7 +8,7 @@
     "dataspace": "default"
   },
   "payload": {
-    "id": "ITEM_ID",
+    "processId": "ITEM_ID",
     "processType": "change",
     "follow": true
   }

@@ -8,12 +8,12 @@
     "dataspace": "default"
   },
   "payload": {
-    "commentId": "COMMENT_ID",
+    "processId": "COMMENT_ID",
     "processType": "change",
     "aptCommentBox": {
       "aptComment": {
         "commentText": "Removing incorrect PO document",
-        "visibilityType": "Public"
+        "visibilityType": "public"
       }
     }
   }
