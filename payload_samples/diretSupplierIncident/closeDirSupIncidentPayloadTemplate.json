@@ -11,13 +11,12 @@
     "id": "ITEM_ID",
     "resolutionType": "NOT_AN_ISSUE",
     "isReoccuring": false,
-    "commentAndAttachments": [
+    "aptCommentBox":
       {
-        "aptComment": {
+        "aptComment": [{
           "commentText": "Comment explaining current action.",
-          "visibilityType": "Public"
-        }
+          "visibilityType": "public"
+        }]
       }
-    ]
   }
 }
