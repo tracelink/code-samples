@@ -32,9 +32,10 @@
     "materialProblem": "MATERIAL_SHORTAGE",
     "isEscalated": false,
     "originatingLocation": [
-      "LOCATION_ID",
-      "partnerLocationMasterData"
-    ],
+      {
+        "originatingLocationId": "LOCATION_ID",
+        "toIdType":"partnerLocationMasterData"
+      }],
     "resolutionDueDate": 1651133945000,
     "createdByPartner": false,
     "isSubmittedToPartner": true,
