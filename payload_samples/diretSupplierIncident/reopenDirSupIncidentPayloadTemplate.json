@@ -12,13 +12,13 @@
     "aptCommentBox": {
       "aptComment": {
         "commentText": "Reopening INC-4097 based on additional info on damaged cargo (see attached email)",
-        "visibilityType": "Public"
+        "visibilityType": "public"
       },
       "addAttachment": [
         {
           "fileName": "INC-4097_12Jun2021.pdf",
           "fileSize": "2mb",
-          "visibilityType": "Public",
+          "visibilityType": "public",
           "requestIdentifier": "COMMENT_ID"
         }
       ]
