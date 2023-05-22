@@ -12,7 +12,7 @@
     "aptCommentBox": {
       "aptComment": {
         "commentText": "INC-4098 closed prematurely - reopening to finalize record.",
-        "visibilityType": "Internal"
+        "visibilityType": "ownerOnly"
       }
     }
   }
