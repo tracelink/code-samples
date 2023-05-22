@@ -9,12 +9,12 @@
   },
   "payload": {
     "commentId": "COMMENT_ID",
-    "processType": "directSupplierincident",
+    "processType": "directSupplierIncident",
     "id": "ITEM_ID",
     "aptCommentBox": {
       "aptComment": {
         "commentText": "Incorrect order uploaded",
-        "visibilityType": "Public"
+        "visibilityType": "public"
       },
       "removeAttachment": [
         "ATTACHMENT_ID"
