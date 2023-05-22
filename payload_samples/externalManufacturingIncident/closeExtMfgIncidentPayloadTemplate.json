@@ -19,13 +19,13 @@
     "aptCommentBox": {
       "aptComment": {
         "commentText": "Order received. Signed off by Receiving Manager on 23 Aug 2021",
-        "visibilityType": "Public"
+        "visibilityType": "public"
       },
       "addAttachment": [
         {
           "fileName": "ORDER_1896155146_approved_RECEIVED 23-AUG",
           "fileSize": "3mb",
-          "visibilityType": "Public",
+          "visibilityType": "public",
           "requestIdentifier": "REQUEST_IDENTIFIER_ID"
         }
       ]
