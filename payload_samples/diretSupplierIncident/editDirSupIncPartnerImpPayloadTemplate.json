@@ -21,12 +21,8 @@
     "directSupplierImpact": {
       "businessImpact": "Business Impact",
       "businessPriority": "HIGH",
-      "impactedDepartments": [
-        "CUSTOMER_SERVICE"
-      ],
-      "highPriorityReasons": [
-        "Reason1"
-      ],
+      "impactedDepartments": "CUSTOMER_SERVICE",
+      "highPriorityReasons": "REVENUE_IMPACTED",
       "financialImpact": 164113394500,
       "dateSupplyImpacted": 1641133945000,
       "originatingLocationInvestigationDueDate": 1641133945000,
@@ -40,17 +36,17 @@
       "PRODUCT_ID",
       "PRODUCT_ID"
     ],
-    "impactedLocations": {
+    "impactedLocations": [{
       "locationId": "LOCATION_ID",
       "toIdType": "companyLocationMasterData",
-      "locationType": "INTERNAL",
+      "locationType": "Internal",
       "locationContact": "edavis"
-    },
+    }],
     "potentiallyImpactedLocations": [
       {
         "locationId": "LOCATION_ID",
         "toIdType": "companyLocationMasterData",
-        "locationType": "INTERNAL",
+        "locationType": "Internal",
         "locationContact": "edavis"
       }
     ],
