@@ -30,17 +30,17 @@
     "materialType": "FINISHED_GOOD",
     "materialSubtype": "CHEMICAL_API",
     "materialProblem": "MATERIAL_SHORTAGE",
-    "originatingLocation": {
+    "originatingLocation": [{
       "originatingLocationId": "LOCATION_ID",
       "toIdType": "partnerLocationMasterData"
-    },
+    }],
     "resolutionDueDate": 1651133945000,
     "createdByPartner": false,
     "isSubmittedToPartner": true,
-    "referenceIdentifiers": {
+    "referenceIdentifiers": [{
       "referenceTransactionType": "BILL_OF_LADING",
       "value": "GTIN-1161187176294956"
-    },
+    }],
     "externalManufacturingMaterialInformation": {
       "companyInternalMaterialInformation": "pim161187176294672",
       "partnerInternalMaterialInformation": "pim161187176294672",
@@ -48,7 +48,7 @@
       "materialDescription": "Material Description",
       "companyLotNumber": "cln161187176294679",
       "partnerLotNumber": "pln161187176294652",
-      "defectiveQuantity": 1,
+      "defectiveQuantity": "1",
       "defectiveUnitOfMeasure": "CENTILITER",
       "defectiveItemInformation": "Defective Item Information",
       "samplesAvailable": false
@@ -67,9 +67,7 @@
       "initialContainmentActions": "Final Containment Actions",
       "recommendationFromOriginatingCompany": "Recommendation From Originating Company",
       "immediateCorrectiveActions": "Immediate Corrective Actions",
-      "potentialRootCauses": [
-        "DOCUMENTATION"
-      ],
+      "potentialRootCauses": "DOCUMENTATION",
       "potentialRootCauseNotes": "Potential Root Cause Notes",
       "finalPreventativeActions": "Final Preventative Actions",
       "methodsToProvePreventativeActionsTaken": "Methods To Prove Preventative Actions Taken",
