@@ -33,24 +33,22 @@
       "dateResourcesDeployed": 1641133945000,
       "dateEscalationReportRequested": 1641133945000
     },
-    "impactedProducts": [
-      "PRODUCT_ID"
-    ],
+    "impactedProducts": "PRODUCT_ID",
     "potentiallyImpactedProducts": [
       "PRODUCT_ID",
       "PRODUCT_ID"
     ],
-    "impactedLocations": {
+    "impactedLocations": [{
       "locationId": "LOCATION_ID",
       "toIdType": "companyLocationMasterData",
-      "locationType": "INTERNAL",
+      "locationType": "Internal",
       "locationContact": "edavis"
-    },
+    }],
     "potentiallyImpactedLocations": [
       {
         "locationId": "LOCATION_ID",
         "toIdType": "companyLocationMasterData",
-        "locationType": "INTERNAL",
+        "locationType": "Internal",
         "locationContact": "edavis"
       }
     ],
