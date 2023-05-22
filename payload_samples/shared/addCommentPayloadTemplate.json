@@ -8,18 +8,18 @@
     "dataspace": "default"
   },
   "payload": {
-    "id": "ITEM_ID",
+    "processId": "ITEM_ID",
     "processType": "indirectSupplierIncident",
     "aptCommentBox": {
-      "aptComment": {
-        "commentText": "Attaching latest order documentation per Jen's request",
-        "visibilityType": "Public"
-      },
+      "aptComment": [{
+        "commentText": "Attaching latest order documentation per Jens request",
+        "visibilityType": "public"
+      }],
       "addAttachment": [
         {
           "fileName": "INC-4098_shipping-order.pdf",
           "fileSize": "3mb",
-          "visibilityType": "Public",
+          "visibilityType": "public",
           "requestIdentifier": "REQUEST_IDENTIFIER_ID"
         }
       ]
