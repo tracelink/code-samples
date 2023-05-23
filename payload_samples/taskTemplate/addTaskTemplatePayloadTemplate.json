@@ -16,6 +16,6 @@
     "businessPriority": "LOW",
     "responsibleDepartmentAtCompany": "CUSTOMER_SERVICE",
     "responsiblePartyAtCompany": "COMPANY_USER_ID",
-    "currentlyAssignedCompanyUsers": [ASSIGNED_COMPANY_USER_ID]
+    "currentlyAssignedCompanyUsers": ["ASSIGNED_COMPANY_USER_ID"]
   }
 }
