@@ -14,13 +14,11 @@
     "businessPriority": "LOW",
     "completionDueDate": 1672489485000,
     "isVisible": false,
-    "aptCommentBox": [
-      {
+    "aptCommentBox": {
         "aptComment": {
           "commentText": "my comment",
-          "visibilityType": "OwnerOnly"
+          "visibilityType": "ownerOnly"
         }
       }
-    ]
   }
 }
