@@ -9,6 +9,7 @@
   },
   "payload": {
     "id": "ITEM_ID",
+    "subTaskType": "incident",
     "currentlyAssignedPartnerUsers": [
       "PARTNER_USER_ID1",
       "PARTNER_USER_ID2"
