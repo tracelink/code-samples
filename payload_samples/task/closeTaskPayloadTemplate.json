@@ -9,23 +9,21 @@
   },
   "payload": {
     "id": "ITEM_ID",
-    "taskResolutionType": "COMPLETED",
+    "resolutionType": "COMPLETED",
     "closingStatement": "All assigned purchase order sub-tasks completed. Final task approved to be closed by J. Watson.",
-    "aptCommentBox": [
-      {
+    "aptCommentBox": {
         "aptComment": {
           "commentText": "add DSI.",
-          "visibilityType": "Public"
+          "visibilityType": "public"
         },
         "addAttachment": [
           {
             "fileSize": "5mb",
             "fileName": "File1",
             "requestIdentifier": "REQUEST_IDENTIFIER_ID",
-            "visibilityType": "Public"
+            "visibilityType": "public"
           }
         ]
       }
-    ]
   }
 }
