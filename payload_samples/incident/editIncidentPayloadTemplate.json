@@ -2,8 +2,8 @@
     "header": {
         "headerVersion": 1,
         "eventName": "agile-process-teams:edit-incident:v5",
-        "ownerId": "{{test-owner1}}",
-        "processNetworkId": "{{test-pni1}}",
+        "ownerId": "YOUR_OWNER_ID",
+        "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
         "appName": "agile-process-teams",
         "dataspace": "default"
     },
