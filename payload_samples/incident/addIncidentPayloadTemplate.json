@@ -1,0 +1,47 @@
+{
+    "header": {
+        "headerVersion": 1,
+        "eventName": "agile-process-teams:add-incident:v5",
+        "ownerId": "YOUR_OWNER_ID",
+        "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+        "appName": "agile-process-teams",
+        "dataspace": "default"
+    },
+    "payload": {
+        "aptBusinessObjectSummary": "Kendall Pharma | ACME Inc | INC-2023-01 | No EPCIS Data for 1 package",
+        "aptBusinessObjectDescription": "Shipment quarantined due to T1 reflecting incomplete data|SO 3027209239|PO 5201019344|Transaminase enzyme, CDX-017 (ACS-4007466). EPCIS shows 48 pallets and receiving called out 50 received ",
+        "businessPriority": "HIGH",
+        "incidentCategory":"Aggregate Shipment Error",
+        "referenceIdentifiers": [
+            {
+                "referenceTransactionType": "PO Number",
+                "value": "PO-123"
+            },
+            {
+                "referenceTransactionType": "PO Number",
+                "value": "PO-345"
+            }
+        ],
+        "impactedProducts": [
+            {
+                "productDetailId": "PRODUCT_ID",
+                "impactedLots": "4"
+            }
+        ],
+        "responsibleEntity": {
+            "partnerId": "PARTNER_COMPANY_ID",
+            "toIdType": "companyLocationMasterData"
+        },
+        "resolutionDueDate": 1681640075000,
+        "responsiblePartyAtCompany": "COMPANY_USER_ID",
+        "currentlyAssignedCompanyUsers": [
+            "COMPANY_USER_ID1",
+            "COMPANY_USER_ID2"
+        ],
+        "responsiblePartyAtPartner": "PARTNER_USER_ID",
+        "currentlyAssignedPartnerUsers": [
+            "PARTNER_USER_ID1",
+            "PARTNER_USER_ID2"
+        ]
+    }
+}
