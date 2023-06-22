@@ -333,9 +333,18 @@ url = "URL_FROM_YOUR_ADMINISTRATOR"
 request_header = "{'Authorization': 'Basic YOUR_TOKEN', 'Content-Type': 'application/json'}"
 
 request_body = {
-  "header": {},
-  "payload": {}
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:read-incident:v4",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "INCIDENT_ID"
   }
+}
 
 result = requests.request("POST", url, headers=request_header, data=request_body)
 ```
