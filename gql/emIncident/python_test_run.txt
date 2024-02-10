@@ -1,0 +1,242 @@
+rbills@mbp19-rbills emIncident % python3 addEMIncident.py
+{
+    "id": "419ccb7a-a39c-4e76-99b6-268cf4f019af"
+}
+rbills@mbp19-rbills emIncident % python3 editEMIncident.py
+{
+    "id": "419ccb7a-a39c-4e76-99b6-268cf4f019af"
+}
+rbills@mbp19-rbills emIncident % python3 addEMIncidentComment.py
+{
+    "id": "c46a368e-c6b1-11ee-a30e-bbc985410070"
+}
+rbills@mbp19-rbills emIncident % python3 listEMIncidentComments.py
+{
+    "commentsAndAttachments": [
+        {
+            "aptComment": {
+                "id": "c46a368e-c6b1-11ee-a30e-bbc985410070",
+                "lastUpdatedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+                "lastUpdatedByUserName": "Robert Bills",
+                "lastUpdatedDateTime": 1707417730445,
+                "createdByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+                "createdByUserName": "Robert Bills",
+                "creationDateTime": 1707417730445,
+                "commentText": "Adding a test comment using GraphQL via Python.",
+                "visibilityType": "Public",
+                "aptAttachments": []
+            },
+            "isEditableByUser": true
+        }
+    ]
+}
+rbills@mbp19-rbills emIncident % python3 readEMIncident.py
+{
+    "id": "419ccb7a-a39c-4e76-99b6-268cf4f019af",
+    "currentBaseState": "ToDo",
+    "currentSubState": null,
+    "data": {
+        "aptBusinessObjectId": "USPT-3577",
+        "aptBusinessObjectSummary": "GraphQL Python test run",
+        "aptBusinessObjectDescription": "Editing an external manufacturing incident programmatically using graphQL and Python.",
+        "responsibleDepartmentAtCompany": null,
+        "responsibleDepartmentAtPartner": null,
+        "incidentType": null,
+        "resolutionDueDate": 1736613281000,
+        "externalManufacturingImpact": {
+            "businessImpact": null,
+            "businessPriority": "MEDIUM"
+        },
+        "referenceIdentifiers": null,
+        "dateSubmitted": null,
+        "createdByPartner": false,
+        "__typename": "ExternalManufacturingIncidentData"
+    },
+    "aptBusinessObjectBelongsToProcessNetwork": [
+        {
+            "to": {
+                "id": "YOUR_PROCESS_NETWORK_ID",
+                "__typename": "ProcessNetwork"
+            },
+            "__typename": "AptBusinessObjectBelongsToProcessNetwork"
+        }
+    ],
+    "aptBusinessObjectCompanyAssignedUser": [],
+    "aptBusinessObjectPartnerAssignedUser": [],
+    "aptBusinessObjectCompanyOwnerUser": [],
+    "aptBusinessObjectPartnerOwnerUser": [],
+    "aptBusinessObjectAssignedToCompanyPartnerMasterData": [],
+    "aptBusinessObjectPrimaryPartnerLocationMasterData": [],
+    "__typename": "ExternalManufacturingIncident"
+}
+rbills@mbp19-rbills emIncident % python3 getEMIncidentHistory.py
+{
+    "auditTrailRecordList": [
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "fromId",
+                        "auditRecordNewValue": "USPT-3577",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:externalManufacturingIncident",
+                        "auditRecordAttributeName": "fromId",
+                        "auditRecordNewResolvedIdentifier": "419ccb7a-a39c-4e76-99b6-268cf4f019af"
+                    },
+                    {
+                        "auditRecordDisplayName": "toId",
+                        "auditRecordNewValue": "agile-process-teams:aptComment:v1_c46a368e-c6b1-11ee-a30e-bbc985410070",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:aptComment",
+                        "auditRecordAttributeName": "toId",
+                        "auditRecordNewResolvedIdentifier": "c46a368e-c6b1-11ee-a30e-bbc985410070"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "externalManufacturingIncident",
+            "resolvedRelationshipSchemaName": "agile-process-teams:aptBusinessObjectContainsComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707417730618,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "CREATE",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "419ccb7a-a39c-4e76-99b6-268cf4f019af",
+            "auditItemIdentifier": "USPT-3577",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "resolvedRelationshipObjectIdentifier": "c4ab5e41-c6b1-11ee-a30e-bbc985410070",
+            "businessObjectSchemaName": "agile-process-teams:externalManufacturingIncident",
+            "performedByUserName": "rbills+uspt1@tracelink.com",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "fromId : --,USPT-3577 ; toId : --,agile-process-teams:aptComment:v1_c46a368e-c6b1-11ee-a30e-bbc985410070",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "commentText",
+                        "auditRecordNewValue": "Adding a test comment using GraphQL via Python.",
+                        "auditRecordAttributeName": "commentText"
+                    },
+                    {
+                        "auditRecordDisplayName": "isDeleted",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "isDeleted"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "aptComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707417730191,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "c46a368e-c6b1-11ee-a30e-bbc985410070",
+            "auditItemIdentifier": "agile-process-teams:aptComment:v1_c46a368e-c6b1-11ee-a30e-bbc985410070",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:aptComment",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "commentText : --,Adding a test comment using GraphQL via Python. ; isDeleted : --,false",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "UPDATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Editing an external manufacturing incident programmatically using graphQL and Python.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription",
+                        "auditRecordOldValue": "Adding an incident programmatically from postman using graphQL walkthrough demo."
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "externalManufacturingIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707417548587,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Edited",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "419ccb7a-a39c-4e76-99b6-268cf4f019af",
+            "auditItemIdentifier": "USPT-3577",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:externalManufacturingIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "aptBusinessObjectDescription : Adding an incident programmatically from postman using graphQL walkthrough demo.,Editing an external manufacturing incident programmatically using graphQL and Python.",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "Status",
+                        "auditRecordNewValue": "ToDo",
+                        "auditRecordAttributeName": "currentBaseState"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectId",
+                        "auditRecordNewValue": "USPT-3577",
+                        "auditRecordAttributeName": "aptBusinessObjectId"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectSummary",
+                        "auditRecordNewValue": "GraphQL Python test run",
+                        "auditRecordAttributeName": "aptBusinessObjectSummary"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Adding an incident programmatically from postman using graphQL walkthrough demo.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription"
+                    },
+                    {
+                        "auditRecordDisplayName": "resolutionDueDate",
+                        "auditRecordNewValue": "1736613281000",
+                        "auditRecordAttributeName": "resolutionDueDate"
+                    },
+                    {
+                        "auditRecordDisplayName": "businessPriority",
+                        "auditRecordNewValue": "MEDIUM",
+                        "auditRecordAttributeName": "businessPriority"
+                    },
+                    {
+                        "auditRecordDisplayName": "createdByPartner",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "createdByPartner"
+                    },
+                    {
+                        "auditRecordDisplayName": "Follower",
+                        "auditRecordNewValue": "Robert Bills",
+                        "auditRecordNewResolvedSchemaName": "network-administration:user",
+                        "auditRecordAttributeName": "followerId",
+                        "auditRecordNewResolvedIdentifier": "2160937a-409f-43e6-a5e8-dd7ca2b9225b"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "externalManufacturingIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707417408602,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "419ccb7a-a39c-4e76-99b6-268cf4f019af",
+            "auditItemIdentifier": "USPT-3577",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:externalManufacturingIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "currentBaseState : --,ToDo ; aptBusinessObjectId : --,USPT-3577 ; aptBusinessObjectSummary : --,GraphQL Python test run ; aptBusinessObjectDescription : --,Adding an incident programmatically from postman using graphQL walkthrough demo. ; resolutionDueDate : --,1736613281000 ; businessPriority : --,MEDIUM ; fkProcessNetworkId : --,APT-SCWM ; createdByPartner : --,false ; followerId : --,rbills+uspt1@tracelink.com",
+            "applicationName": "agile-process-teams"
+        }
+    ]
+}

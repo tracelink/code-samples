@@ -1,0 +1,309 @@
+rbills@mbp19-rbills taskTemplate % python3 addTaskTemplate.py
+{"data":{"genericActionCall":{"result":"{\"id\":\"9f2ce4b7-b9fe-4273-9586-c58c78f76b85\"}","__typename":"ReadResult"}}}
+rbills@mbp19-rbills taskTemplate % python3 readTemplateDetails.py
+Traceback (most recent call last):
+  File "/Users/rbills/test/gql_samples/taskTemplate/readTemplateDetails.py", line 22, in <module>
+    api_json = json.loads(schema_json.get('result'))  # load the result object to json
+                          ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+rbills@mbp19-rbills taskTemplate % python3 readTemplateDetails.py
+{
+    "id": "9f2ce4b7-b9fe-4273-9586-c58c78f76b85",
+    "data": {
+        "templateName": "GQL Python Created Task Template 1",
+        "aptBusinessObjectDescription": "Template to demonstrate creation via GraphQL API and Python",
+        "isTemplateModifiableByMember": true,
+        "isAddRemoveSubtaskAllowed": true,
+        "completionRequiredWithinDays": 14,
+        "businessPriority": "LOW",
+        "responsibleDepartmentAtCompany": null
+    },
+    "taskTemplateContainsSubTask": null,
+    "__typename": "TaskTemplate"
+}
+rbills@mbp19-rbills taskTemplate % python3 addSubTaskTemplate.py
+{
+    "id": "26dca45e-fd7e-4324-9bcd-f5e67d08adc5"
+}
+rbills@mbp19-rbills taskTemplate % python3 readTemplateDetails.py
+{
+    "id": "9f2ce4b7-b9fe-4273-9586-c58c78f76b85",
+    "data": {
+        "templateName": "GQL Python Created Task Template 1",
+        "aptBusinessObjectDescription": "Template to demonstrate creation via GraphQL API and Python",
+        "isTemplateModifiableByMember": true,
+        "isAddRemoveSubtaskAllowed": true,
+        "completionRequiredWithinDays": 14,
+        "businessPriority": "LOW",
+        "responsibleDepartmentAtCompany": null
+    },
+    "taskTemplateContainsSubTask": [
+        {
+            "to": {
+                "subType": null,
+                "objectType": "agile-process-teams:subTask"
+            }
+        }
+    ],
+    "__typename": "TaskTemplate"
+}
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{"errors":[{"message":"Variable 'action' has an invalid value: Variable 'action' has coerced Null value for NonNull type 'String!'","locations":[{"line":1,"column":34}],"extensions":{"classification":"ValidationError"}}]}
+Traceback (most recent call last):
+  File "/Users/rbills/test/gql_samples/taskTemplate/listSubtaskForTemplate.py", line 20, in <module>
+    schema_json = raw_json.get('data').get('genericActionCall')  # drill into object
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{"errors":[{"message":"Variable 'payload' has an invalid value: Variable 'payload' has coerced Null value for NonNull type 'JSON!'","locations":[{"line":1,"column":52}],"extensions":{"classification":"ValidationError"}}]}
+Traceback (most recent call last):
+  File "/Users/rbills/test/gql_samples/taskTemplate/listSubtaskForTemplate.py", line 20, in <module>
+    schema_json = raw_json.get('data').get('genericActionCall')  # drill into object
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{"errors":[{"message":"Variable 'payload' has an invalid value: Variable 'payload' has coerced Null value for NonNull type 'JSON!'","locations":[{"line":1,"column":52}],"extensions":{"classification":"ValidationError"}}]}
+Traceback (most recent call last):
+  File "/Users/rbills/test/gql_samples/taskTemplate/listSubtaskForTemplate.py", line 20, in <module>
+    schema_json = raw_json.get('data').get('genericActionCall')  # drill into object
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{"errors":[{"message":"Variable 'payload' has an invalid value: Variable 'payload' has coerced Null value for NonNull type 'JSON!'","locations":[{"line":1,"column":52}],"extensions":{"classification":"ValidationError"}}]}
+Traceback (most recent call last):
+  File "/Users/rbills/test/gql_samples/taskTemplate/listSubtaskForTemplate.py", line 20, in <module>
+    schema_json = raw_json.get('data').get('genericActionCall')  # drill into object
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{
+    "subTasks": [
+        {
+            "subTask": {
+                "subTaskId": "26dca45e-fd7e-4324-9bcd-f5e67d08adc5",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521317401,
+                "aptBusinessObjectId": "USPT-3585",
+                "lastUpdatedDateTime": 1707521317401,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        }
+    ]
+}
+rbills@mbp19-rbills taskTemplate % python3 addSubTaskTemplate.py
+{
+    "id": "68faa274-a206-4a1d-8c88-1de9f286c462"
+}
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{
+    "subTasks": [
+        {
+            "subTask": {
+                "subTaskId": "074bef4d-bc6c-40c9-86c1-f907b028b883",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task 2",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521820679,
+                "aptBusinessObjectId": "USPT-3586",
+                "lastUpdatedDateTime": 1707521820679,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        },
+        {
+            "subTask": {
+                "subTaskId": "68faa274-a206-4a1d-8c88-1de9f286c462",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task 3",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521861702,
+                "aptBusinessObjectId": "USPT-3587",
+                "lastUpdatedDateTime": 1707521861702,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        },
+        {
+            "subTask": {
+                "subTaskId": "26dca45e-fd7e-4324-9bcd-f5e67d08adc5",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521317401,
+                "aptBusinessObjectId": "USPT-3585",
+                "lastUpdatedDateTime": 1707521317401,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        }
+    ]
+}
+rbills@mbp19-rbills taskTemplate % python3 editSubTaskonTemplate.py
+Traceback (most recent call last):
+  File "/Users/rbills/test/gql_samples/taskTemplate/editSubTaskonTemplate.py", line 22, in <module>
+    api_json = json.loads(schema_json.get('result'))  # load the result object to json
+                          ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+rbills@mbp19-rbills taskTemplate % python3 editSubTaskonTemplate.py
+{
+    "aptBusinessObjectId": "USPT-3586",
+    "id": "074bef4d-bc6c-40c9-86c1-f907b028b883"
+}
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{
+    "subTasks": [
+        {
+            "subTask": {
+                "subTaskId": "074bef4d-bc6c-40c9-86c1-f907b028b883",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "Modified template name 2",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521820679,
+                "aptBusinessObjectId": "USPT-3586",
+                "lastUpdatedDateTime": 1707522235773,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        },
+        {
+            "subTask": {
+                "subTaskId": "68faa274-a206-4a1d-8c88-1de9f286c462",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task 3",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521861702,
+                "aptBusinessObjectId": "USPT-3587",
+                "lastUpdatedDateTime": 1707521861702,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        },
+        {
+            "subTask": {
+                "subTaskId": "26dca45e-fd7e-4324-9bcd-f5e67d08adc5",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521317401,
+                "aptBusinessObjectId": "USPT-3585",
+                "lastUpdatedDateTime": 1707521317401,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        }
+    ]
+}
+rbills@mbp19-rbills taskTemplate % python3 removeSubTaskFromTemplate.py
+{
+    "aptBusinessObjectId": "USPT-3586",
+    "message": "Sub-task with Id: 074bef4d-bc6c-40c9-86c1-f907b028b883 removed successfully."
+}
+rbills@mbp19-rbills taskTemplate % python3 listSubtaskForTemplate.py
+{
+    "subTasks": [
+        {
+            "subTask": {
+                "subTaskId": "68faa274-a206-4a1d-8c88-1de9f286c462",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task 3",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521861702,
+                "aptBusinessObjectId": "USPT-3587",
+                "lastUpdatedDateTime": 1707521861702,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        },
+        {
+            "subTask": {
+                "subTaskId": "26dca45e-fd7e-4324-9bcd-f5e67d08adc5",
+                "subTaskType": "Test subTask",
+                "subTaskDueDate": null,
+                "subTaskName": "GQL Created Sub Task",
+                "subTaskStatus": "ToDo",
+                "currentSubState": null,
+                "creationDateTime": 1707521317401,
+                "aptBusinessObjectId": "USPT-3585",
+                "lastUpdatedDateTime": 1707521317401,
+                "currentlyOwnerAssignees": [],
+                "currentlyPartnerAssignees": [],
+                "lastUpdatedByUserName": "Robert Bills",
+                "isCreator": true
+            }
+        }
+    ]
+}
+rbills@mbp19-rbills taskTemplate % python3 editTaskTemplate.py
+{"data":{"genericActionCall":{"result":"{\"id\":\"9f2ce4b7-b9fe-4273-9586-c58c78f76b85\"}","__typename":"ReadResult"}}}
+{
+    "id": "9f2ce4b7-b9fe-4273-9586-c58c78f76b85"
+}
+rbills@mbp19-rbills taskTemplate % python3 readTemplateDetails.py
+{
+    "id": "9f2ce4b7-b9fe-4273-9586-c58c78f76b85",
+    "data": {
+        "templateName": "GQL Python Created Task Template 1",
+        "aptBusinessObjectDescription": "Modified template via python using GraphQL",
+        "isTemplateModifiableByMember": true,
+        "isAddRemoveSubtaskAllowed": true,
+        "completionRequiredWithinDays": 14,
+        "businessPriority": "LOW",
+        "responsibleDepartmentAtCompany": null
+    },
+    "taskTemplateContainsSubTask": [
+        {
+            "to": {
+                "subType": null,
+                "objectType": "agile-process-teams:subTask"
+            }
+        },
+        {
+            "to": {
+                "subType": null,
+                "objectType": "agile-process-teams:subTask"
+            }
+        },
+        {
+            "to": {
+                "subType": null,
+                "objectType": "agile-process-teams:subTask"
+            }
+        }
+    ],
+    "__typename": "TaskTemplate"
+}

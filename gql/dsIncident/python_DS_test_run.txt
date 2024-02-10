@@ -1,0 +1,489 @@
+rbills@mbp19-rbills dsIncident % python3 addDSIncident.py
+{
+    "id": "58b81b52-6bfd-4ed6-8136-0ab666b202d7"
+}
+rbills@mbp19-rbills dsIncident % python3 editDSIncident.py
+  File "/Users/rbills/test/gql_samples/dsIncident/editDSIncident.py", line 6
+    payload = "{\"query\":\"mutation EditIncident($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{"action": "Editdirectsupplierincident","payload":{"id":"58b81b52-6bfd-4ed6-8136-0ab666b202d7","aptBusinessObjectDescription":"Editing an incident programmatically using graphQL via Python.","businessPriority":"LOW","responsiblePartyAtParner":{}}}}"
+                                                                                                                                                                                                                                                                                     ^
+SyntaxError: invalid decimal literal
+rbills@mbp19-rbills dsIncident % python3 editDSIncident.py
+{
+    "id": "58b81b52-6bfd-4ed6-8136-0ab666b202d7"
+}
+rbills@mbp19-rbills dsIncident % python3 editDSIncident.py
+{
+    "id": "58b81b52-6bfd-4ed6-8136-0ab666b202d7"
+}
+rbills@mbp19-rbills dsIncident % python3 addDSIncidentComment.py
+{
+    "id": "9e8653f3-c6a9-11ee-a30e-bbc985410070"
+}
+rbills@mbp19-rbills dsIncident % python3 listDSIncidentComments.py
+{
+    "commentsAndAttachments": [
+        {
+            "aptComment": {
+                "id": "9e8653f3-c6a9-11ee-a30e-bbc985410070",
+                "lastUpdatedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+                "lastUpdatedByUserName": "Robert Bills",
+                "lastUpdatedDateTime": 1707414230809,
+                "createdByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+                "createdByUserName": "Robert Bills",
+                "creationDateTime": 1707414230809,
+                "commentText": "Adding a test comment using GraphQL via Python command line.",
+                "visibilityType": "Public",
+                "aptAttachments": []
+            },
+            "isEditableByUser": true
+        }
+    ]
+}
+rbills@mbp19-rbills dsIncident % python3 getActivityHistoryForDSIncidents.py
+{
+    "auditTrailRecordList": []
+}
+rbills@mbp19-rbills dsIncident % python3 getActivityHistoryForDSIncidents.py
+{
+    "auditTrailRecordList": [
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "fromId",
+                        "auditRecordNewValue": "USPT-3576",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:directSupplierIncident",
+                        "auditRecordAttributeName": "fromId",
+                        "auditRecordNewResolvedIdentifier": "58b81b52-6bfd-4ed6-8136-0ab666b202d7"
+                    },
+                    {
+                        "auditRecordDisplayName": "toId",
+                        "auditRecordNewValue": "agile-process-teams:aptComment:v1_9e8653f3-c6a9-11ee-a30e-bbc985410070",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:aptComment",
+                        "auditRecordAttributeName": "toId",
+                        "auditRecordNewResolvedIdentifier": "9e8653f3-c6a9-11ee-a30e-bbc985410070"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "resolvedRelationshipSchemaName": "agile-process-teams:aptBusinessObjectContainsComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707414230976,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "CREATE",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "resolvedRelationshipObjectIdentifier": "9eb88785-c6a9-11ee-a30e-bbc985410070",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "rbills+uspt1@tracelink.com",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "fromId : --,USPT-3576 ; toId : --,agile-process-teams:aptComment:v1_9e8653f3-c6a9-11ee-a30e-bbc985410070",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "commentText",
+                        "auditRecordNewValue": "Adding a test comment using GraphQL via Python command line.",
+                        "auditRecordAttributeName": "commentText"
+                    },
+                    {
+                        "auditRecordDisplayName": "isDeleted",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "isDeleted"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "aptComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707414230647,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "9e8653f3-c6a9-11ee-a30e-bbc985410070",
+            "auditItemIdentifier": "agile-process-teams:aptComment:v1_9e8653f3-c6a9-11ee-a30e-bbc985410070",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:aptComment",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "commentText : --,Adding a test comment using GraphQL via Python command line. ; isDeleted : --,false",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "UPDATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Editing an incident programmatically using graphQL via Python command line.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription",
+                        "auditRecordOldValue": "Editing an incident programmatically using graphQL for a demo3."
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707413884132,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Edited",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "aptBusinessObjectDescription : Editing an incident programmatically using graphQL for a demo3.,Editing an incident programmatically using graphQL via Python command line.",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "UPDATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Editing an incident programmatically using graphQL for a demo3.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription",
+                        "auditRecordOldValue": "Adding an incident programmatically using graphQL via Python."
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707413706448,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Edited",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "aptBusinessObjectDescription : Adding an incident programmatically using graphQL via Python.,Editing an incident programmatically using graphQL for a demo3.",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "Status",
+                        "auditRecordNewValue": "ToDo",
+                        "auditRecordAttributeName": "currentBaseState"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectId",
+                        "auditRecordNewValue": "USPT-3576",
+                        "auditRecordAttributeName": "aptBusinessObjectId"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectSummary",
+                        "auditRecordNewValue": "GraphQL Python DS Incident test run 1",
+                        "auditRecordAttributeName": "aptBusinessObjectSummary"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Adding an incident programmatically using graphQL via Python.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription"
+                    },
+                    {
+                        "auditRecordDisplayName": "resolutionDueDate",
+                        "auditRecordNewValue": "1736613281000",
+                        "auditRecordAttributeName": "resolutionDueDate"
+                    },
+                    {
+                        "auditRecordDisplayName": "businessPriority",
+                        "auditRecordNewValue": "MEDIUM",
+                        "auditRecordAttributeName": "businessPriority"
+                    },
+                    {
+                        "auditRecordDisplayName": "createdByPartner",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "createdByPartner"
+                    },
+                    {
+                        "auditRecordDisplayName": "Follower",
+                        "auditRecordNewValue": "Robert Bills",
+                        "auditRecordNewResolvedSchemaName": "network-administration:user",
+                        "auditRecordAttributeName": "followerId",
+                        "auditRecordNewResolvedIdentifier": "2160937a-409f-43e6-a5e8-dd7ca2b9225b"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707412752699,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "currentBaseState : --,ToDo ; aptBusinessObjectId : --,USPT-3576 ; aptBusinessObjectSummary : --,GraphQL Python DS Incident test run 1 ; aptBusinessObjectDescription : --,Adding an incident programmatically using graphQL via Python. ; resolutionDueDate : --,1736613281000 ; businessPriority : --,MEDIUM ; fkProcessNetworkId : --,APT-SCWM ; createdByPartner : --,false ; followerId : --,rbills+uspt1@tracelink.com",
+            "applicationName": "agile-process-teams"
+        }
+    ]
+}
+rbills@mbp19-rbills dsIncident % python3 readDSIncident.py
+Traceback (most recent call last):
+  File "/Users/rbills/test/gql_samples/dsIncident/readDSIncident.py", line 23, in <module>
+    api_json = json.loads(schema_json.get('result'))  # load the result object to json
+                          ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+rbills@mbp19-rbills dsIncident % python3 readDSIncident.py
+{
+    "id": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+    "currentBaseState": "ToDo",
+    "currentSubState": null,
+    "data": {
+        "aptBusinessObjectId": "USPT-3576",
+        "aptBusinessObjectSummary": "GraphQL Python DS Incident test run 1",
+        "aptBusinessObjectDescription": "Editing an incident programmatically using graphQL via Python command line.",
+        "responsibleDepartmentAtCompany": null,
+        "responsibleDepartmentAtPartner": null,
+        "incidentType": null,
+        "resolutionDueDate": 1736613281000,
+        "directSupplierImpact": {
+            "businessPriority": "MEDIUM"
+        },
+        "referenceIdentifiers": null,
+        "dateSubmitted": null,
+        "createdByPartner": false,
+        "__typename": "DirectSupplierIncidentData"
+    },
+    "aptBusinessObjectBelongsToProcessNetwork": [
+        {
+            "to": {
+                "id": "YOUR_PROCESS_NETWORK_ID",
+                "__typename": "ProcessNetwork"
+            },
+            "__typename": "AptBusinessObjectBelongsToProcessNetwork"
+        }
+    ],
+    "aptBusinessObjectCompanyAssignedUser": [],
+    "aptBusinessObjectPartnerAssignedUser": [],
+    "aptBusinessObjectCompanyOwnerUser": [],
+    "aptBusinessObjectPartnerOwnerUser": [],
+    "aptBusinessObjectAssignedToCompanyPartnerMasterData": [],
+    "aptBusinessObjectPrimaryPartnerLocationMasterData": [],
+    "__typename": "DirectSupplierIncident"
+}
+rbills@mbp19-rbills dsIncident % python3 getActivityHistoryForDSIncidents.py
+{
+    "auditTrailRecordList": [
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "fromId",
+                        "auditRecordNewValue": "USPT-3576",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:directSupplierIncident",
+                        "auditRecordAttributeName": "fromId",
+                        "auditRecordNewResolvedIdentifier": "58b81b52-6bfd-4ed6-8136-0ab666b202d7"
+                    },
+                    {
+                        "auditRecordDisplayName": "toId",
+                        "auditRecordNewValue": "agile-process-teams:aptComment:v1_9e8653f3-c6a9-11ee-a30e-bbc985410070",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:aptComment",
+                        "auditRecordAttributeName": "toId",
+                        "auditRecordNewResolvedIdentifier": "9e8653f3-c6a9-11ee-a30e-bbc985410070"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "resolvedRelationshipSchemaName": "agile-process-teams:aptBusinessObjectContainsComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707414230976,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "CREATE",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "resolvedRelationshipObjectIdentifier": "9eb88785-c6a9-11ee-a30e-bbc985410070",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "rbills+uspt1@tracelink.com",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "fromId : --,USPT-3576 ; toId : --,agile-process-teams:aptComment:v1_9e8653f3-c6a9-11ee-a30e-bbc985410070",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "commentText",
+                        "auditRecordNewValue": "Adding a test comment using GraphQL via Python command line.",
+                        "auditRecordAttributeName": "commentText"
+                    },
+                    {
+                        "auditRecordDisplayName": "isDeleted",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "isDeleted"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "aptComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707414230647,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "9e8653f3-c6a9-11ee-a30e-bbc985410070",
+            "auditItemIdentifier": "agile-process-teams:aptComment:v1_9e8653f3-c6a9-11ee-a30e-bbc985410070",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:aptComment",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "commentText : --,Adding a test comment using GraphQL via Python command line. ; isDeleted : --,false",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "UPDATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Editing an incident programmatically using graphQL via Python command line.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription",
+                        "auditRecordOldValue": "Editing an incident programmatically using graphQL for a demo3."
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707413884132,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Edited",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "aptBusinessObjectDescription : Editing an incident programmatically using graphQL for a demo3.,Editing an incident programmatically using graphQL via Python command line.",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "UPDATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Editing an incident programmatically using graphQL for a demo3.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription",
+                        "auditRecordOldValue": "Adding an incident programmatically using graphQL via Python."
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707413706448,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Edited",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "aptBusinessObjectDescription : Adding an incident programmatically using graphQL via Python.,Editing an incident programmatically using graphQL for a demo3.",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "Status",
+                        "auditRecordNewValue": "ToDo",
+                        "auditRecordAttributeName": "currentBaseState"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectId",
+                        "auditRecordNewValue": "USPT-3576",
+                        "auditRecordAttributeName": "aptBusinessObjectId"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectSummary",
+                        "auditRecordNewValue": "GraphQL Python DS Incident test run 1",
+                        "auditRecordAttributeName": "aptBusinessObjectSummary"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Adding an incident programmatically using graphQL via Python.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription"
+                    },
+                    {
+                        "auditRecordDisplayName": "resolutionDueDate",
+                        "auditRecordNewValue": "1736613281000",
+                        "auditRecordAttributeName": "resolutionDueDate"
+                    },
+                    {
+                        "auditRecordDisplayName": "businessPriority",
+                        "auditRecordNewValue": "MEDIUM",
+                        "auditRecordAttributeName": "businessPriority"
+                    },
+                    {
+                        "auditRecordDisplayName": "createdByPartner",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "createdByPartner"
+                    },
+                    {
+                        "auditRecordDisplayName": "Follower",
+                        "auditRecordNewValue": "Robert Bills",
+                        "auditRecordNewResolvedSchemaName": "network-administration:user",
+                        "auditRecordAttributeName": "followerId",
+                        "auditRecordNewResolvedIdentifier": "2160937a-409f-43e6-a5e8-dd7ca2b9225b"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "directSupplierIncident",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707412752699,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "58b81b52-6bfd-4ed6-8136-0ab666b202d7",
+            "auditItemIdentifier": "USPT-3576",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:directSupplierIncident",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "currentBaseState : --,ToDo ; aptBusinessObjectId : --,USPT-3576 ; aptBusinessObjectSummary : --,GraphQL Python DS Incident test run 1 ; aptBusinessObjectDescription : --,Adding an incident programmatically using graphQL via Python. ; resolutionDueDate : --,1736613281000 ; businessPriority : --,MEDIUM ; fkProcessNetworkId : --,APT-SCWM ; createdByPartner : --,false ; followerId : --,rbills+uspt1@tracelink.com",
+            "applicationName": "agile-process-teams"
+        }
+    ]
+}

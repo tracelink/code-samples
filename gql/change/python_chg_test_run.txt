@@ -1,0 +1,298 @@
+rbills@mbp19-rbills change % python3 addChange.py
+{
+    "id": "29a1073b-65e2-4d29-ad35-c392e235be82"
+}
+rbills@mbp19-rbills change % python3 readChange.py
+{"errors":[{"message":"Can't resolve '/genericGetObject'. Abstract type 'ALL_RETURNS' must resolve to an Object type at runtime for field 'Query.genericGetObject'. Could not determine the exact type of 'ALL_RETURNS'","path":["genericGetObject"],"extensions":{"classification":"DataFetchingException"}}],"data":{"genericGetObject":null}}
+null
+rbills@mbp19-rbills change % python3 readChange.py
+{"data":{"genericGetObject":{"id":"29a1073b-65e2-4d29-ad35-c392e235be82","currentBaseState":"ToDo","currentSubState":null,"data":{"aptBusinessObjectId":"USPT-3581","aptBusinessObjectSummary":"GraphQL using python demo","aptBusinessObjectDescription":"Test case entering a change request using postman and graphQL","responsibleDepartmentAtCompany":null,"responsibleDepartmentAtPartner":null,"businessPriority":"LOW","changeType":null,"implementationDueDate":null,"implementationTeam":null,"subjectMatterExperts":null,"changeImpact":null,"createdByPartner":false,"productId":null,"aptBusinessObjectImpactsLocationMasterData":[],"__typename":"ChangeData"},"aptBusinessObjectContainsComment":null,"aptBusinessObjectContainsAttachment":null,"__typename":"Change"}}}
+{
+    "id": "29a1073b-65e2-4d29-ad35-c392e235be82",
+    "currentBaseState": "ToDo",
+    "currentSubState": null,
+    "data": {
+        "aptBusinessObjectId": "USPT-3581",
+        "aptBusinessObjectSummary": "GraphQL using python demo",
+        "aptBusinessObjectDescription": "Test case entering a change request using postman and graphQL",
+        "responsibleDepartmentAtCompany": null,
+        "responsibleDepartmentAtPartner": null,
+        "businessPriority": "LOW",
+        "changeType": null,
+        "implementationDueDate": null,
+        "implementationTeam": null,
+        "subjectMatterExperts": null,
+        "changeImpact": null,
+        "createdByPartner": false,
+        "productId": null,
+        "aptBusinessObjectImpactsLocationMasterData": [],
+        "__typename": "ChangeData"
+    },
+    "aptBusinessObjectContainsComment": null,
+    "aptBusinessObjectContainsAttachment": null,
+    "__typename": "Change"
+}
+rbills@mbp19-rbills change % python3 readChange.py
+{"errors":[{"message":"Can't resolve '/genericGetObject'. Abstract type 'ALL_RETURNS' must resolve to an Object type at runtime for field 'Query.genericGetObject'. Could not determine the exact type of 'ALL_RETURNS'","path":["genericGetObject"],"extensions":{"classification":"DataFetchingException"}}],"data":{"genericGetObject":null}}
+null
+rbills@mbp19-rbills change % python3 readChange.py
+{"data":{"genericGetObject":{"id":"29a1073b-65e2-4d29-ad35-c392e235be82","currentBaseState":"ToDo","currentSubState":null,"data":{"aptBusinessObjectId":"USPT-3581","aptBusinessObjectSummary":"GraphQL using python demo","aptBusinessObjectDescription":"Test case entering a change request using postman and graphQL","responsibleDepartmentAtCompany":null,"responsibleDepartmentAtPartner":null,"businessPriority":"LOW","changeType":null,"implementationDueDate":null,"implementationTeam":null,"subjectMatterExperts":null,"changeImpact":null,"createdByPartner":false,"productId":null,"aptBusinessObjectImpactsLocationMasterData":[],"__typename":"ChangeData"},"aptBusinessObjectContainsComment":null,"aptBusinessObjectContainsAttachment":null,"__typename":"Change"}}}
+{
+    "id": "29a1073b-65e2-4d29-ad35-c392e235be82",
+    "currentBaseState": "ToDo",
+    "currentSubState": null,
+    "data": {
+        "aptBusinessObjectId": "USPT-3581",
+        "aptBusinessObjectSummary": "GraphQL using python demo",
+        "aptBusinessObjectDescription": "Test case entering a change request using postman and graphQL",
+        "responsibleDepartmentAtCompany": null,
+        "responsibleDepartmentAtPartner": null,
+        "businessPriority": "LOW",
+        "changeType": null,
+        "implementationDueDate": null,
+        "implementationTeam": null,
+        "subjectMatterExperts": null,
+        "changeImpact": null,
+        "createdByPartner": false,
+        "productId": null,
+        "aptBusinessObjectImpactsLocationMasterData": [],
+        "__typename": "ChangeData"
+    },
+    "aptBusinessObjectContainsComment": null,
+    "aptBusinessObjectContainsAttachment": null,
+    "__typename": "Change"
+}
+rbills@mbp19-rbills change % python3 edditChange.py
+{
+    "id": "29a1073b-65e2-4d29-ad35-c392e235be82"
+}
+rbills@mbp19-rbills change % python3 readChange.py
+{"data":{"genericGetObject":{"id":"29a1073b-65e2-4d29-ad35-c392e235be82","currentBaseState":"ToDo","currentSubState":null,"data":{"aptBusinessObjectId":"USPT-3581","aptBusinessObjectSummary":"GraphQL using python demo","aptBusinessObjectDescription":"Editing a compliance exception programmatically using graphQL and Python.","responsibleDepartmentAtCompany":null,"responsibleDepartmentAtPartner":null,"businessPriority":"LOW","changeType":null,"implementationDueDate":null,"implementationTeam":null,"subjectMatterExperts":null,"changeImpact":null,"createdByPartner":false,"productId":null,"aptBusinessObjectImpactsLocationMasterData":[],"__typename":"ChangeData"},"aptBusinessObjectContainsComment":null,"aptBusinessObjectContainsAttachment":null,"__typename":"Change"}}}
+{
+    "id": "29a1073b-65e2-4d29-ad35-c392e235be82",
+    "currentBaseState": "ToDo",
+    "currentSubState": null,
+    "data": {
+        "aptBusinessObjectId": "USPT-3581",
+        "aptBusinessObjectSummary": "GraphQL using python demo",
+        "aptBusinessObjectDescription": "Editing a compliance exception programmatically using graphQL and Python.",
+        "responsibleDepartmentAtCompany": null,
+        "responsibleDepartmentAtPartner": null,
+        "businessPriority": "LOW",
+        "changeType": null,
+        "implementationDueDate": null,
+        "implementationTeam": null,
+        "subjectMatterExperts": null,
+        "changeImpact": null,
+        "createdByPartner": false,
+        "productId": null,
+        "aptBusinessObjectImpactsLocationMasterData": [],
+        "__typename": "ChangeData"
+    },
+    "aptBusinessObjectContainsComment": null,
+    "aptBusinessObjectContainsAttachment": null,
+    "__typename": "Change"
+}
+rbills@mbp19-rbills change % python3 listChangeComments.py
+{
+    "commentsAndAttachments": []
+}
+rbills@mbp19-rbills change % python3 addChangeComment.py
+{
+    "id": "f7d63a4f-c75a-11ee-a30e-bbc985410070"
+}
+rbills@mbp19-rbills change % python3 listChangeComments.py
+{
+    "commentsAndAttachments": []
+}
+rbills@mbp19-rbills change % python3 listChangeComments.py
+{
+    "commentsAndAttachments": [
+        {
+            "aptComment": {
+                "id": "f7d63a4f-c75a-11ee-a30e-bbc985410070",
+                "lastUpdatedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+                "lastUpdatedByUserName": "Robert Bills",
+                "lastUpdatedDateTime": 1707490401536,
+                "createdByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+                "createdByUserName": "Robert Bills",
+                "creationDateTime": 1707490401536,
+                "commentText": "Adding a test comment using GraphQL via Python command line.",
+                "visibilityType": "Public",
+                "aptAttachments": []
+            },
+            "isEditableByUser": true
+        }
+    ]
+}
+rbills@mbp19-rbills change % python3 getChangeActivityHistory.py
+{
+    "auditTrailRecordList": [
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "fromId",
+                        "auditRecordNewValue": "USPT-3581",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:change",
+                        "auditRecordAttributeName": "fromId",
+                        "auditRecordNewResolvedIdentifier": "29a1073b-65e2-4d29-ad35-c392e235be82"
+                    },
+                    {
+                        "auditRecordDisplayName": "toId",
+                        "auditRecordNewValue": "agile-process-teams:aptComment:v1_f7d63a4f-c75a-11ee-a30e-bbc985410070",
+                        "auditRecordNewResolvedSchemaName": "agile-process-teams:aptComment",
+                        "auditRecordAttributeName": "toId",
+                        "auditRecordNewResolvedIdentifier": "f7d63a4f-c75a-11ee-a30e-bbc985410070"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "change",
+            "resolvedRelationshipSchemaName": "agile-process-teams:aptBusinessObjectContainsComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707490401701,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "CREATE",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "29a1073b-65e2-4d29-ad35-c392e235be82",
+            "auditItemIdentifier": "USPT-3581",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "resolvedRelationshipObjectIdentifier": "f802a181-c75a-11ee-a30e-bbc985410070",
+            "businessObjectSchemaName": "agile-process-teams:change",
+            "performedByUserName": "rbills+uspt1@tracelink.com",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "fromId : --,USPT-3581 ; toId : --,agile-process-teams:aptComment:v1_f7d63a4f-c75a-11ee-a30e-bbc985410070",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "commentText",
+                        "auditRecordNewValue": "Adding a test comment using GraphQL via Python command line.",
+                        "auditRecordAttributeName": "commentText"
+                    },
+                    {
+                        "auditRecordDisplayName": "isDeleted",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "isDeleted"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "aptComment",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707490401410,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "f7d63a4f-c75a-11ee-a30e-bbc985410070",
+            "auditItemIdentifier": "agile-process-teams:aptComment:v1_f7d63a4f-c75a-11ee-a30e-bbc985410070",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:aptComment",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "commentText : --,Adding a test comment using GraphQL via Python command line. ; isDeleted : --,false",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "UPDATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Editing a compliance exception programmatically using graphQL and Python.",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription",
+                        "auditRecordOldValue": "Test case entering a change request using postman and graphQL"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "change",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707489271160,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Edited",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "29a1073b-65e2-4d29-ad35-c392e235be82",
+            "auditItemIdentifier": "USPT-3581",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:change",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "aptBusinessObjectDescription : Test case entering a change request using postman and graphQL,Editing a compliance exception programmatically using graphQL and Python.",
+            "applicationName": "agile-process-teams"
+        },
+        {
+            "auditChangeEntry": {
+                "auditActionTaken": "CREATE",
+                "auditChangeDetail": [
+                    {
+                        "auditRecordDisplayName": "Status",
+                        "auditRecordNewValue": "ToDo",
+                        "auditRecordAttributeName": "currentBaseState"
+                    },
+                    {
+                        "auditRecordDisplayName": "Follower",
+                        "auditRecordNewValue": "Robert Bills",
+                        "auditRecordNewResolvedSchemaName": "network-administration:user",
+                        "auditRecordAttributeName": "followerId",
+                        "auditRecordNewResolvedIdentifier": "2160937a-409f-43e6-a5e8-dd7ca2b9225b"
+                    },
+                    {
+                        "auditRecordDisplayName": "isVisible",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "isVisible"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectId",
+                        "auditRecordNewValue": "USPT-3581",
+                        "auditRecordAttributeName": "aptBusinessObjectId"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectSummary",
+                        "auditRecordNewValue": "GraphQL using python demo",
+                        "auditRecordAttributeName": "aptBusinessObjectSummary"
+                    },
+                    {
+                        "auditRecordDisplayName": "aptBusinessObjectDescription",
+                        "auditRecordNewValue": "Test case entering a change request using postman and graphQL",
+                        "auditRecordAttributeName": "aptBusinessObjectDescription"
+                    },
+                    {
+                        "auditRecordDisplayName": "businessPriority",
+                        "auditRecordNewValue": "LOW",
+                        "auditRecordAttributeName": "businessPriority"
+                    },
+                    {
+                        "auditRecordDisplayName": "createdByPartner",
+                        "auditRecordNewValue": "false",
+                        "auditRecordAttributeName": "createdByPartner"
+                    }
+                ]
+            },
+            "companyName": "USPT1",
+            "businessObjectName": "change",
+            "performedByCompanyName": "USPT1",
+            "timeStamp": 1707426761453,
+            "performedByNetworkNodeId": "YOUR_COMPANY_ID",
+            "actionType": "Added",
+            "networkNodeId": "YOUR_COMPANY_ID",
+            "businessObjectId": "29a1073b-65e2-4d29-ad35-c392e235be82",
+            "auditItemIdentifier": "USPT-3581",
+            "applicationDescription": "application-manager:application:v1_0408ee28-21d4-4890-97f8-90f3174ed3a8",
+            "businessObjectSchemaName": "agile-process-teams:change",
+            "performedByUserName": "Robert Bills",
+            "reasonCode": "",
+            "performedByUserId": "2160937a-409f-43e6-a5e8-dd7ca2b9225b",
+            "modifiedData": "currentBaseState : --,ToDo ; followerId : --,rbills+uspt1@tracelink.com ; isVisible : --,false ; aptBusinessObjectId : --,USPT-3581 ; aptBusinessObjectSummary : --,GraphQL using python demo ; aptBusinessObjectDescription : --,Test case entering a change request using postman and graphQL ; businessPriority : --,LOW ; fkProcessNetworkId : --,APT-SCWM ; createdByPartner : --,false",
+            "applicationName": "agile-process-teams"
+        }
+    ]
+}
