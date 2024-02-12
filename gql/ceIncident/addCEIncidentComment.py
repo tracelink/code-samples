@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"mutation AddIncidentComments($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\": \"Addcommentforincident\",\"payload\":{\"processId\":\"07b129e6-055f-40a7-97d2-549c3437e061\",\"processType\":\"complianceException\",\"aptCommentBox\":{\"aptComment\":{\"commentText\": \"Adding a test comment using GraphQL via Python command line.\",\"visibilityType\": \"Public\"}}}}}"
+payload = "{\"query\":\"mutation AddIncidentComments($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\": \"Addcommentforincident\",\"payload\":{\"processId\":\"YOUR_ID\",\"processType\":\"complianceException\",\"aptCommentBox\":{\"aptComment\":{\"commentText\": \"Adding a test comment using GraphQL via Python command line.\",\"visibilityType\": \"Public\"}}}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

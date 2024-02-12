@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"query GetActivityHistoryForIncident($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Getactivityhistoryforincident\",\"payload\":{\"processId\":\"9b593391-abfc-4730-9883-c2680b545903\",\"processType\":\"incident\"}}}"
+payload = "{\"query\":\"query GetActivityHistoryForIncident($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Getactivityhistoryforincident\",\"payload\":{\"processId\":\"YOUR_ID\",\"processType\":\"incident\"}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

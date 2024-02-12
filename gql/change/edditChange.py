@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"mutation Editchange($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\": \"Editchange\",\"payload\":{\"id\":\"29a1073b-65e2-4d29-ad35-c392e235be82\",\"aptBusinessObjectDescription\":\"Editing a compliance exception programmatically using graphQL and Python.\",\"businessPriority\":\"LOW\",\"responsiblePartyAtParner\":{}}}}"
+payload = "{\"query\":\"mutation Editchange($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\": \"Editchange\",\"payload\":{\"id\":\"YOUR_ID\",\"aptBusinessObjectDescription\":\"Editing a compliance exception programmatically using graphQL and Python.\",\"businessPriority\":\"LOW\",\"responsiblePartyAtParner\":{}}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

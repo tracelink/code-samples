@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"query getProductMasterData($action: String!, $regulatoryItemCodeValue: String!, $regulatoryItemCodeType: String!)\\n{\\n    genericActionCall(\\n        action: $action,\\n        payload:\\n        {\\n            regulatoryItemCodeValue: $regulatoryItemCodeValue,\\n            regulatoryItemCodeType: $regulatoryItemCodeType\\n            }\\n    )\\n    {\\n        result\\n        __typename\\n    }\\n}\",\"variables\":{\"action\":\"Getproductbyitemcode\",\"regulatoryItemCodeValue\":\"6846210340\",\"regulatoryItemCodeType\":\"US_NDC532\"}}"
+payload = "{\"query\":\"query getProductMasterData($action: String!, $regulatoryItemCodeValue: String!, $regulatoryItemCodeType: String!)\\n{\\n    genericActionCall(\\n        action: $action,\\n        payload:\\n        {\\n            regulatoryItemCodeValue: $regulatoryItemCodeValue,\\n            regulatoryItemCodeType: $regulatoryItemCodeType\\n            }\\n    )\\n    {\\n        result\\n        __typename\\n    }\\n}\",\"variables\":{\"action\":\"Getproductbyitemcode\",\"regulatoryItemCodeValue\":\"YOUR_PRODUCT_ID\",\"regulatoryItemCodeType\":\"ITEM_CODE_TYPE\"}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"mutation EditSubTaskOnTemplate($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Editsubtaskontemplate\",\"payload\":{\"id\":\"074bef4d-bc6c-40c9-86c1-f907b028b883\",\"subTaskName\":\"Modified template name 2\",\"businessPriority\":\"LOW\"}}}"
+payload = "{\"query\":\"mutation EditSubTaskOnTemplate($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Editsubtaskontemplate\",\"payload\":{\"id\":\"YOUR_ID\",\"subTaskName\":\"Modified template name 2\",\"businessPriority\":\"LOW\"}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

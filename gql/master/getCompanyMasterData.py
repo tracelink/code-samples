@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"query getQueryResults($regulatoryCompanyIdentifierValue: String!, $regulatoryCompanyIdentifierType: String!)\\n    {\\n        genericActionCall(\\n            action: \\\"Getcompanybyidentifier\\\",\\n            payload:{\\n                regulatoryCompanyIdentifierValue: $regulatoryCompanyIdentifierValue,\\n                regulatoryCompanyIdentifierType: $regulatoryCompanyIdentifierType\\n                }\\n        )\\n{result}\\n}\",\"variables\":{\"regulatoryCompanyIdentifierValue\":\"0324031989111\",\"regulatoryCompanyIdentifierType\":\"GLN\"}}"
+payload = "{\"query\":\"query getQueryResults($regulatoryCompanyIdentifierValue: String!, $regulatoryCompanyIdentifierType: String!)\\n    {\\n        genericActionCall(\\n            action: \\\"Getcompanybyidentifier\\\",\\n            payload:{\\n                regulatoryCompanyIdentifierValue: $regulatoryCompanyIdentifierValue,\\n                regulatoryCompanyIdentifierType: $regulatoryCompanyIdentifierType\\n                }\\n        )\\n{result}\\n}\",\"variables\":{\"regulatoryCompanyIdentifierValue\":\"YOUR_COMPANY_ID\",\"regulatoryCompanyIdentifierType\":\"GLN\"}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

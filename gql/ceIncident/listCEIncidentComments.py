@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"query ListIncidentComments($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Listcommentsforincident\",\"payload\":{\"id\":\"07b129e6-055f-40a7-97d2-549c3437e061\",\"processType\":\"complianceException\"}}}"
+payload = "{\"query\":\"query ListIncidentComments($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Listcommentsforincident\",\"payload\":{\"id\":\"YOUR_ID\",\"processType\":\"complianceException\"}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

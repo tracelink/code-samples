@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"query ListSubTaskForTemplate($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Listsubtaskfortemplate\",\"payload\":{\"templateId\":\"9f2ce4b7-b9fe-4273-9586-c58c78f76b85\"}}}"
+payload = "{\"query\":\"query ListSubTaskForTemplate($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Listsubtaskfortemplate\",\"payload\":{\"templateId\":\"YOUR_ID\"}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

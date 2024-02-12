@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"mutation CopyTask($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Copytask\",\"payload\":{\"id\":\"522a98e1-c301-4f07-8cc5-0862b08a4886\",\"aptBusinessObjectSummary\":\"Copy of Task via python and GraphQL\",\"copyGeneralInfo\":true,\"copySubTasks\":true,\"copyRelatedProcesses\":true}}}"
+payload = "{\"query\":\"mutation CopyTask($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Copytask\",\"payload\":{\"id\":\"YOUR_ID\",\"aptBusinessObjectSummary\":\"Copy of Task via python and GraphQL\",\"copyGeneralInfo\":true,\"copySubTasks\":true,\"copyRelatedProcesses\":true}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',

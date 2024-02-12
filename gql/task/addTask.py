@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"mutation AddTask($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Addtask\",\"payload\":{\"templateId\":\"9f2ce4b7-b9fe-4273-9586-c58c78f76b85\",\"aptBusinessObjectSummary\":\"GraphQL Python created task\",\"aptBusinessObjectDescription\":\"Tasks for recurring purchase orders\",\"businessPriority\":\"LOW\",\"completionDueDate\":\"1737834411000\",\"isVisible\":true,\"isAtRisk\":false}}}"
+payload = "{\"query\":\"mutation AddTask($action: String!, $payload: JSON!)\\n{\\n    genericActionCall(action: $action, payload: $payload)\\n    {\\n    result\\n    __typename\\n    }    \\n}\",\"variables\":{\"action\":\"Addtask\",\"payload\":{\"templateId\":\"YOUR_ID\",\"aptBusinessObjectSummary\":\"GraphQL Python created task\",\"aptBusinessObjectDescription\":\"Tasks for recurring purchase orders\",\"businessPriority\":\"LOW\",\"completionDueDate\":\"1737834411000\",\"isVisible\":true,\"isAtRisk\":false}}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',
