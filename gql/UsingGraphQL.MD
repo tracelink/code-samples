@@ -1,3 +1,4 @@
 # Issuing GraphQL requests using Python
-## Query Data
-## Modify Data
+## Anatomy of a GraphQL request
+### Query Data
+### Modify Data
