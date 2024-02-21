@@ -3,7 +3,7 @@ import json
 
 url = "https://valvir-opus.tracelink.com/api/graphql"
 
-payload = "{\"query\":\"query getQueryResults($regulatoryCompanyIdentifierValue: String!, $regulatoryCompanyIdentifierType: String!)\\n    {\\n        genericActionCall(\\n            action: \\\"Getpartnerbyregulatoryidentifier\\\",\\n            payload:{\\n                regulatoryCompanyIdentifier: $regulatoryCompanyIdentifierValue,\\n                regulatoryCompanyIdentifierType: $regulatoryCompanyIdentifierType\\n                }\\n        )\\n    {result}\\n}\",\"variables\":{}}"
+payload = "{\"query\":\"query getQueryResults($regulatoryCompanyIdentifierValue: String!, $regulatoryCompanyIdentifierType: String!)\\n    {\\n        genericActionCall(\\n            action: \\\"Getcompanybyidentifier\\\",\\n            payload:{\\n                regulatoryCompanyIdentifierValue: $regulatoryCompanyIdentifierValue,\\n                regulatoryCompanyIdentifierType: $regulatoryCompanyIdentifierType\\n                }\\n        )\\n{result}\\n}\",\"variables\":{\"regulatoryCompanyIdentifierValue\":\"PARTNER_COMPANY_ID\",\"regulatoryCompanyIdentifierType\":\"GLN\"}}"
 headers = {
   'Authorization': 'Basic YOUR_TOKEN',
   'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ headers = {
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
-# print(response.text)
+print(response.text)
 raw_json = json.loads(response.text)  # load the text result to into json
 
 schema_json = raw_json.get('data').get('genericActionCall')  # drill into object
