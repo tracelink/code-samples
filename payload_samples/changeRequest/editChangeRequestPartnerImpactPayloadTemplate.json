@@ -1,0 +1,56 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:edit-change:v3",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "partnerCompany": {
+      "partnerId": "PARTNER_COMPANY_ID",
+      "toIdType": "companyMasterData"
+    },
+    "isVisible": true,
+    "currentlyAssignedCompanyUsers": [
+      "COMPANY_USER_ID1",
+      "COMPANY_USER_ID2"
+    ],
+    "initiatingCompany": {
+      "toId": "COMPANY_ID",
+      "toIdType": "companyMasterData"
+    },
+    "subjectMatterExpert": [
+      {
+        "subjectMatterExpertEmail": "JDoe@example.com",
+        "subjectMatterExpertName": "John Doe"
+      }
+    ],
+    "changeImpact": {
+      "changeReferenceIdentifiers": [
+        {
+          "referenceTransactionType": "INVOICE_NUMBER",
+          "value": "55512345"
+        }
+      ],
+      "riskType": "NONTECHNICAL_LOW_RISK",
+      "implementationNeededByDate": 1611981070772,
+      "businessScopeImpact": "OTHER",
+      "otherBusinessScopeImpact": "User-Defined Business Scope",
+      "reasonForChange": "STREAMLINE_OPERATIONS",
+      "reasonForChangeNotes": "Reason why a change is required.",
+      "potentialRisks": "potential Risks",
+      "evaluationsOfChange": "Evaluations Of Change"
+    },
+    "impactedLocation":
+      {
+        "locationId": "COMPANY_LOCATION_ID",
+        "locationType": "Internal",
+        "locationContact": "Elias Davis",
+        "toIdType": "companyLocationMasterData"
+      }
+
+  }
+}

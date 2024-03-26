@@ -1,0 +1,24 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:edit-comment-for-incident:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "commentId": "COMMENT_ID",
+    "processType": "directSupplierIncident",
+    "id": "ITEM_ID",
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "Incorrect order uploaded",
+        "visibilityType": "public"
+      },
+      "removeAttachment": [
+        "ATTACHMENT_ID"
+      ]
+    }
+  }
+}

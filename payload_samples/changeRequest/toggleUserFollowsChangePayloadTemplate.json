@@ -1,0 +1,15 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:toggle-user-follows-change:v1",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "processId": "ITEM_ID",
+    "processType": "change",
+    "follow": true
+  }
+}

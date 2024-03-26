@@ -1,0 +1,34 @@
+{
+  "header": {
+    "headerVersion": 1,
+    "eventName": "agile-process-teams:close-external-manufacturing-incident:v2",
+    "ownerId": "YOUR_OWNER_ID",
+    "processNetworkId": "YOUR_PROCESS_NETWORK_ID",
+    "appName": "agile-process-teams",
+    "dataspace": "default"
+  },
+  "payload": {
+    "id": "ITEM_ID",
+    "resolutionType": "RESOLVED",
+    "originatingLocation": [
+      {
+        "originatingLocationId": "LOCATION_ID",
+        "toIdType": "companyLocationMasterData"
+      }
+    ],
+    "aptCommentBox": {
+      "aptComment": {
+        "commentText": "Order received. Signed off by Receiving Manager on 23 Aug 2021",
+        "visibilityType": "public"
+      },
+      "addAttachment": [
+        {
+          "fileName": "ORDER_1896155146_approved_RECEIVED 23-AUG",
+          "fileSize": "3mb",
+          "visibilityType": "public",
+          "requestIdentifier": "REQUEST_IDENTIFIER_ID"
+        }
+      ]
+    }
+  }
+}

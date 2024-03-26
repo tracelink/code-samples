@@ -25,7 +25,7 @@ token = "SomeTokenYouGotFromSomewhere"
 
 if __name__ == "__main__":
     # the statements below can be made on their own from your own processes rather than using this function.
-    # the steps below when replaced with live data would create a single Direct Supplier Incident
+    # the steps below when replaced with live data would create a single Direct Supplier incident
     token = "NotARealToken"  # admittedly redundant since we declared it earlier
     file = "c:/temp/samples/addIncident.json"  # again, we already declared this
 
